@@ -15,7 +15,7 @@ class TagsController < ApplicationController
     @tag = Tag.new(tag_params)
     @tag.user = current_user
     if @tag.save
-      redirect_to tag_path(@tag)
+      redirect_to tags_path
     else
       render :new
     end
@@ -24,7 +24,7 @@ class TagsController < ApplicationController
   def destroy
     set_tags
     @tag.destroy
-    redirect_to tags_path(current_user)
+    redirect_to tags_path
   end
 
   private
