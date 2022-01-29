@@ -1,9 +1,9 @@
 class ClothesController < ApplicationController
   before_action :find_clothe, only: [ :show, :destroy ]
   before_action :new_clothe, only: [ :new, :create ]
+  # before_action :
 
   def new
-    # @clothe = Clothe.new(review_params)
   end
 
   def destroy
@@ -34,12 +34,12 @@ class ClothesController < ApplicationController
     @clothe = Clothe.find(params[:id])
   end
 
-  def review_params
-    params.require(:user).permit(:height :body_shape :skin_tone :waist_circ :chest_circ :hip_circ)
-  end
+  # def clothes_params
+  #   params.require(:user).permit(:height, :body_shape, :skin_tone, :waist_circ, :chest_circ, :hip_circ)
+  # end
 
   def new_clothe
-    @review = Review.new(review_params)
+    @review = Clothe.new #(clothes_params)
   end
 
 end
