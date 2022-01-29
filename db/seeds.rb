@@ -11,7 +11,7 @@ require "open-uri"
 puts "Cleaning database..."
 OutfitTag.destroy_all
 ClotheTag.destroy_all
-ClotheOutfit.destroy_all
+ClothesOutfit.destroy_all
 Outfit.destroy_all
 Tag.destroy_all
 Clothe.destroy_all
@@ -55,20 +55,7 @@ puts "--------------------------------------------------------------------------
 
 puts "Creating clothes ..."
 
-# for i in 1..50
-#   clothe = Clothe.new(
-#       id: i
-#       category: "Feet",
-#       bookmark: [true, false].sample,
-#       brand: Faker::Artist.name,
-#       size: prng.rand(34..42),
-#       colour: Faker::Color.color_name,
-#       material: Faker::Commerce.material,
-#       product_ref: prng.rand(1..1000000),
-#       user_id: prng.rand(1..2)
-#     )
-#   puts "Created clothe #{clothe.id}"
-# end
+
 
 CLOUD_LEG = ["https://res.cloudinary.com/detkinqcf/image/upload/v1643464202/Clothes/1-removebg-preview_vt05fp.png",
               "https://res.cloudinary.com/detkinqcf/image/upload/v1643464202/Clothes/3-removebg-preview_q1vuzf.png",
@@ -78,51 +65,124 @@ CLOUD_CHEST = ["https://res.cloudinary.com/detkinqcf/image/upload/v1643463632/Cl
                 "https://res.cloudinary.com/detkinqcf/image/upload/v1643463626/Clothes/3_fzyz8t.png",
                 "https://res.cloudinary.com/detkinqcf/image/upload/v1643463618/Clothes/1_pti9ma.png"]
 
-]
 
-for i in 51..75
+
+for i in 51..60
   clothe = Clothe.new(
-      id: i
+      id: i,
       category: "Leg",
       bookmark: [true, false].sample,
       brand: Faker::Artist.name,
-      size: prng.rand(34..42),
+      size: rand(34..42),
       colour: Faker::Color.color_name,
       material: Faker::Commerce.material,
-      product_ref: prng.rand(1..1000000),
-      user_id: prng.rand(1..2)
+      product_ref: rand(1..1000000),
+      user_id: rand(1..2)
     )
     clothe.photo.attach(io: URI.open(CLOUD_LEG.sample), filename: "clothe #{clothe.id}.jpeg", content_type: 'image/jpeg')
     clothe.save!
     puts "Created clothe #{clothe.id}"
 end
-for i in 101..175
+for i in 101..120
   clothe = Clothe.new(
-      id: i
+      id: i,
       category: "Chest",
       bookmark: [true, false].sample,
       brand: Faker::Artist.name,
-      size: prng.rand(34..42),
+      size: rand(34..42),
       colour: Faker::Color.color_name,
       material: Faker::Commerce.material,
-      product_ref: prng.rand(1..1000000),
-      user_id: prng.rand(1..2)
+      product_ref: rand(1..1000000),
+      user_id: rand(1..2)
     )
     clothe.photo.attach(io: URI.open(CLOUD_CHEST.sample), filename: "clothe #{clothe.id}.jpeg", content_type: 'image/jpeg')
     clothe.save!
     puts "Created clothe #{clothe.id}"
 end
-# for i in 151..200
-#   clothe = Clothe.new(
-#       id: i
-#       category: "Head",
-#       bookmark: [true, false].sample,
-#       brand: Faker::Artist.name,
-#       size: prng.rand(34..42),
-#       colour: Faker::Color.color_name,
-#       material: Faker::Commerce.material,
-#       product_ref: prng.rand(1..1000000),
-#       user_id: prng.rand(1..2)
-#     )
-#     puts "Created clothe #{clothe.id}"
-# end
+
+puts "Finished!"
+
+puts "--------------------------------------------------------------------------"
+
+puts "Creating outfit ..."
+
+Outfit.create(
+  id: 1,
+  name: "Tenue pref",
+  user_id: 1,
+)
+
+ClothesOutfit.create(
+  id: 1,
+  clothe_id: rand(51..60),
+  outfit_id: 1
+)
+
+ClothesOutfit.create(
+  id: 2,
+  clothe_id: rand(101..120),
+  outfit_id: 1
+)
+
+puts "Finished!"
+
+puts "--------------------------------------------------------------------------"
+
+puts "Creating tag clothes ..."
+
+Tag.create(
+  id: 1,
+  name: "skirt",
+  user_id: 1
+)
+
+Tag.create(
+  id: 2,
+  name: "t-shirt",
+  user_id: 1
+)
+
+ClotheTag.create(
+  id: 1,
+  clothe_id: rand(51..60),
+  tag_id: 1
+)
+
+ClotheTag.create(
+  id: 2,
+  clothe_id: rand(51..60),
+  tag_id: 1
+)
+
+ClotheTag.create(
+  id: 3,
+  clothe_id: rand(101..120),
+  tag_id: 2
+)
+
+ClotheTag.create(
+  id: 4,
+  clothe_id: rand(101..120),
+  tag_id: 2
+)
+
+puts "Finished!"
+puts "--------------------------------------------------------------------------"
+
+puts "Creating tag outfits ..."
+
+Tag.create(
+  id: 3,
+  name: "summer",
+  user_id: 1
+)
+
+OutfitTag.create(
+  id: 1,
+  outfit_id: 1,
+  tag_id: 3
+)
+puts "Finished!"
+puts "--------------------------------------------------------------------------"
+
+puts "DB COMPLETE"
