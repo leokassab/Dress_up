@@ -3,25 +3,24 @@ class ClothesController < ApplicationController
   before_action :new_clothe, only: [ :new, :create ]
 
   def new
-    # @clothe = Clothe.new(review_params)
   end
 
   def destroy
     @clothe.destroy
-    # redirect_to clothes_path
+    redirect_to clothes_path
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @clothe.user = @user
+    @clothe.user = current_user
     if @clothe.save
-      # redirect_to clothe_path(@clothe)
+      redirect_to clothe_path(@clothe)
     else
       render :new
     end
   end
 
   def show
+    @tags = current_user.tags
   end
 
   def index
@@ -34,12 +33,12 @@ class ClothesController < ApplicationController
     @clothe = Clothe.find(params[:id])
   end
 
-  def review_params
-    params.require(:user).permit(:height :body_shape :skin_tone :waist_circ :chest_circ :hip_circ)
+  def clothes_params
+    # params.require(:user).permit(:height, :body_shape, :skin_tone, :waist_circ, :chest_circ, :hip_circ)
   end
 
   def new_clothe
-    @review = Review.new(review_params)
+    @clothe = Clothe.new(clothes_params)
   end
 
 end
