@@ -1,0 +1,35 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: lightgrey;
+  color: $light-gray;
+  width: 300px;
+  padding: 8px 15px;
+  border-radius: 20px;
+}
+
+.loup i {
+  color: $light-gray;
+}
+
+.filter i {
+  color: $color-primary;
+}
+
+.loup {
+  display: flex;
+  align-items: center;
+}
+ .loup p {
+    margin: 0;
+ }
+
+ .loup i {
+   margin-right: 10px;
+ }
+
+ .form {
+  background: transparent;
+  border: none;
+ }
