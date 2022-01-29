@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       resources :clothe_tags, only: [:create]
     end
   end
-  resources :outfits, only: [:index, :show, :new]
+  resources :outfits, only: [:index, :show, :new, :create]
   resources :tags, only: [:index, :show, :new, :create]
 
 end

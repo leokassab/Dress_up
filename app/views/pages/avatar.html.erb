@@ -1,2 +1,14 @@
 <h1> Hey c'est ton avatar!</h1>
 <p>Taille: <%= @user.height %> </p>
+
+
+<%= simple_form_for(@outfit) do |f| %>
+  <%= f.label :head %>
+  <%= f.input :head, as: :select, collection: @head %>
+  <%= f.submit %>
+<% end %>
+
+
+<%# # crée rle simple for qui rédige vers le create de l'outfit  %>
+
+<%# à la fois dcréer de sobjects outflits et outfit_clothe %>

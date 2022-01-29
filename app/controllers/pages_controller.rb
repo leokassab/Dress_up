@@ -6,5 +6,8 @@ class PagesController < ApplicationController
 
   def avatar
     @user = current_user
+    #défniir el s4 listes de clothes quo'n veut afficher.
+    @head = Clothe.where(catagory: "Head")
+    @outfit = Outfit.new
   end
 end
