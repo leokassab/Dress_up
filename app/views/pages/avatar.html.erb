@@ -3,8 +3,11 @@
 
 
 <%= simple_form_for(@outfit) do |f| %>
+  <%= f.label :name %>
+  <%= f.input :name %>
+  <%# <%= f.input :head, as: :select, collection: @head %> %>
   <%= f.label :head %>
-  <%= f.input :head, as: :select, collection: @head %>
+  <%= select_tag :head, options_from_collection_for_select(@head, "id", "name"), include_blank: true %>
   <%= f.submit %>
 <% end %>
 

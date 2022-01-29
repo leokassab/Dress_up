@@ -13,14 +13,12 @@ class OutfitsController < ApplicationController
   def create
     @outfit = Outfit.new(outfit_params)
     @outfit.user = current_user
-
-    if @outfit.save!
-      # innjecter les 4 clothes
-      # ClothesOutfit.create(@head)
-      # ClothesOutfit.new(@top)
-      redirect_to outfit_path(@outfit)
-    else
-      render :new
+    if @outfit.save
+      @head = ClothesOutfit.create(clothe_id: params[:head], outfit_id: @outfit.id)
+      # innjecter les 3 clothes
+          #   redirect_to outfit_path(@outfit)
+          # else
+    #   render :new
     end
   end
 
@@ -42,7 +40,7 @@ class OutfitsController < ApplicationController
   end
 
   def outfit_params
-    params.require(:outfit).permit(:name, :user_id)
+    params.require(:outfit).permit(:name)
   end
 
 end

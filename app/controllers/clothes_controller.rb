@@ -1,8 +1,8 @@
 class ClothesController < ApplicationController
   before_action :find_clothe, only: [ :show, :destroy ]
-  before_action :new_clothe, only: [ :new, :create ]
 
   def new
+    @clothe = Clothe.new
   end
 
   def destroy
@@ -11,6 +11,7 @@ class ClothesController < ApplicationController
   end
 
   def create
+    @clothe = Clothe.new(clothes_params)
     @clothe.user = current_user
     if @clothe.save
       redirect_to clothe_path(@clothe)
@@ -34,11 +35,7 @@ class ClothesController < ApplicationController
   end
 
   def clothes_params
-    # params.require(:user).permit(:height, :body_shape, :skin_tone, :waist_circ, :chest_circ, :hip_circ)
-  end
-
-  def new_clothe
-    @clothe = Clothe.new(clothes_params)
+    params.require(:clothe).permit(:category, :bookmark, :brand, :size, :colour, :material, :product_ref, :name)
   end
 
 end
