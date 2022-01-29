@@ -34,11 +34,11 @@ class OutfitsController < ApplicationController
     @outfit = Outfit.find(params[:id])
   end
 
-  def review_params
-    params.require(:user).permit(:height :body_shape :skin_tone :waist_circ :chest_circ :hip_circ)
-  end
+  # def review_params
+  #   params.require(:user).permit(:height :body_shape :skin_tone :waist_circ :chest_circ :hip_circ)
+  # end
 
   def new_outfit
-    @outfit = Outfit.new(review_params)
+    @outfit = Outfit.new #(review_params)
   end
 end
