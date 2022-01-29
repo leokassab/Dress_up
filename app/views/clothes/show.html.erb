@@ -1,1 +1,5 @@
-<h1>Show Clothes</h1>
+<h1>Show Clothe</h1>
+
+<% @tags.each do |t|%>
+<%= link_to t.name, clothe_tags_path(@clothe, tag_id: t), method: :post %>
+<% end %>

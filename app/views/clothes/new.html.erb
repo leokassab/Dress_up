@@ -1,1 +1,21 @@
 <h1>New Clothes</h1>
+
+<%= simple_form_for(@clothe) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :category %>
+  <%= f.text_field :category %>
+  <%= f.label :bookmark %>
+  <%= f.text_field :bookmark %>
+  <%= f.label :brand %>
+  <%= f.text_field :brand %>
+  <%= f.label :size %>
+  <%= f.text_field :size %>
+  <%= f.label :colour %>
+  <%= f.text_field :colour %>
+  <%= f.label :material %>
+  <%= f.text_field :material %>
+  <%= f.label :product_ref %>
+  <%= f.text_field :product_ref %>
+  <%= f.submit %>
+<% end %>

@@ -1,14 +1,15 @@
 class TagsController < ApplicationController
+  before_action :set_tags, only: [ :show, :destroy ]
+
   def index
     @tags = Tag.all
   end
 
   def show
-    set_tags
   end
 
   def new
-    @taf = Tag.new
+    @tag = Tag.new
   end
 
   def create
@@ -22,7 +23,6 @@ class TagsController < ApplicationController
   end
 
   def destroy
-    set_tags
     @tag.destroy
     redirect_to tags_path
   end
