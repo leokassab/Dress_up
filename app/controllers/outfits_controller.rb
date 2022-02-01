@@ -14,11 +14,14 @@ class OutfitsController < ApplicationController
     @outfit = Outfit.new(outfit_params)
     @outfit.user = current_user
     if @outfit.save
-      @head = ClothesOutfit.create(clothe_id: params[:head], outfit_id: @outfit.id)
-      # innjecter les 3 clothes
-          #   redirect_to outfit_path(@outfit)
-          # else
-    #   render :new
+      # @head = ClothesOutfit.create(clothe_id: params[:head], outfit_id: @outfit.id)
+      @chest = ClothesOutfit.create(clothe_id: params[:chest], outfit_id: @outfit.id)
+      @leg = ClothesOutfit.create(clothe_id: params[:leg], outfit_id: @outfit.id)
+      # @foot = ClothesOutfit.create(clothe_id: params[:foot], outfit_id: @outfit.id)
+
+      redirect_to outfit_path(@outfit)
+      else
+      render :new
     end
   end
 
