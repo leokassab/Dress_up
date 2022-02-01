@@ -1,6 +1,22 @@
+<p>Welcome back <%= @user.user_name %></p>
 
-<p>Find me in app/views/pages/home.html.erb</p>
+<p>How would you like ti dress today?</p>
 
 <%= render "shared/search" %>
-<%= render "shared/button_sign_in" %>
-<%= render "shared/button_sign_up" %>
+<%# <%= render "shared/button_sign_in" %> %>
+<%# <%= render "shared/button_sign_up" %> %>
+
+<p>Categories</p>
+<% @user.tags.each do |tag| %>
+  <p><%= tag.name %></p>
+<% end %>
+
+<p>Your favorites</p>
+<% @user.clothes.each do |clothe| %>
+  <% if clothe.bookmark %>
+    <%= cl_image_tag clothe.photo.key %>
+  <% end %>
+<% end %>
+
+<%= link_to "Home", root_path %>
+<%= link_to "Cintre", clothes_path %>
