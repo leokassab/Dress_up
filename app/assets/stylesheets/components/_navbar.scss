@@ -1,12 +1,23 @@
-.navbar-lewagon {
+.navbar-dressup {
+  background: $color-primary;
+  padding: 10px 0px;
+  border-radius: 10px 10px 0px 0px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.navbar-dressup-item i {
+  color: white;
+  font-size: 36px;
+}
+
+ul {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  background: white;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0px 40px;
 }
