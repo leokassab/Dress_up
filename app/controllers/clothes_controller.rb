@@ -25,7 +25,7 @@ class ClothesController < ApplicationController
   end
 
   def index
-    Clothe.all
+    @clothes = current_user.clothes
   end
 
   private
