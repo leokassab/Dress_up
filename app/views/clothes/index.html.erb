@@ -9,7 +9,7 @@
 
 <% @clothes.each do |c| %>
   <% if c.photo.attached? %>
-    <%= link_to avatar_path(clothe_id: c.id) do %>
+    <%= link_to clothe_path(c) do %>
       <%= cl_image_tag c.photo.key %>
     <% end %>
   <% end %>
