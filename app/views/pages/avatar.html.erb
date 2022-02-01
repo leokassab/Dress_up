@@ -17,3 +17,8 @@
 
 
 <%# à la fois dcréer de sobjects outflits et outfit_clothe %>
+
+
+<% if @clothe.photo.attached? %>
+  <%= cl_image_tag @clothe.photo.key %>
+<% end %>
