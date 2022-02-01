@@ -1,17 +1,21 @@
 <h1> Hey c'est ton avatar!</h1>
-<p>Taille: <%= @user.height %> </p>
 
 
 <%= simple_form_for(@outfit) do |f| %>
+  <%# <%= f.label :head %>
+  <%# <%= select_tag :head, options_from_collection_for_select(@head, "id", "name"), include_blank: true %>
+  <%= f.label :chest %>
+  <%= select_tag :chest, options_from_collection_for_select(@chest, "id", "name"), include_blank: true %>
+  <%= f.label :leg %>
+  <%= select_tag :leg, options_from_collection_for_select(@leg, "id", "name"), include_blank: true %>
+  <%# <%= f.label :foot %>
+  <%# <%= select_tag :foot, options_from_collection_for_select(@Foot, "id", "name"), include_blank: true %>
   <%= f.label :name %>
   <%= f.input :name %>
-  <%# <%= f.input :head, as: :select, collection: @head %> %>
-  <%= f.label :head %>
-  <%= select_tag :head, options_from_collection_for_select(@head, "id", "name"), include_blank: true %>
   <%= f.submit %>
 <% end %>
 
 
-<%# # crée rle simple for qui rédige vers le create de l'outfit  %>
+<%# # créer le simple for qui rédige vers le create de l'outfit  %>
 
 <%# à la fois dcréer de sobjects outflits et outfit_clothe %>
