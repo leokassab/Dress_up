@@ -1,5 +1,16 @@
 <h1>Index clothes</h1>
 
+
+<p>Search</p>
+
+
+
+<%= link_to "Add a clothe", new_clothe_path %>
+
 <% @clothes.each do |c| %>
-  <h2><%= c.name %></h2>
+  <% if c.photo.attached? %>
+    <%= link_to avatar_path(clothe_id: c.id) do %>
+      <%= cl_image_tag c.photo.key %>
+    <% end %>
+  <% end %>
 <% end %>
