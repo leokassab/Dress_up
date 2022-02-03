@@ -10,7 +10,7 @@ require "open-uri"
 
 puts "Cleaning database..."
 OutfitTag.destroy_all
-ClotheTag.destroy_all
+ClothesTag.destroy_all
 ClothesOutfit.destroy_all
 Outfit.destroy_all
 Tag.destroy_all
