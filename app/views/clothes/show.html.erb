@@ -2,17 +2,15 @@
 
 <%= cl_image_tag @clothe.photo.key %>
 
-<p>Add to tags</p>
-
 
 <%= simple_form_for [@clothe, @clothes_tag] do |f| %>
   <%= f.association :tag,
               as: :check_boxes,
               collection: @tags,
-              # checked: @clothe.tags.map {|x| x.name}
-              checked: @clothe.tags  %>
-
-  <%= f.submit "Save" %>
+              checked: @clothe.tags.ids,
+              input_html: { class: "tag-selector" },
+              item_wrapper_class: 'tag-item'  %>
+  <%= f.button :submit, "Save", class: "tag-submit" %>
 <% end %>
 
 <div>
