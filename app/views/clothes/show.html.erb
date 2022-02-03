@@ -1,5 +1,31 @@
 <h1>Show Clothe</h1>
 
-<% @tags.each do |t|%>
-<%= link_to t.name, clothe_tags_path(@clothe, tag_id: t), method: :post %>
+<%= cl_image_tag @clothe.photo.key %>
+
+<p>Add to tags</p>
+
+
+<%= simple_form_for [@clothe, @clothes_tag] do |f| %>
+  <%= f.association :tag,
+              as: :check_boxes,
+              collection: @tags,
+              # checked: @clothe.tags.map {|x| x.name}
+              checked: @clothe.tags  %>
+
+  <%= f.submit "Save" %>
 <% end %>
+
+<div>
+  <%# <% @tags.each do |t| %> %>
+    <%# Create a ClothesTag %>
+    <%# <%= link_to t.name,  clothe_clothes_tags_path(@clothe, tag_id: t), method: :post %> %>
+  <%# <% end %> %>
+</div>
+
+<%= link_to "Add to avatar", avatar_path(clothe_id: @clothe.id) %>
+
+<p>Category: <%= @clothe.category %></p>
+<p>Brand: <%= @clothe.brand %></p>
+<p>Size: <%= @clothe.size %></p>
+<p>Color: <%= @clothe.colour %></p>
+<p>Fabric: <%= @clothe.material %></p>

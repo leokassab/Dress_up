@@ -1,22 +1,26 @@
 class OutfitsController < ApplicationController
   before_action :find_outfit, only: [ :show, :destroy ]
-  before_action :new_outfit, only: [ :new, :create ]
 
   def new
-    # @outfit = Outfit.new(review_params)
+    @outfit = Outfit.new
   end
 
   def destroy
     @outfit.destroy
-    # redirect_to outfits_path
+    redirect_to outfits_path
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @outfit.user = @user
+    @outfit = Outfit.new(outfit_params)
+    @outfit.user = current_user
     if @outfit.save
-      # redirect_to outfit_path(@outfit)
-    else
+      # @head = ClothesOutfit.create(clothe_id: params[:head], outfit_id: @outfit.id)
+      @chest = ClothesOutfit.create(clothe_id: params[:chest], outfit_id: @outfit.id)
+      @leg = ClothesOutfit.create(clothe_id: params[:leg], outfit_id: @outfit.id)
+      # @foot = ClothesOutfit.create(clothe_id: params[:foot], outfit_id: @outfit.id)
+
+      redirect_to outfit_path(@outfit)
+      else
       render :new
     end
   end
@@ -25,7 +29,7 @@ class OutfitsController < ApplicationController
   end
 
   def index
-    Outfit.all
+    @outfits = Outfit.all
   end
 
   private
@@ -34,11 +38,12 @@ class OutfitsController < ApplicationController
     @outfit = Outfit.find(params[:id])
   end
 
-  # def review_params
-  #   params.require(:user).permit(:height :body_shape :skin_tone :waist_circ :chest_circ :hip_circ)
-  # end
-
-  def new_outfit
-    @outfit = Outfit.new #(review_params)
+  def user_params
+    params.require(:user).permit(:height, :body_shape, :skin_tone, :waist_circ, :chest_circ, :hip_circ, :user_name)
   end
+
+  def outfit_params
+    params.require(:outfit).permit(:name)
+  end
+
 end
