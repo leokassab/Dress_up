@@ -65,6 +65,9 @@ CLOUD_CHEST = ["https://res.cloudinary.com/detkinqcf/image/upload/v1643463632/Cl
                 "https://res.cloudinary.com/detkinqcf/image/upload/v1643463626/Clothes/3_fzyz8t.png",
                 "https://res.cloudinary.com/detkinqcf/image/upload/v1643463618/Clothes/1_pti9ma.png"]
 
+CLOUD_HAT
+
+CLOUD_FIT
 
 
 for i in 51..60
