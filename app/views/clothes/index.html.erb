@@ -11,21 +11,18 @@
     <h1>Clothes</h1>
   </div>
   <div class="search">
-    <%# <p>Search</p> %>
       <%= render "shared/search" %>
   </div>
   <div class="row">
     <% @clothes.each do |c| %>
       <div class="col-6">
         <div class="card-product">
-          <div>
             <% if c.photo.attached? %>
               <%= link_to clothe_path(c) do %>
                 <div class="product-photo" style="background-image: url('<%= cl_image_path c.photo.key, height: 120, crop: :fill %>')">
                 </div>
               <% end %>
             <% end %>
-          </div>
         </div>
       </div>
     <% end %>
