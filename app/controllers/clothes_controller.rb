@@ -23,6 +23,7 @@ class ClothesController < ApplicationController
   def show
     @tags = current_user.tags
     @clothes_tag = ClothesTag.new
+    @new_tag = Tag.new
   end
 
   def index
