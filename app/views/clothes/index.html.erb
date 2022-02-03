@@ -1,16 +1,30 @@
-<h1>Index clothes</h1>
 
 
-<p>Search</p>
+
+
 
 
 
 <%= link_to "Add a clothe", new_clothe_path %>
-
-<% @clothes.each do |c| %>
-  <% if c.photo.attached? %>
-    <%= link_to clothe_path(c) do %>
-      <%= cl_image_tag c.photo.key %>
+<div class="container">
+  <div class="header">
+    <h1>Clothes</h1>
+  </div>
+  <div class="search">
+      <%= render "shared/search" %>
+  </div>
+  <div class="row">
+    <% @clothes.each do |c| %>
+      <div class="col-6">
+        <div class="card-product">
+            <% if c.photo.attached? %>
+              <%= link_to clothe_path(c) do %>
+                <div class="product-photo" style="background-image: url('<%= cl_image_path c.photo.key, height: 120, crop: :fill %>')">
+                </div>
+              <% end %>
+            <% end %>
+        </div>
+      </div>
     <% end %>
-  <% end %>
-<% end %>
+  </div>
+</div>

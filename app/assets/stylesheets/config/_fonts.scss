@@ -18,6 +18,13 @@ h2, h3, h4, h5, h6 {
   font-weight: 300;
 }
 
+h1 {
+  font-size: 32px;
+  color: white;
+  font-family: $headers-font;
+  font-weight: bold;
+}
+
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";
