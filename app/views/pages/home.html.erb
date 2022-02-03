@@ -1,31 +1,23 @@
 
 <div class="container">
-  <%= render "shared/search" %>
-  <br>
-  <%= render "shared/button_sign_in" %>
-  <br>
-  <%= render "shared/button_sign_up" %>
-  <br>
-  <%= render "shared/card_product" %>
-  <br>
-  <%= render "shared/category" %>
-  <br>
-
-  <div class="avatar">
-    <p>Welcome back </p><br><p><%= @user.user_name %></p>
+  <div class="log-avatar">
+    <div>
+      <p>Welcome back</p>
+      <p><%= @user.user_name %></p>
+    </div>
     <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
   </div>
 
   <div class="home-search">
     <h2>How would you like to dress today?</h2>
-    <%= render "shared/search" %>
+    <div class="align-search"><%= render "shared/search" %></div>
   </div>
 
 
   <%# <%= render "shared/button_sign_in" %> %>
   <%# <%= render "shared/button_sign_up" %> %>
   <div class="categories">
-    <h2>Categories</h2>
+    <h3>Categories</h3>
     <ul><% @user.tags.each do |tag| %>
       <li><%= render "shared/category", tag: tag %></li>
     <% end %></ul>
@@ -35,13 +27,8 @@
     <p>Your favorites</p>
     <ul><% @user.clothes.each do |clothe| %>
       <% if clothe.bookmark %>
-        <li><%= cl_image_tag clothe.photo.key %></li>
+        <li class="product-photo" ><%= cl_image_tag clothe.photo.key %></li>
       <% end %>
     <% end %></ul>
   </div>
-
-
-  <%= link_to "Home", root_path %>
-  <%= link_to "Cintre", clothes_path %>
-  <%= link_to "Avatar", avatar_path %>
 </div>
