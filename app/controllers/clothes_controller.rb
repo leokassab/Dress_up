@@ -22,6 +22,7 @@ class ClothesController < ApplicationController
 
   def show
     @tags = current_user.tags
+    @clothes_tag = ClothesTag.new
   end
 
   def index
@@ -35,7 +36,8 @@ class ClothesController < ApplicationController
   end
 
   def clothes_params
-    params.require(:clothe).permit(:category, :bookmark, :brand, :size, :colour, :material, :product_ref, :name)
+    params.require(:clothe).permit(:category, :bookmark, :brand, :size, :colour, :material, :product_ref, :name, :clothes_tags_attributes => [:clothe_id, :tag_id])
   end
+
 
 end

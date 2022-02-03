@@ -7,7 +7,11 @@ class PagesController < ApplicationController
 
   def avatar
     @user = current_user
-    @clothe = Clothe.find(params[:clothe_id])
+
+    unless params[:clothe_id].nil?
+      @clothe = Clothe.find(params[:clothe_id])
+    end
+
     #défniir el s4 listes de clothes quo'n veut afficher.
     @head = Clothe.where(category: "Head")
     @leg = Clothe.where(category: "Leg")

@@ -142,25 +142,25 @@ Tag.create(
   user_id: 1
 )
 
-ClotheTag.create(
+ClothesTag.create(
   id: 1,
   clothe_id: rand(51..60),
   tag_id: 1
 )
 
-ClotheTag.create(
+ClothesTag.create(
   id: 2,
   clothe_id: rand(51..60),
   tag_id: 1
 )
 
-ClotheTag.create(
+ClothesTag.create(
   id: 3,
   clothe_id: rand(101..120),
   tag_id: 2
 )
 
-ClotheTag.create(
+ClothesTag.create(
   id: 4,
   clothe_id: rand(101..120),
   tag_id: 2
