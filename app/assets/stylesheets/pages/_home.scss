@@ -1,1 +1,15 @@
 // Specific CSS for your home-page
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.categories ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline-start: 0px;
+}

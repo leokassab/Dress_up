@@ -1,7 +1,5 @@
 
 <div class="container">
-  <p>Find me in app/views/pages/home.html.erb</p>
-
   <%= render "shared/search" %>
   <br>
   <%= render "shared/button_sign_in" %>
@@ -10,31 +8,40 @@
   <br>
   <%= render "shared/card_product" %>
   <br>
+  <%= render "shared/category" %>
   <br>
-  <br>
+
+  <div class="avatar">
+    <p>Welcome back </p><br><p><%= @user.user_name %></p>
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
+  </div>
+
+  <div class="home-search">
+    <h2>How would you like to dress today?</h2>
+    <%= render "shared/search" %>
+  </div>
+
+
+  <%# <%= render "shared/button_sign_in" %> %>
+  <%# <%= render "shared/button_sign_up" %> %>
+  <div class="categories">
+    <h2>Categories</h2>
+    <ul><% @user.tags.each do |tag| %>
+      <li><%= render "shared/category", tag: tag %></li>
+    <% end %></ul>
+  </div>
+
+  <div class="favorites">
+    <p>Your favorites</p>
+    <ul><% @user.clothes.each do |clothe| %>
+      <% if clothe.bookmark %>
+        <li><%= cl_image_tag clothe.photo.key %></li>
+      <% end %>
+    <% end %></ul>
+  </div>
+
+
+  <%= link_to "Home", root_path %>
+  <%= link_to "Cintre", clothes_path %>
+  <%= link_to "Avatar", avatar_path %>
 </div>
-
-<p>Welcome back <%= @user.user_name %></p>
-
-<p>How would you like ti dress today?</p>
-
-<%= render "shared/search" %>
-<%# <%= render "shared/button_sign_in" %> %>
-<%# <%= render "shared/button_sign_up" %> %>
-
-<p>Categories</p>
-<% @user.tags.each do |tag| %>
-  <p><%= tag.name %></p>
-<% end %>
-
-<p>Your favorites</p>
-<% @user.clothes.each do |clothe| %>
-  <% if clothe.bookmark %>
-    <%= cl_image_tag clothe.photo.key %>
-  <% end %>
-<% end %>
-
-<%= link_to "Home", root_path %>
-<%= link_to "Cintre", clothes_path %>
-<%= link_to "Avatar", avatar_path %>
-
