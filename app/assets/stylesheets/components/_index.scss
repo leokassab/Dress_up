@@ -9,3 +9,14 @@
 body {
   background-color: $black;
 }
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px;
+}
