@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_29_142138) do
+ActiveRecord::Schema.define(version: 2022_02_02_172403) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,15 +43,6 @@ ActiveRecord::Schema.define(version: 2022_01_29_142138) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "clothe_tags", force: :cascade do |t|
-    t.bigint "clothe_id", null: false
-    t.bigint "tag_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["clothe_id"], name: "index_clothe_tags_on_clothe_id"
-    t.index ["tag_id"], name: "index_clothe_tags_on_tag_id"
-  end
-
   create_table "clothes", force: :cascade do |t|
     t.string "category"
     t.string "bookmark"
@@ -74,6 +65,15 @@ ActiveRecord::Schema.define(version: 2022_01_29_142138) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["clothe_id"], name: "index_clothes_outfits_on_clothe_id"
     t.index ["outfit_id"], name: "index_clothes_outfits_on_outfit_id"
+  end
+
+  create_table "clothes_tags", force: :cascade do |t|
+    t.bigint "clothe_id", null: false
+    t.bigint "tag_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["clothe_id"], name: "index_clothes_tags_on_clothe_id"
+    t.index ["tag_id"], name: "index_clothes_tags_on_tag_id"
   end
 
   create_table "outfit_tags", force: :cascade do |t|
@@ -122,11 +122,11 @@ ActiveRecord::Schema.define(version: 2022_01_29_142138) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "clothe_tags", "clothes"
-  add_foreign_key "clothe_tags", "tags"
   add_foreign_key "clothes", "users"
   add_foreign_key "clothes_outfits", "clothes"
   add_foreign_key "clothes_outfits", "outfits"
+  add_foreign_key "clothes_tags", "clothes"
+  add_foreign_key "clothes_tags", "tags"
   add_foreign_key "outfit_tags", "outfits"
   add_foreign_key "outfit_tags", "tags"
   add_foreign_key "outfits", "users"
