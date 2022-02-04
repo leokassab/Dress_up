@@ -1,8 +1,14 @@
 <div class="search-bar">
-  <div class="loup">
+  <div class="loup" data-controller="search-clothes">
     <i class="fas fa-search"></i>
-    <%= form_with url: clothes_path, method: :get do |f| %>
-      <%= f.text_field :query, class: "form", :placeholder => 'Search your outfit', value: params[:query]  %>
+    <%= form_with url: clothes_path, method: :get,
+      html: { data: { search_clothes_target: 'form' } } do |f| %>
+      <%= f.text_field :query,
+                        class: "form-control",
+                        :placeholder => 'Search your outfit',
+                        value: params[:query],
+                        data: { search_clothes_target: 'input' },
+                        action: 'keyup->search-clothes#update'  %>
     <% end %>
   </div>
   <div class="filter">

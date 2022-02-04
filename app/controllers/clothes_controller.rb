@@ -30,7 +30,13 @@ class ClothesController < ApplicationController
     @clothes = current_user.clothes
 
     if params[:query].present?
-      @clothes = @clothes.where('title ILIKE ?', "%#{params[:query]}%")
+      sql_query = "name ILIKE :query OR brand ILIKE :query"
+      @clothes = @clothes.where(sql_query, query: "%#{params[:query]}%")
+    end
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'clothes/clothes_list', locals: { clothes: @clothes }, formats: [:html] }
     end
   end
 
