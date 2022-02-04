@@ -28,6 +28,10 @@ class ClothesController < ApplicationController
 
   def index
     @clothes = current_user.clothes
+
+    if params[:query].present?
+      @clothes = @clothes.where('title ILIKE ?', "%#{params[:query]}%")
+    end
   end
 
   private

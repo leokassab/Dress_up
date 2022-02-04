@@ -1,8 +1,8 @@
 <div class="search-bar">
   <div class="loup">
     <i class="fas fa-search"></i>
-    <%= form_with url: outfits_path, method: :get do |f| %>
-      <%= f.text_field :name, class: "form", :placeholder => 'Search your outfit'  %>
+    <%= form_with url: clothes_path, method: :get do |f| %>
+      <%= f.text_field :query, class: "form", :placeholder => 'Search your outfit', value: params[:query]  %>
     <% end %>
   </div>
   <div class="filter">
