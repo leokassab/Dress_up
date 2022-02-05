@@ -1,44 +1,44 @@
-<h1>Show Clothe</h1>
+<div class="container">
+  <div class="show-pic" style="background-image: url('<%= cl_image_path @clothe.photo.key, height: 320, width: 320, crop: :fill %>')">
+  </div>
 
-<%= cl_image_tag @clothe.photo.key %>
+  <%= simple_form_for [@clothe, @clothes_tag] do |f| %>
+    <%= f.association :tag,
+                as: :check_boxes,
+                collection: @tags,
+                checked: @clothe.tags.ids,
+                input_html: { class: "tag-selector" },
+                item_wrapper_class: 'tag-item'  %>
+    <%= f.button :submit, "Save", class: "tag-submit" %>
+  <% end %>
+
+  <div data-controller="data-tag">
+    <%= link_to "Add Tag", class: "tag-submit" %>
+
+    <div>
+      <%= simple_form_for @new_tag do |f| %>
+        <%= f.input :name %>
+        <%= f.input_field :clothe_id, as: :hidden, value: @clothe.id %>
+        <%= f.submit "Add", class: "tag-submit" %>
+      <% end %>
+    </div>
+  </div>
 
 
-<%= simple_form_for [@clothe, @clothes_tag] do |f| %>
-  <%= f.association :tag,
-              as: :check_boxes,
-              collection: @tags,
-              checked: @clothe.tags.ids,
-              input_html: { class: "tag-selector" },
-              item_wrapper_class: 'tag-item'  %>
-  <%= f.button :submit, "Save", class: "tag-submit" %>
-<% end %>
 
-<div data-controller="data-tag">
-  <%= link_to "Add Tag", class: "tag-submit" %>
 
   <div>
-    <%= simple_form_for @new_tag do |f| %>
-      <%= f.input :name %>
-      <%= f.input_field :clothe_id, as: :hidden, value: @clothe.id %>
-      <%= f.submit "Add", class: "tag-submit" %>
-    <% end %>
+    <%# <% @tags.each do |t| %> %>
+      <%# Create a ClothesTag %>
+      <%# <%= link_to t.name,  clothe_clothes_tags_path(@clothe, tag_id: t), method: :post %> %>
+    <%# <% end %> %>
   </div>
+
+  <%= link_to "Add to avatar", avatar_path(clothe_id: @clothe.id) %>
+
+  <p>Category: <%= @clothe.category %></p>
+  <p>Brand: <%= @clothe.brand %></p>
+  <p>Size: <%= @clothe.size %></p>
+  <p>Color: <%= @clothe.colour %></p>
+  <p>Fabric: <%= @clothe.material %></p>
 </div>
-
-
-
-
-<div>
-  <%# <% @tags.each do |t| %> %>
-    <%# Create a ClothesTag %>
-    <%# <%= link_to t.name,  clothe_clothes_tags_path(@clothe, tag_id: t), method: :post %> %>
-  <%# <% end %> %>
-</div>
-
-<%= link_to "Add to avatar", avatar_path(clothe_id: @clothe.id) %>
-
-<p>Category: <%= @clothe.category %></p>
-<p>Brand: <%= @clothe.brand %></p>
-<p>Size: <%= @clothe.size %></p>
-<p>Color: <%= @clothe.colour %></p>
-<p>Fabric: <%= @clothe.material %></p>
