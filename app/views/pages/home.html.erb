@@ -30,7 +30,7 @@
 
   <div class="categories">
     <h3>Categories</h3>
-    <ul><% @user.tags.each do |tag| %>
+    <ul><% @user.tags.first(4).each do |tag| %>
       <li><%= render "shared/category", tag: tag %></li>
     <% end %></ul>
   </div>
