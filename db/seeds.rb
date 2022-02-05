@@ -399,62 +399,52 @@ puts "--------------------------------------------------------------------------
 puts "Creating tag clothes ..."
 
 Tag.create(
-  id: 1,
   name: "Pants",
   user_id: 1
 )
 
 Tag.create(
-  id: 2,
   name: "T-shirts",
   user_id: 1
 )
 
 Tag.create(
-  id: 3,
   name: "Sneakers",
   user_id: 1
 )
 
 Tag.create(
-  id: 4,
   name: "Hat",
   user_id: 1
 )
 
 
 Tag.create(
-  id: 6,
   name: "Suits",
   user_id: 1
 )
 
 Tag.create(
-  id: 7,
   name: "5 stars",
   user_id: 1
 )
 
 ClothesTag.create(
-  id: 1,
   clothe_id: rand(1..20),
   tag_id: 7
 )
 
 ClothesTag.create(
-  id: 2,
   clothe_id: rand(1..20),
   tag_id: 7
 )
 
 ClothesTag.create(
-  id: 3,
   clothe_id: rand(1..20),
   tag_id: 7
 )
 
 ClothesTag.create(
-  id: 4,
   clothe_id: rand(1..20),
   tag_id: 7
 )
