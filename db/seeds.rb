@@ -21,11 +21,11 @@ User.destroy_all
 puts "Start creating DB"
 
 puts "--------------------------------------------------------------------------"
-puts "create Adriana"
+puts "create Travis"
 adriana = User.create(
-  email: "adriana@dressup.com",
+  email: "travis@dressup.com",
   password: "123456",
-  user_name: "Adriana",
+  user_name: "Travis",
   height: 180,
   body_shape: "hourglass",
   skin_tone: "white",
@@ -36,11 +36,11 @@ adriana = User.create(
 )
 puts "Finished!"
 
-puts "create Naomi"
+puts "create Scott"
 naomi = User.create(
-  email: "naomi@dressup.com",
+  email: "scott@dressup.com",
   password: "123456",
-  user_name: "Naomi",
+  user_name: "Scott",
   height: 175,
   body_shape: "hourglass",
   skin_tone: "black",
@@ -54,78 +54,259 @@ puts "Finished!"
 puts "--------------------------------------------------------------------------"
 
 puts "Creating clothes ..."
-
-
-
-CLOUD_LEG = ["https://res.cloudinary.com/detkinqcf/image/upload/v1643464202/Clothes/1-removebg-preview_vt05fp.png",
-              "https://res.cloudinary.com/detkinqcf/image/upload/v1643464202/Clothes/3-removebg-preview_q1vuzf.png",
-              "https://res.cloudinary.com/detkinqcf/image/upload/v1643464202/Clothes/2-removebg-preview_lkbjyb.png"]
-
-CLOUD_CHEST = ["https://res.cloudinary.com/detkinqcf/image/upload/v1643463632/Clothes/2_xgsuyn.png",
-                "https://res.cloudinary.com/detkinqcf/image/upload/v1643463626/Clothes/3_fzyz8t.png",
-                "https://res.cloudinary.com/detkinqcf/image/upload/v1643463618/Clothes/1_pti9ma.png"]
-
-CLOUD_HAT
-
-CLOUD_FIT
-
-
-for i in 51..60
-  clothe = Clothe.new(
-      id: i,
-      category: "Leg",
-      bookmark: [true, false].sample,
-      brand: Faker::Artist.name,
-      size: rand(34..42),
-      colour: Faker::Color.color_name,
-      material: Faker::Commerce.material,
-      product_ref: rand(1..1000000),
-      user_id: rand(1..2)
-    )
-    clothe.photo.attach(io: URI.open(CLOUD_LEG.sample), filename: "clothe #{clothe.id}.jpeg", content_type: 'image/jpeg')
-    clothe.save!
-    puts "Created clothe #{clothe.id}"
-end
-for i in 101..120
-  clothe = Clothe.new(
-      id: i,
-      category: "Chest",
-      bookmark: [true, false].sample,
-      brand: Faker::Artist.name,
-      size: rand(34..42),
-      colour: Faker::Color.color_name,
-      material: Faker::Commerce.material,
-      product_ref: rand(1..1000000),
-      user_id: rand(1..2)
-    )
-    clothe.photo.attach(io: URI.open(CLOUD_CHEST.sample), filename: "clothe #{clothe.id}.jpeg", content_type: 'image/jpeg')
-    clothe.save!
-    puts "Created clothe #{clothe.id}"
-end
-
-puts "Finished!"
-
-puts "--------------------------------------------------------------------------"
-
-puts "Creating outfit ..."
-
-Outfit.create(
-  id: 1,
-  name: "Tenue pref",
-  user_id: 1,
+diesel_tshirt = Clothe.new(
+  name: "Diesel Blue T-shirt",
+  category: "Cheast",
+  bookmark: [true, false].sample,
+  brand: "Diesel",
+  size: "L",
+  colour: "blue",
+  material: "coton",
+  product_ref: rand(1..1000000),
+  user_id: 1
 )
+diesel_tshirt.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644058350/Clothes/Tshirt/t-shirt_blue_diesel_u7zsyk.png"), filename: "clothe #{diesel_tshirt.id}.jpeg", content_type: 'image/jpeg')
+diesel_tshirt.save!
 
-ClothesOutfit.create(
-  id: 1,
-  clothe_id: rand(51..60),
-  outfit_id: 1
+diesel_tiger_tshirt = Clothe.new(
+  name: "Diesel Tiger T-shirt",
+  category: "Cheast",
+  bookmark: [true, false].sample,
+  brand: "Diesel",
+  size: "L",
+  colour: "black",
+  material: "coton",
+  product_ref: rand(1..1000000),
+  user_id: 1
 )
+diesel_tiger_tshirt.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644058350/Clothes/Tshirt/tshirt_tiger_diesel_opqqqe.png"), filename: "clothe #{diesel_tiger_tshirt.id}.jpeg", content_type: 'image/jpeg')
+diesel_tiger_tshirt.save!
 
-ClothesOutfit.create(
-  id: 2,
-  clothe_id: rand(101..120),
-  outfit_id: 1
+dior_sacai_black_tshirt = Clothe.new(
+  name: "Dior x Sacai Black T-shirt",
+  category: "Cheast",
+  bookmark: [true, false].sample,
+  brand: "Dior",
+  size: "L",
+  colour: "black",
+  material: "coton",
+  product_ref: rand(1..1000000),
+  user_id: 1
 )
+dior_sacai_black_tshirt.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644058350/Clothes/Tshirt/tshirt_black_dior_s0gqwa.png"), filename: "clothe #{dior_sacai_black_tshirt.id}.jpeg", content_type: 'image/jpeg')
+dior_sacai_black_tshirt.save!
+
+dior_sacai_white_tshirt = Clothe.new(
+  name: "Dior x Sacai White T-shirt",
+  category: "Cheast",
+  bookmark: [true, false].sample,
+  brand: "Dior",
+  size: "L",
+  colour: "red",
+  material: "coton",
+  product_ref: rand(1..1000000),
+  user_id: 1
+)
+dior_sacai_white_tshirt.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644058350/Clothes/Tshirt/tshirt_white_dior_pztmoi.png"), filename: "clothe #{dior_sacai_white_tshirt.id}.jpeg", content_type: 'image/jpeg')
+dior_sacai_white_tshirt.save!
+
+kith_red_tshirt = Clothe.new(
+  name: "Kith Red T-shirt",
+  category: "Cheast",
+  bookmark: [true, false].sample,
+  brand: "Kith",
+  size: "L",
+  colour: "white",
+  material: "coton",
+  product_ref: rand(1..1000000),
+  user_id: 1
+)
+kith_red_tshirt.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1643919410/Clothes/Tshirt/t-shirt_red_zdq1gm.png"), filename: "clothe #{kith_red_tshirt.id}.jpeg", content_type: 'image/jpeg')
+kith_red_tshirt.save!
+
+kith_cream_tshirt = Clothe.new(
+  name: "Kith White T-shirt",
+  category: "Cheast",
+  bookmark: [true, false].sample,
+  brand: "Kith",
+  size: "L",
+  colour: "cream",
+  material: "coton",
+  product_ref: rand(1..1000000),
+  user_id: 1
+)
+kith_cream_tshirt.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1643919410/Clothes/Tshirt/t-shirt_white_os5i5e.png"), filename: "clothe #{kith_cream_tshirt.id}.jpeg", content_type: 'image/jpeg')
+kith_cream_tshirt.save!
+
+rhude_tiger_tshirt = Clothe.new(
+  name: "Rhude Tiger T-shirt",
+  category: "Cheast",
+  bookmark: [true, false].sample,
+  brand: "Rhude",
+  size: "L",
+  colour: "white",
+  material: "coton",
+  product_ref: rand(1..1000000),
+  user_id: 1
+)
+rhude_tiger_tshirt.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1643919411/Clothes/Tshirt/t-shirt_tiger_m6hhhr.png"), filename: "clothe #{rhude_tiger_tshirt.id}.jpeg", content_type: 'image/jpeg')
+rhude_tiger_tshirt.save!
+
+rhude_white_tshirt = Clothe.new(
+  name: "Rhude White T-shirt",
+  category: "Cheast",
+  bookmark: [true, false].sample,
+  brand: "Rhude",
+  size: "L",
+  colour: "white",
+  material: "coton",
+  product_ref: rand(1..1000000),
+  user_id: 1
+)
+rhude_white_tshirt.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1643919411/Clothes/Tshirt/t-shirt_white_red_fmg1nf.png"), filename: "clothe #{rhude_white_tshirt.id}.jpeg", content_type: 'image/jpeg')
+rhude_white_tshirt.save!
+
+kith_hat_blue = Clothe.new(
+  name: "Kith Blue Hat",
+  category: "Hat",
+  bookmark: [true, false].sample,
+  brand: "Kith",
+  size: "Unique",
+  colour: "blue",
+  material: "coton",
+  product_ref: rand(1..1000000),
+  user_id: 1
+)
+kith_hat_blue.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1643919381/Clothes/hat/hat_blue_zkcqac.png"), filename: "clothe #{kith_hat_blue.id}.jpeg", content_type: 'image/jpeg')
+kith_hat_blue.save!
+
+kith_hat_grey = Clothe.new(
+  name: "Kith Grey Hat",
+  category: "Hat",
+  bookmark: [true, false].sample,
+  brand: "Kith",
+  size: "Unique",
+  colour: "grey",
+  material: "coton",
+  product_ref: rand(1..1000000),
+  user_id: 1
+)
+kith_hat_grey.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1643919381/Clothes/hat/hat_grey_nuirnr.png"), filename: "clothe #{kith_hat_grey.id}.jpeg", content_type: 'image/jpeg')
+kith_hat_grey.save!
+
+mitchell_navy_hat = Clothe.new(
+  name: "Mitchell & Ness Snapback",
+  category: "Hat",
+  bookmark: [true, false].sample,
+  brand: "Mitchell & Ness",
+  size: "Unique",
+  colour: "navy",
+  material: "coton",
+  product_ref: rand(1..1000000),
+  user_id: 1
+)
+mitchell_navy_hat.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1643919381/Clothes/hat/hat_USA_bo1nu1.png"), filename: "clothe #{mitchell_navy_hat.id}.jpeg", content_type: 'image/jpeg')
+mitchell_navy_hat.save!
+
+celine_pant_jean = Clothe.new(
+  name: "Celine Black Jean",
+  category: "Leg",
+  bookmark: [true, false].sample,
+  brand: "Celine",
+  size: "L",
+  colour: "black",
+  material: "jean",
+  product_ref: rand(1..1000000),
+  user_id: 1
+)
+celine_pant_jean.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644058348/Clothes/pants/pant_jean_black_celine_jogonm.png"), filename: "clothe #{celine_pant_jean.id}.jpeg", content_type: 'image/jpeg')
+celine_pant_jean.save!
+
+kith_jean_black = Clothe.new(
+  name: "Kith Black Jean",
+  category: "Leg",
+  bookmark: [true, false].sample,
+  brand: "Kith",
+  size: "34",
+  colour: "black",
+  material: "coton",
+  product_ref: rand(1..1000000),
+  user_id: 1
+)
+kith_jean_black.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1643919410/Clothes/pants/pant_jeanblack_izln6i.png"), filename: "clothe #{kith_cream_tshirt.id}.jpeg", content_type: 'image/jpeg')
+kith_jean_black.save!
+
+kith_jean_black_hole = Clothe.new(
+  name: "Kith Jean Black w/ hole",
+  category: "Leg",
+  bookmark: [true, false].sample,
+  brand: "Kith",
+  size: "34",
+  colour: "black",
+  material: "jean",
+  product_ref: rand(1..1000000),
+  user_id: 1
+)
+kith_jean_black_hole.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1643919410/Clothes/pants/pant_jean_black_wlut88.png"), filename: "clothe #{kith_jean_black_hole.id}.jpeg", content_type: 'image/jpeg')
+kith_jean_black_hole.save!
+
+kith_jean_black_red = Clothe.new(
+  name: "Kith Jean Black & Red",
+  category: "Leg",
+  bookmark: [true, false].sample,
+  brand: "Kith",
+  size: "34",
+  colour: "Black",
+  material: "jean",
+  product_ref: rand(1..1000000),
+  user_id: 1
+)
+kith_jean_black_red.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1643919409/Clothes/pants/pant_jean_black_red_y0sk54.png"), filename: "clothe #{kith_jean_black_red.id}.jpeg", content_type: 'image/jpeg')
+kith_jean_black_red.save!
+
+adidas_jogging_whith = Clothe.new(
+  name: "Kith White Jogging",
+  category: "Leg",
+  bookmark: [true, false].sample,
+  brand: "Kith",
+  size: "L",
+  colour: "white",
+  material: "coton",
+  product_ref: rand(1..1000000),
+  user_id: 1
+)
+adidas_jogging_whith.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1643919409/Clothes/pants/pant_jogging_white_zbr0ca.png"), filename: "clothe #{adidas_jogging_whith.id}.jpeg", content_type: 'image/jpeg')
+adidas_jogging_whith.save!
+
+kith_pant_ski = Clothe.new(
+  name: "Kith Ski pant",
+  category: "Leg",
+  bookmark: [true, false].sample,
+  brand: "Kith",
+  size: "L",
+  colour: "grey",
+  material: "coton",
+  product_ref: rand(1..1000000),
+  user_id: 1
+)
+kith_pant_ski.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1643919409/Clothes/pants/pant_ski_n9o5ds.png"), filename: "clothe #{kith_pant_ski.id}.jpeg", content_type: 'image/jpeg')
+kith_pant_ski.save!
+
+adidas_jogging_black = Clothe.new(
+  name: "Adidas Black Jogging",
+  category: "Leg",
+  bookmark: [true, false].sample,
+  brand: "Adidas",
+  size: "L",
+  colour: "black",
+  material: "coton",
+  product_ref: rand(1..1000000),
+  user_id: 1
+)
+adidas_jogging_black.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1643919409/Clothes/pants/pant_joggin_black_uewr4k.png"), filename: "clothe #{adidas_jogging_black.id}.jpeg", content_type: 'image/jpeg')
+adidas_jogging_black.save!
+
+puts Clothe.all
 
 puts "Finished!"
 
@@ -135,56 +316,70 @@ puts "Creating tag clothes ..."
 
 Tag.create(
   id: 1,
-  name: "skirt",
+  name: "Pants",
   user_id: 1
 )
 
 Tag.create(
   id: 2,
-  name: "t-shirt",
+  name: "T-shirts",
+  user_id: 1
+)
+
+Tag.create(
+  id: 3,
+  name: "Sneakers",
+  user_id: 1
+)
+
+Tag.create(
+  id: 4,
+  name: "HAt",
+  user_id: 1
+)
+
+Tag.create(
+  id: 5,
+  name: "Evenings dress",
+  user_id: 1
+)
+
+Tag.create(
+  id: 6,
+  name: "Suits",
+  user_id: 1
+)
+
+Tag.create(
+  id: 7,
+  name: "5 stars",
   user_id: 1
 )
 
 ClothesTag.create(
   id: 1,
-  clothe_id: rand(51..60),
-  tag_id: 1
+  clothe_id: rand(1..20),
+  tag_id: 7
 )
 
 ClothesTag.create(
   id: 2,
-  clothe_id: rand(51..60),
-  tag_id: 1
+  clothe_id: rand(1..20),
+  tag_id: 7
 )
 
 ClothesTag.create(
   id: 3,
-  clothe_id: rand(101..120),
-  tag_id: 2
+  clothe_id: rand(1..20),
+  tag_id: 7
 )
 
 ClothesTag.create(
   id: 4,
-  clothe_id: rand(101..120),
-  tag_id: 2
+  clothe_id: rand(1..20),
+  tag_id: 7
 )
 
-puts "Finished!"
-puts "--------------------------------------------------------------------------"
-
-puts "Creating tag outfits ..."
-
-Tag.create(
-  id: 3,
-  name: "summer",
-  user_id: 1
-)
-
-OutfitTag.create(
-  id: 1,
-  outfit_id: 1,
-  tag_id: 3
-)
 puts "Finished!"
 puts "--------------------------------------------------------------------------"
 
