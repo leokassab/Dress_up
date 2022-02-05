@@ -13,9 +13,6 @@
     <div class="align-search"><%= render "shared/search" %></div>
   </div>
 
-
-  <%# <%= render "shared/button_sign_in" %> %>
-  <%# <%= render "shared/button_sign_up" %> %>
   <div class="categories">
     <h3>Categories</h3>
     <ul><% @user.tags.each do |tag| %>
@@ -24,10 +21,17 @@
   </div>
 
   <div class="favorites">
-    <p>Your favorites</p>
+    <h3>Your favorites</h3>
     <ul><% @user.clothes.each do |clothe| %>
       <% if clothe.bookmark %>
-        <li class="product-photo" ><%= cl_image_tag clothe.photo.key %></li>
+        <div class="card-product">
+          <li><% if clothe.photo.attached? %>
+            <%= link_to clothe_path(clothe) do %>
+              <div class="product-photo" style="background-image: url('<%= cl_image_path clothe.photo.key, height: 120, crop: :fill %>')">
+              </div>
+            <% end %>
+          <% end %></li>
+        </div>
       <% end %>
     <% end %></ul>
   </div>
