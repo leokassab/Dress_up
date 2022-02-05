@@ -27,22 +27,22 @@
   <% if @clothe != nil && @clothe.category == "Leg" && @clothe.photo.attached? %>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <%= cl_image_tag @clothe.photo.key, class:"d-block w-5", height: 370 %>
+        <%= cl_image_tag @clothe.photo.key, class:"d-block w-5", height: 310 %>
       </div>
       <% @leg.each do |i| %>
         <div class="carousel-item">
-          <%= cl_image_tag i.photo.key, class:"d-block w-5", height: 370 %>
+          <%= cl_image_tag i.photo.key, class:"d-block w-5", height: 310 %>
         </div>
       <% end %>
     </div>
   <% else %>
     <div class="carousel-inner">
         <div class="carousel-item active">
-          <%= cl_image_tag @leg.first.photo.key, class:"d-block w-5", height: 370 %>
+          <%= cl_image_tag @leg.first.photo.key, class:"d-block w-5", height: 310 %>
         </div>
         <% @leg.last(@leg.length-1).each do |i| %>
           <div class="carousel-item">
-            <%= cl_image_tag i.photo.key, class:"d-block w-5", height: 370 %>
+            <%= cl_image_tag i.photo.key, class:"d-block w-5", height: 310 %>
           </div>
         <% end %>
       </div>
