@@ -18,31 +18,33 @@
 
 <%# à la fois dcréer de sobjects outflits et outfit_clothe %>
 
+<%# Affichage avatar %>
 
+<img src="https://res.cloudinary.com/detkinqcf/image/upload/v1644060053/development/avatar-removebg-preview_nsakth.png", id="avatar" >
 
 
 <%# Carousel des Hauts %>
 
-<div id="carouselExampleControls1" class="carousel slide" data-interval="false">
+<div id="carouselExampleControls1" class="carousel slide" data-interval="false" >
   <% if @clothe != nil && @clothe.category == "Chest" && @clothe.photo.attached? %>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <%= cl_image_tag @clothe.photo.key, class:"d-block w-5" %>
+        <%= cl_image_tag @clothe.photo.key,width: 240, crop: :fill, class:"d-block w-5" %>
       </div>
       <% @chest.each do |i| %>
         <div class="carousel-item">
-          <%= cl_image_tag i.photo.key, class:"d-block w-5" %>
+          <%= cl_image_tag i.photo.key, width: 240, crop: :fill, class:"d-block w-5" %>
         </div>
       <% end %>
     </div>
   <% else %>
     <div class="carousel-inner">
         <div class="carousel-item active">
-          <%= cl_image_tag @chest.first.photo.key, class:"d-block w-5" %>
+          <%= cl_image_tag @chest.first.photo.key, width: 240, crop: :fill,  class:"d-block w-5" %>
         </div>
         <% @chest.last(@chest.length-1).each do |i| %>
           <div class="carousel-item">
-            <%= cl_image_tag i.photo.key, class:"d-block w-5" %>
+            <%= cl_image_tag i.photo.key, width: 240, crop: :fill,  class:"d-block w-5" %>
           </div>
         <% end %>
       </div>
@@ -63,22 +65,22 @@
   <% if @clothe != nil && @clothe.category == "Leg" && @clothe.photo.attached? %>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <%= cl_image_tag @clothe.photo.key, class:"d-block w-5" %>
+        <%= cl_image_tag @clothe.photo.key, class:"d-block w-5", width: 480 %>
       </div>
       <% @leg.each do |i| %>
         <div class="carousel-item">
-          <%= cl_image_tag i.photo.key, class:"d-block w-5" %>
+          <%= cl_image_tag i.photo.key, class:"d-block w-5", width: 480 %>
         </div>
       <% end %>
     </div>
   <% else %>
     <div class="carousel-inner">
         <div class="carousel-item active">
-          <%= cl_image_tag @leg.first.photo.key, class:"d-block w-5" %>
+          <%= cl_image_tag @leg.first.photo.key, class:"d-block w-5", width: 350 %>
         </div>
         <% @leg.last(@leg.length-1).each do |i| %>
           <div class="carousel-item">
-            <%= cl_image_tag i.photo.key, class:"d-block w-5" %>
+            <%= cl_image_tag i.photo.key, class:"d-block w-5", width: 480 %>
           </div>
         <% end %>
       </div>
