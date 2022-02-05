@@ -10,19 +10,34 @@
 
   <div class="home-search">
     <h2>How would you like to dress today?</h2>
-    <div class="align-search"><%= render "shared/search" %></div>
+    <div class="align-search">
+      <div class="search-bar">
+        <div class="loup">
+          <i class="fas fa-search"></i>
+          <%= form_with url: clothes_path, method: :get do |f| %>
+            <%= f.text_field :query,
+                              class: "form-control",
+                              :placeholder => 'Search your outfit',
+                              value: params[:query] %>
+            <% end %>
+        </div>
+        <div class="filter">
+          <i class="fas fa-filter"></i>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="categories">
     <h3>Categories</h3>
-    <ul><% @user.tags.each do |tag| %>
+    <ul><% @user.tags.first(4).each do |tag| %>
       <li><%= render "shared/category", tag: tag %></li>
     <% end %></ul>
   </div>
 
   <div class="favorites">
     <h3>Your favorites</h3>
-    <ul><% @user.clothes.each do |clothe| %>
+    <ul><% @user.clothes.first(2).each do |clothe| %>
       <% if clothe.bookmark %>
         <div class="card-product">
           <li><% if clothe.photo.attached? %>
@@ -34,5 +49,9 @@
         </div>
       <% end %>
     <% end %></ul>
+  </div>
+  <div class="new-collection">
+    <h3>New collections</h3>
+    <%= render "shared/shop_card" %>
   </div>
 </div>

@@ -7,9 +7,11 @@
 @import "card_product";
 @import "category";
 @import "tag";
+@import "shop_card";
 
 body {
   background-color: $black;
+  margin-bottom: 100px;
 }
 
 .header {

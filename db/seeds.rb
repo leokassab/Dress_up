@@ -56,7 +56,7 @@ puts "--------------------------------------------------------------------------
 puts "Creating clothes ..."
 diesel_tshirt = Clothe.new(
   name: "Diesel Blue T-shirt",
-  category: "Cheast",
+  category: "Chest",
   bookmark: [true, false].sample,
   brand: "Diesel",
   size: "L",
@@ -70,7 +70,7 @@ diesel_tshirt.save!
 
 diesel_tiger_tshirt = Clothe.new(
   name: "Diesel Tiger T-shirt",
-  category: "Cheast",
+  category: "Chest",
   bookmark: [true, false].sample,
   brand: "Diesel",
   size: "L",
@@ -84,7 +84,7 @@ diesel_tiger_tshirt.save!
 
 dior_sacai_black_tshirt = Clothe.new(
   name: "Dior x Sacai Black T-shirt",
-  category: "Cheast",
+  category: "Chest",
   bookmark: [true, false].sample,
   brand: "Dior",
   size: "L",
@@ -98,7 +98,7 @@ dior_sacai_black_tshirt.save!
 
 dior_sacai_white_tshirt = Clothe.new(
   name: "Dior x Sacai White T-shirt",
-  category: "Cheast",
+  category: "Chest",
   bookmark: [true, false].sample,
   brand: "Dior",
   size: "L",
@@ -112,7 +112,7 @@ dior_sacai_white_tshirt.save!
 
 kith_red_tshirt = Clothe.new(
   name: "Kith Red T-shirt",
-  category: "Cheast",
+  category: "Chest",
   bookmark: [true, false].sample,
   brand: "Kith",
   size: "L",
@@ -126,7 +126,7 @@ kith_red_tshirt.save!
 
 kith_cream_tshirt = Clothe.new(
   name: "Kith White T-shirt",
-  category: "Cheast",
+  category: "Chest",
   bookmark: [true, false].sample,
   brand: "Kith",
   size: "L",
@@ -140,7 +140,7 @@ kith_cream_tshirt.save!
 
 rhude_tiger_tshirt = Clothe.new(
   name: "Rhude Tiger T-shirt",
-  category: "Cheast",
+  category: "Chest",
   bookmark: [true, false].sample,
   brand: "Rhude",
   size: "L",
@@ -154,7 +154,7 @@ rhude_tiger_tshirt.save!
 
 rhude_white_tshirt = Clothe.new(
   name: "Rhude White T-shirt",
-  category: "Cheast",
+  category: "Chest",
   bookmark: [true, false].sample,
   brand: "Rhude",
   size: "L",
@@ -418,9 +418,10 @@ Tag.create(
 
 Tag.create(
   id: 4,
-  name: "Head",
+  name: "Hat",
   user_id: 1
 )
+
 
 Tag.create(
   id: 6,
