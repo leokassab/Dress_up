@@ -12,15 +12,20 @@
               item_wrapper_class: 'tag-item'  %>
   <%= f.button :submit, "Save", class: "tag-submit" %>
 <% end %>
-<%= link_to "Add Tag", class: "tag-submit" %>
 
-<div>
-  <%= simple_form_for @new_tag do |f| %>
-    <%= f.input :name %>
-    <%= f.input_field :clothe_id, as: :hidden, value: @clothe.id %>
-    <%= f.submit "Add", class: "tag-submit" %>
-  <% end %>
+<div data-controller="data-tag">
+  <%= link_to "Add Tag", class: "tag-submit" %>
+
+  <div>
+    <%= simple_form_for @new_tag do |f| %>
+      <%= f.input :name %>
+      <%= f.input_field :clothe_id, as: :hidden, value: @clothe.id %>
+      <%= f.submit "Add", class: "tag-submit" %>
+    <% end %>
+  </div>
 </div>
+
+
 
 
 <div>
