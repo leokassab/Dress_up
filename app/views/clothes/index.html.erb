@@ -1,16 +1,10 @@
-<h1>Index clothes</h1>
-
-
-<p>Search</p>
-
-
-
 <%= link_to "Add a clothe", new_clothe_path %>
-
-<% @clothes.each do |c| %>
-  <% if c.photo.attached? %>
-    <%= link_to clothe_path(c) do %>
-      <%= cl_image_tag c.photo.key %>
-    <% end %>
-  <% end %>
-<% end %>
+<div class="container" data-controller="search-clothes">
+  <div class="header">
+    <h1>Clothes</h1>
+  </div>
+  <div class="search">
+      <%= render "shared/search" %>
+  </div>
+  <%= render "clothes_list" %>
+</div>

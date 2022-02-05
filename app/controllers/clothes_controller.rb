@@ -23,10 +23,21 @@ class ClothesController < ApplicationController
   def show
     @tags = current_user.tags
     @clothes_tag = ClothesTag.new
+    @new_tag = Tag.new
   end
 
   def index
     @clothes = current_user.clothes
+
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR brand ILIKE :query"
+      @clothes = @clothes.where(sql_query, query: "%#{params[:query]}%")
+    end
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'clothes/clothes_list', locals: { clothes: @clothes }, formats: [:html] }
+    end
   end
 
   private

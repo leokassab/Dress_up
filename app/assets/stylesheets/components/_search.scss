@@ -5,8 +5,8 @@
   background-color: lightgrey;
   color: $light-gray;
   width: 300px;
-  padding: 8px 15px;
-  border-radius: 20px;
+  padding: 6px 15px;
+  border-radius: 30px;
 }
 
 .loup i {
@@ -29,7 +29,12 @@
    margin-right: 10px;
  }
 
- .form {
+ .form-control {
+  background: transparent;
+  border: none;
+ }
+
+ .form-control:hover {
   background: transparent;
   border: none;
  }

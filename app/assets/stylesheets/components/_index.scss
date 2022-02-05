@@ -5,7 +5,21 @@
 @import "search";
 @import "button";
 @import "card_product";
+@import "category";
+@import "tag";
 
 body {
   background-color: $black;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px;
+  margin-bottom: 30px;
 }

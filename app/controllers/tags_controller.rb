@@ -13,10 +13,9 @@ class TagsController < ApplicationController
   end
 
   def create
-    @tag = Tag.new(tag_params)
-    @tag.user = current_user
-    if @tag.save
-      redirect_to tags_path
+    @new_tag = Tag.new(tag_params)
+    if Tag.create(name: params[:tag][:name], user_id: current_user.id)
+      redirect_to clothe_path(params[:tag][:clothe_id])
     else
       render :new
     end

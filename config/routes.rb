@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :clothes, only: [:show, :index, :new, :create] do
       resources :clothes_tags, only: :create
+      resources :tags, only: :create
   end
   resources :outfits, only: [:index, :show, :new, :create]
   resources :tags, only: [:index, :show, :new, :create]
