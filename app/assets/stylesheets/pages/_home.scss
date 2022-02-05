@@ -60,4 +60,23 @@
   color: white;
   margin-top: 30px;
   margin-bottom: 20px;
+  h3 {
+    margin-bottom: 20px;
+  }
+}
+
+.horizontal-list {
+  display: flex;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }

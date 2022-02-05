@@ -30,14 +30,14 @@
 
   <div class="categories">
     <h3>Categories</h3>
-    <ul><% @user.tags.first(4).each do |tag| %>
+    <ul class="horizontal-list hide-scrollbar"><% @user.tags.each do |tag| %>
       <li><%= render "shared/category", tag: tag %></li>
     <% end %></ul>
   </div>
 
   <div class="favorites">
     <h3>Your favorites</h3>
-    <ul><% @user.clothes.first(2).each do |clothe| %>
+    <ul class="horizontal-list hide-scrollbar"><% @user.clothes.each do |clothe| %>
       <% if clothe.bookmark %>
         <div class="card-product">
           <li><% if clothe.photo.attached? %>
