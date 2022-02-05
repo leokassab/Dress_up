@@ -36,11 +36,11 @@ adriana = User.create(
 )
 puts "Finished!"
 
-puts "create Scott"
+puts "create Elliott"
 naomi = User.create(
-  email: "scott@dressup.com",
+  email: "elliott@dressup.com",
   password: "123456",
-  user_name: "Scott",
+  user_name: "Elliott",
   height: 175,
   body_shape: "hourglass",
   skin_tone: "black",
@@ -93,7 +93,7 @@ dior_sacai_black_tshirt = Clothe.new(
   product_ref: rand(1..1000000),
   user_id: 1
 )
-dior_sacai_black_tshirt.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644058350/Clothes/Tshirt/tshirt_black_dior_s0gqwa.png"), filename: "clothe #{dior_sacai_black_tshirt.id}.jpeg", content_type: 'image/jpeg')
+dior_sacai_black_tshirt.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644074356/Clothes/Tshirt/STSLA-M2845TE-BLK-3860_2048x-removebg-preview_xnhb21.png"), filename: "clothe #{dior_sacai_black_tshirt.id}.jpeg", content_type: 'image/jpeg')
 dior_sacai_black_tshirt.save!
 
 dior_sacai_white_tshirt = Clothe.new(
@@ -107,7 +107,7 @@ dior_sacai_white_tshirt = Clothe.new(
   product_ref: rand(1..1000000),
   user_id: 1
 )
-dior_sacai_white_tshirt.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644058350/Clothes/Tshirt/tshirt_white_dior_pztmoi.png"), filename: "clothe #{dior_sacai_white_tshirt.id}.jpeg", content_type: 'image/jpeg')
+dior_sacai_white_tshirt.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644074355/Clothes/Tshirt/STSLA-M2845TE-WHT-3858_2048x-removebg-preview_rkne7o.png"), filename: "clothe #{dior_sacai_white_tshirt.id}.jpeg", content_type: 'image/jpeg')
 dior_sacai_white_tshirt.save!
 
 kith_red_tshirt = Clothe.new(
@@ -168,7 +168,7 @@ rhude_white_tshirt.save!
 
 kith_hat_blue = Clothe.new(
   name: "Kith Blue Hat",
-  category: "Hat",
+  category: "Head",
   bookmark: [true, false].sample,
   brand: "Kith",
   size: "Unique",
@@ -182,7 +182,7 @@ kith_hat_blue.save!
 
 kith_hat_grey = Clothe.new(
   name: "Kith Grey Hat",
-  category: "Hat",
+  category: "Head",
   bookmark: [true, false].sample,
   brand: "Kith",
   size: "Unique",
@@ -196,7 +196,7 @@ kith_hat_grey.save!
 
 mitchell_navy_hat = Clothe.new(
   name: "Mitchell & Ness Snapback",
-  category: "Hat",
+  category: "Head",
   bookmark: [true, false].sample,
   brand: "Mitchell & Ness",
   size: "Unique",
@@ -219,7 +219,7 @@ celine_pant_jean = Clothe.new(
   product_ref: rand(1..1000000),
   user_id: 1
 )
-celine_pant_jean.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644058348/Clothes/pants/pant_jean_black_celine_jogonm.png"), filename: "clothe #{celine_pant_jean.id}.jpeg", content_type: 'image/jpeg')
+celine_pant_jean.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644075460/Clothes/pants/MC2A00005M1395-PUR_2048x-removebg-preview_vcefm6.png"), filename: "clothe #{celine_pant_jean.id}.jpeg", content_type: 'image/jpeg')
 celine_pant_jean.save!
 
 kith_jean_black = Clothe.new(
@@ -233,7 +233,7 @@ kith_jean_black = Clothe.new(
   product_ref: rand(1..1000000),
   user_id: 1
 )
-kith_jean_black.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1643919410/Clothes/pants/pant_jeanblack_izln6i.png"), filename: "clothe #{kith_cream_tshirt.id}.jpeg", content_type: 'image/jpeg')
+kith_jean_black.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644075391/Clothes/pants/MA3554-OLV-4267_2048x-removebg-preview_grtinb.png"), filename: "clothe #{kith_cream_tshirt.id}.jpeg", content_type: 'image/jpeg')
 kith_jean_black.save!
 
 kith_jean_black_hole = Clothe.new(
@@ -247,7 +247,7 @@ kith_jean_black_hole = Clothe.new(
   product_ref: rand(1..1000000),
   user_id: 1
 )
-kith_jean_black_hole.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1643919410/Clothes/pants/pant_jean_black_wlut88.png"), filename: "clothe #{kith_jean_black_hole.id}.jpeg", content_type: 'image/jpeg')
+kith_jean_black_hole.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644075411/Clothes/pants/VKAW210085-BLK-4285_2048x-removebg-preview_qzi2r3.png"), filename: "clothe #{kith_jean_black_hole.id}.jpeg", content_type: 'image/jpeg')
 kith_jean_black_hole.save!
 
 kith_jean_black_red = Clothe.new(
@@ -261,7 +261,7 @@ kith_jean_black_red = Clothe.new(
   product_ref: rand(1..1000000),
   user_id: 1
 )
-kith_jean_black_red.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1643919409/Clothes/pants/pant_jean_black_red_y0sk54.png"), filename: "clothe #{kith_jean_black_red.id}.jpeg", content_type: 'image/jpeg')
+kith_jean_black_red.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644075366/Clothes/pants/MAHA7026-OLV-4262_2048x-removebg-preview_rulxz1.png"), filename: "clothe #{kith_jean_black_red.id}.jpeg", content_type: 'image/jpeg')
 kith_jean_black_red.save!
 
 adidas_jogging_whith = Clothe.new(
@@ -306,6 +306,90 @@ adidas_jogging_black = Clothe.new(
 adidas_jogging_black.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1643919409/Clothes/pants/pant_joggin_black_uewr4k.png"), filename: "clothe #{adidas_jogging_black.id}.jpeg", content_type: 'image/jpeg')
 adidas_jogging_black.save!
 
+jordan_1 = Clothe.new(
+  name: "Jordan 4 white",
+  category: "Foot",
+  bookmark: [true, false].sample,
+  brand: "Jordan",
+  size: "44",
+  colour: "white",
+  material: "nubuck",
+  product_ref: rand(1..1000000),
+  user_id: 1
+)
+jordan_1.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644076414/Clothes/foot/2_owmblm.png"), filename: "clothe #{jordan_1.id}.jpeg", content_type: 'image/jpeg')
+jordan_1.save!
+
+jordan_2 = Clothe.new(
+  name: "Jordan 4 University Blue",
+  category: "Foot",
+  bookmark: [true, false].sample,
+  brand: "Jordan",
+  size: "44",
+  colour: "blue",
+  material: "nubuck",
+  product_ref: rand(1..1000000),
+  user_id: 1
+)
+jordan_2.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644076393/Clothes/foot/6_wonm3x.png"), filename: "clothe #{jordan_2.id}.jpeg", content_type: 'image/jpeg')
+jordan_2.save!
+
+jordan_3 = Clothe.new(
+  name: "Jordan 11 Navy",
+  category: "Foot",
+  bookmark: [true, false].sample,
+  brand: "Jordan",
+  size: "44",
+  colour: "navy",
+  material: "nubuck",
+  product_ref: rand(1..1000000),
+  user_id: 1
+)
+jordan_3.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644076482/Clothes/foot/4_gwmboy.png"), filename: "clothe #{jordan_3.id}.jpeg", content_type: 'image/jpeg')
+jordan_3.save!
+
+jordan_4 = Clothe.new(
+  name: "Jordan 4 Bred",
+  category: "Foot",
+  bookmark: [true, false].sample,
+  brand: "Jordan",
+  size: "44",
+  colour: "black",
+  material: "nubuck",
+  product_ref: rand(1..1000000),
+  user_id: 1
+)
+jordan_4.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644076444/Clothes/foot/3_cz7azq.png"), filename: "clothe #{jordan_4.id}.jpeg", content_type: 'image/jpeg')
+jordan_4.save!
+
+jordan_5 = Clothe.new(
+  name: "Jordan 4 Grey",
+  category: "Foot",
+  bookmark: [true, false].sample,
+  brand: "Jordan",
+  size: "44",
+  colour: "grey",
+  material: "nubuck",
+  product_ref: rand(1..1000000),
+  user_id: 1
+)
+jordan_5.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644076534/Clothes/foot/1_l9tdg5.png"), filename: "clothe #{jordan_5.id}.jpeg", content_type: 'image/jpeg')
+jordan_5.save!
+
+jordan_6 = Clothe.new(
+  name: "Jordan 11 White/Red",
+  category: "Foot",
+  bookmark: [true, false].sample,
+  brand: "Jordan",
+  size: "44",
+  colour: "white",
+  material: "nubuck",
+  product_ref: rand(1..1000000),
+  user_id: 1
+)
+jordan_6.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644076514/Clothes/foot/5_updmxr.png"), filename: "clothe #{jordan_6.id}.jpeg", content_type: 'image/jpeg')
+jordan_6.save!
+
 puts Clothe.all
 
 puts "Finished!"
@@ -334,13 +418,7 @@ Tag.create(
 
 Tag.create(
   id: 4,
-  name: "HAt",
-  user_id: 1
-)
-
-Tag.create(
-  id: 5,
-  name: "Evenings dress",
+  name: "Head",
   user_id: 1
 )
 
