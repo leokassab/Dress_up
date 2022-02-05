@@ -5,12 +5,14 @@
   background-color: white;
   border-radius: 20px;
   margin: 10px;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .product-photo {
-  height: 160px;
-  // width: 150px;
+  height: 150px;
+  width: 150px;
   background-position: center;
-  background-size: cover;
+  background-repeat: no-repeat;
 }
