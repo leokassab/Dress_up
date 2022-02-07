@@ -1,44 +1,50 @@
-<div class="container">
+<div class="container" data-controller="edit-tag">
   <div class="show-pic" style="background-image: url('<%= cl_image_path @clothe.photo.key, height: 320, width: 320, crop: :fill %>')">
   </div>
 
-  <%= simple_form_for [@clothe, @clothes_tag] do |f| %>
-    <%= f.association :tag,
-                as: :check_boxes,
-                collection: @tags,
-                checked: @clothe.tags.ids,
-                input_html: { class: "tag-selector" },
-                item_wrapper_class: 'tag-item'  %>
-    <%= f.button :submit, "Save", class: "tag-submit" %>
-  <% end %>
+  <div class="clothe-infos">
+    <h3>Category: <%= @clothe.category %></h3>
+    <h3>Brand: <%= @clothe.brand %></h3>
+    <h3>Size: <%= @clothe.size %></h3>
+    <h3>Color: <%= @clothe.colour %></h3>
+    <h3>Fabric: <%= @clothe.material %></h3>
+    <ul><% @clothe.tags.each do |tag| %>
+      <div class="tag-flag show-tag-flag">
+        <li><p><%= tag.name %></p></li>
+      </div>
+    <% end %></ul>
+  </div>
 
-  <div data-controller="data-tag">
-    <%= link_to "Add Tag", class: "tag-submit" %>
-
+  <div class="add-tag" data-action="click->edit-tag#displayForm">
+    <p>Add Tag</p>
     <div>
-      <%= simple_form_for @new_tag do |f| %>
-        <%= f.input :name %>
-        <%= f.input_field :clothe_id, as: :hidden, value: @clothe.id %>
-        <%= f.submit "Add", class: "tag-submit" %>
+      <%= simple_form_for [@clothe, @clothes_tag], html: { class: 'd-none', data: { edit_tag_target: 'form' } } do |f| %>
+        <%= f.association :tag,
+                          as: :check_boxes,
+                          collection: @tags,
+                          checked: @clothe.tags.ids,
+                          input_html: { class: "tag-selector" },
+                          item_wrapper_class: 'tag-item'  %>
+        <%= f.button :submit, "Save", class: "tag-submit" %>
       <% end %>
+    </div>
+    <div>
+      <%#= simple_form_for @new_tag do |f| %>
+        <%#= f.input :name %>
+        <%#= f.input_field :clothe_id, as: :hidden, value: @clothe.id %>
+        <%#= f.submit "Add", class: "tag-submit" %>
+      <%# end %>
     </div>
   </div>
 
-
-
-
   <div>
-    <%# <% @tags.each do |t| %> %>
+    <%# <% @tags.each do |t| %>
       <%# Create a ClothesTag %>
-      <%# <%= link_to t.name,  clothe_clothes_tags_path(@clothe, tag_id: t), method: :post %> %>
-    <%# <% end %> %>
+      <%# <%= link_to t.name,  clothe_clothes_tags_path(@clothe, tag_id: t), method: :post %>
+    <%# <% end %>
   </div>
 
-  <%= link_to "Add to avatar", avatar_path(clothe_id: @clothe.id) %>
-
-  <p>Category: <%= @clothe.category %></p>
-  <p>Brand: <%= @clothe.brand %></p>
-  <p>Size: <%= @clothe.size %></p>
-  <p>Color: <%= @clothe.colour %></p>
-  <p>Fabric: <%= @clothe.material %></p>
+  <div class="button-add-avatar">
+    <%= link_to "Add to avatar", avatar_path(clothe_id: @clothe.id) %>
+  </div>
 </div>
