@@ -1,27 +1,15 @@
-<h1> Hey c'est ton avatar!</h1>
+<h1> Hey this is your avatar!</h1>
 
 
-<%# <%= simple_form_for(@outfit) do |f| %> %>
-  <%# <%= f.label :head %>
-  <%# <%= select_tag :head, options_from_collection_for_select(@head, "id", "name"), include_blank: true %>
-  <%# <%= f.label :chest %> %>
-  <%# <%= select_tag :chest, options_from_collection_for_select(@chest, "id", "name"), include_blank: true %> %>
-  <%# <%= f.label :leg %> %>
-  <%# <%= select_tag :leg, options_from_collection_for_select(@leg, "id", "name"), include_blank: true %> %>
-  <%# <%= f.label :foot %>
-  <%# <%= select_tag :foot, options_from_collection_for_select(@Foot, "id", "name"), include_blank: true %>
-  <%# <%= f.label :name %> %>
-  <%# <%= f.input :name %> %>
-  <%# <%= f.submit %> %>
-<%# <% end %> %>
+
 
 
 <%# à la fois dcréer de sobjects outflits et outfit_clothe %>
 
 <%# Affichage avatar %>
 
-<div id="avatar"  style=" background-image: url(https://res.cloudinary.com/detkinqcf/image/upload/v1644060053/development/avatar-removebg-preview_nsakth.png); height: 530px; background-size: contain; background-repeat: no-repeat; background-position: center;">
-  <div id="head" style="background-colour: blue; height: 87px;">
+<div id="avatar"  style=" background-image: url(https://res.cloudinary.com/detkinqcf/image/upload/v1644343102/avatar-removebg-nofoot-removebg-preview_wm0ler.png); height: 530px; background-size: contain; background-repeat: no-repeat; background-position: center;">
+  <div id="head" style="background-colour: blue; height: 115px;">
   </div>
 
     <%# Carousel des Hauts %>
@@ -133,4 +121,24 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
+
+
+
+</div>
+
+<div class="mt-40 text-center">
+  <%= simple_form_for(@outfit) do |f| %>
+    <%# <%= f.label :head %>
+    <%# <%= select_tag :head, options_from_collection_for_select(@head, "id", "name"), include_blank: true %>
+    <%# <%= f.label :chest %>
+    <%# <%= select_tag :chest, options_from_collection_for_select(@chest, "id", "name"), include_blank: true %>
+    <%# <%= f.label :leg %>
+    <%# <%= select_tag :leg, options_from_collection_for_select(@leg, "id", "name"), include_blank: true %>
+    <%# <%= f.label :foot %>
+    <%# <%= select_tag :foot, options_from_collection_for_select(@Foot, "id", "name"), include_blank: true %>
+    <%# <%= f.label :name %>
+    <%# <%= f.input :name %>
+    <%= f.submit "Save outfit", class: "button-delete mt-20" %>
+
+  <% end %>
 </div>
