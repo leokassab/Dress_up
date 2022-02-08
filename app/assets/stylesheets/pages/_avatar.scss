@@ -1,15 +1,16 @@
-#avatar {
-  position: relative;
+.carousel-inner {
+  text-align: center;
+  // margin: 0px auto;
 }
 
-#carouselExampleControls1 {
-  position: absolute;
-  top: 322px;
-  right: 76px;
+#carouselExampleControls1 img {
+  margin-bottom: -8px;
 }
 
-#carouselExampleControls2 {
-  position: absolute;
-  top: 455px;
-  right: 115px;
+#carouselExampleControls2 img {
+  margin-top: -60px;
+}
+
+#carouselExampleControls3 img {
+  margin-top: -15px;
 }
