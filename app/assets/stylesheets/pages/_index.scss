@@ -7,3 +7,17 @@
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
 }
+
+.button-add {
+  color: white;
+  background-color: $color-primary;
+  border-radius: 10px;
+  padding: 8px 110px;
+}
+
+.add-clothe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}

@@ -46,3 +46,17 @@
   margin-bottom: 15px;
   margin-top: 30px;
 }
+
+.button-delete {
+  background-color: $color-primary;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+
+.delete-clothe {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
