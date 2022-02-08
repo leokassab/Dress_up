@@ -99,26 +99,26 @@
     </div>
 
   <%# Carousel des Shoes %>
-    <div id="carouselExampleControls3" class="carousel slide" data-interval="false" style="height: 91px;">
+    <div id="carouselExampleControls3" class="carousel slide" data-interval="false" style="height: 70px;">
       <% if @clothe != nil && @clothe.category == "Foot" && @clothe.photo.attached? %>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <%= cl_image_tag @clothe.photo.key, style:"height: 91px;" %>
+            <%= cl_image_tag @clothe.photo.key, style:"height: 70px;" %>
           </div>
           <% @foot.each do |i| %>
             <div class="carousel-item">
-              <%= cl_image_tag i.photo.key, style:"height: 91px;" %>
+              <%= cl_image_tag i.photo.key, style:"height: 70px;" %>
             </div>
           <% end %>
         </div>
       <% else %>
         <div class="carousel-inner">
             <div class="carousel-item active">
-              <%= cl_image_tag @foot.first.photo.key, style:"height: 91px;" %>
+              <%= cl_image_tag @foot.first.photo.key, style:"height: 70px;" %>
             </div>
             <% @foot.last(@foot.length-1).each do |i| %>
               <div class="carousel-item">
-                <%= cl_image_tag i.photo.key, style:"height: 91px;" %>
+                <%= cl_image_tag i.photo.key, style:"height: 70px;" %>
               </div>
             <% end %>
           </div>
