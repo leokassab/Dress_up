@@ -5,4 +5,58 @@
   border-radius: 20px;
   background-position: center;
   background-repeat: no-repeat;
+  margin: 20px auto;
+}
+
+.clothe-infos {
+  color: white;
+  ul {
+    text-decoration: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+}
+
+.button-add-avatar {
+  width: 350px;
+  text-align: center;
+  text-decoration: none;
+  background-color: $color-primary;
+  border-radius: 10px;
+  padding: 8px 0px;
+  margin: 0 auto;
+  a {
+    color: white;
+  }
+}
+
+.add-tag {
+  width: 350px;
+  text-align: center;
+  text-decoration: none;
+  background-color: white;
+  border-radius: 10px;
+  padding: 8px 0px;
+  margin: 0 auto;
+  color: $color-primary;
+  p {
+    margin: 0px;
+  }
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
+
+.button-delete {
+  background-color: $color-primary;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+
+.delete-clothe {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
