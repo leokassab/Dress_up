@@ -27,7 +27,12 @@ class ClothesController < ApplicationController
   end
 
   def index
-    @clothes = current_user.clothes
+
+    if params[:tag_id]
+      @clothes = Tag.find(params[:tag_id]).clothes
+    else
+      @clothes = current_user.clothes
+    end
 
     if params[:query].present?
       sql_query = "name ILIKE :query OR brand ILIKE :query"

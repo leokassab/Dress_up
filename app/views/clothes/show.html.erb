@@ -2,16 +2,18 @@
   <div class="show-pic" style="background-image: url('<%= cl_image_path @clothe.photo.key, height: 320, width: 320, crop: :fill %>')">
   </div>
 
-  <div class="delete-clothe">
-    <%= link_to "Delete this clothe", clothe_path(@clothe), method: :delete, data: { confirm: "Sure?" }, class: 'button-delete' %>
-  </div>
-
   <div class="clothe-infos">
+    <h3>Name: <%= @clothe.name %></h3>
     <h3>Category: <%= @clothe.category %></h3>
     <h3>Brand: <%= @clothe.brand %></h3>
     <h3>Size: <%= @clothe.size %></h3>
     <h3>Color: <%= @clothe.colour %></h3>
     <h3>Fabric: <%= @clothe.material %></h3>
+    <div class="delete-clothe">
+      <%= link_to clothe_path(@clothe), method: :delete, data: { confirm: "Sure?" } do %>
+        <i class="fas fa-trash-alt"></i>
+      <% end %>
+    </div>
     <ul><% @clothe.tags.each do |tag| %>
       <div class="tag-flag show-tag-flag" data-edit-tag-target="card">
         <li><p><%= tag.name %></p></li>
@@ -22,7 +24,7 @@
   <div class="add-tag" data-action="click->edit-tag#displayForm">
     <p>Add Tag</p>
     <div>
-      <%= simple_form_for [@clothe, @clothes_tag], html: { class: 'd-none', data: { edit_tag_target: 'form' } }, action: 'submit->edit-tag#update' do |f| %>
+      <%= simple_form_for [@clothe, @clothes_tag], html: { class: 'd-none', data: { edit_tag_target: 'form', action: 'submit->edit-tag#update' } } do |f| %>
         <%= f.association :tag,
                           as: :check_boxes,
                           collection: @tags,
