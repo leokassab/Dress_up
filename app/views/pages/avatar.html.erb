@@ -1,11 +1,20 @@
-<h1> Hey this is your avatar!</h1>
-
-
-
-
-
 <%# à la fois dcréer de sobjects outflits et outfit_clothe %>
+<div class="text-center">
+  <%= simple_form_for(@outfit) do |f| %>
+    <%# <%= f.label :head %>
+    <%# <%= select_tag :head, options_from_collection_for_select(@head, "id", "name"), include_blank: true %>
+    <%# <%= f.label :chest %>
+    <%# <%= select_tag :chest, options_from_collection_for_select(@chest, "id", "name"), include_blank: true %>
+    <%# <%= f.label :leg %>
+    <%# <%= select_tag :leg, options_from_collection_for_select(@leg, "id", "name"), include_blank: true %>
+    <%# <%= f.label :foot %>
+    <%# <%= select_tag :foot, options_from_collection_for_select(@Foot, "id", "name"), include_blank: true %>
+    <%# <%= f.label :name %>
+    <%# <%= f.input :name %>
+    <%= f.submit "Save outfit", class: "button-delete mt-40" %>
 
+  <% end %>
+</div>
 <%# Affichage avatar %>
 
 <div id="avatar"  style=" background-image: url(https://res.cloudinary.com/detkinqcf/image/upload/v1644343102/avatar-removebg-nofoot-removebg-preview_wm0ler.png); height: 530px; background-size: contain; background-repeat: no-repeat; background-position: center;">
@@ -48,28 +57,28 @@
     <%# <div style="heigh: 100px;">
     </div> %>
 
-    <%# Carousel des Hauts %>
+  <%# Carousel des Hauts %>
 
     <div id="carouselExampleControls1" class="carousel slide" data-interval="false" >
       <% if @clothe != nil && @clothe.category == "Chest" && @clothe.photo.attached? %>
         <div class="carousel-inner ">
           <div class="carousel-item active">
-            <%= cl_image_tag @clothe.photo.key, style:"height: 180px;"%>
+            <%= cl_image_tag @clothe.photo.key, style:"height: 200px;"%>
           </div>
           <% @chest.each do |i| %>
             <div class="carousel-item">
-              <%= cl_image_tag i.photo.key, style:"height: 180px;" %>
+              <%= cl_image_tag i.photo.key, style:"height: 200px;" %>
             </div>
           <% end %>
         </div>
       <% else %>
         <div class="carousel-inner">
             <div class="carousel-item active">
-              <%= cl_image_tag @chest.first.photo.key,   style:"height: 180px;"%>
+              <%= cl_image_tag @chest.first.photo.key,   style:"height: 200px;"%>
             </div>
             <% @chest.last(@chest.length-1).each do |i| %>
               <div class="carousel-item">
-                <%= cl_image_tag i.photo.key,   style:"height: 180px;"%>
+                <%= cl_image_tag i.photo.key,   style:"height: 200px;"%>
               </div>
             <% end %>
           </div>
@@ -86,7 +95,7 @@
     </div>
 
 
-  <%# Carousel des Bas %>
+    <%# Carousel des Bas %>
     <div id="carouselExampleControls2" class="carousel slide" data-interval="false" >
       <% if @clothe != nil && @clothe.category == "Leg" && @clothe.photo.attached? %>
         <div class="carousel-inner">
@@ -160,21 +169,4 @@
 
 
 
-</div>
-
-<div class="mt-40 text-center">
-  <%= simple_form_for(@outfit) do |f| %>
-    <%# <%= f.label :head %>
-    <%# <%= select_tag :head, options_from_collection_for_select(@head, "id", "name"), include_blank: true %>
-    <%# <%= f.label :chest %>
-    <%# <%= select_tag :chest, options_from_collection_for_select(@chest, "id", "name"), include_blank: true %>
-    <%# <%= f.label :leg %>
-    <%# <%= select_tag :leg, options_from_collection_for_select(@leg, "id", "name"), include_blank: true %>
-    <%# <%= f.label :foot %>
-    <%# <%= select_tag :foot, options_from_collection_for_select(@Foot, "id", "name"), include_blank: true %>
-    <%# <%= f.label :name %>
-    <%# <%= f.input :name %>
-    <%= f.submit "Save outfit", class: "button-delete mt-20" %>
-
-  <% end %>
 </div>
