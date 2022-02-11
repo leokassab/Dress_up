@@ -1,0 +1,28 @@
+// Import your components CSS files here.
+@import "alert";
+@import "avatar";
+@import "navbar";
+@import "search";
+@import "button";
+@import "card_product";
+@import "category";
+@import "tag";
+@import "shop_card";
+
+body {
+  background-color: $black;
+  margin-bottom: 100px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.prout {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  margin: 10px 0px;
+  margin-bottom: 30px;
+}
