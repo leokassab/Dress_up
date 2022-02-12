@@ -4,15 +4,17 @@ import { csrfToken } from "@rails/ujs"
 export default class extends Controller {
   favorite(click) {
     const clothId = click.target.dataset.clothId;
-    console.log(clothId);
+    // console.log(clothId);
     console.log(this.element);
     console.log(this.element.classList);
-    if (this.element.classList.contains('far')) {
-      this.element.classList.remove('fas');
-      this.element.classList.add('fas');
+    console.log(this.heartTarget);
+    const heart = this.element.querySelector("i");
+    if (heart.classList.contains('far')) {
+      heart.classList.remove('far');
+      heart.classList.add('fas');
     } else {
-      this.element.classList.remove('far');
-      this.element.classList.add('fas');
+      heart.classList.remove('fas');
+      heart.classList.add('far');
     }
     fetch(`/clothes/${clothId}/favorite`, {
       method: 'PATCH',
