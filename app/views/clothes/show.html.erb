@@ -1,20 +1,40 @@
 <div class="container" data-controller="edit-tag">
 
   <div class="show-pic" style="background-image: url('<%= cl_image_path @clothe.photo.key, height: 320, width: 320 %>')">
+    <%# <%= link_to  %> %>
+      <h3><i class="fas fa-pencil-alt"></i></h3>
+    <%# <% end %> %>
   </div>
 
+
   <div class="clothe-infos">
-    <h3>Name: <%= @clothe.name %></h3>
-    <h3>Category: <%= @clothe.category %></h3>
-    <h3>Brand: <%= @clothe.brand %></h3>
-    <h3>Size: <%= @clothe.size %></h3>
-    <h3>Color: <%= @clothe.colour %></h3>
-    <h3>Fabric: <%= @clothe.material %></h3>
-    <div class="delete-clothe">
-      <%= link_to clothe_path(@clothe), method: :delete, data: { confirm: "Sure?" } do %>
-        <i class="fas fa-trash-alt"></i>
-      <% end %>
+
+    <div>
+      <div class="update-clothe-infos" style="display:none;">
+        <h3>Name: <%= @clothe.name %></h3>
+        <h3>Category: <%= @clothe.category %></h3>
+        <h3>Brand: <%= @clothe.brand %></h3>
+        <h3>Size: <%= @clothe.size %></h3>
+        <h3>Color: <%= @clothe.colour %></h3>
+        <h3>Fabric: <%= @clothe.material %></h3>
+        <div class="delete-clothe">
+          <%= link_to clothe_path(@clothe), method: :delete, data: { confirm: "Sure?" } do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+        </div>
+      </div>
+
+      <div>
+        <h3>Name: <%= @clothe.name %></h3>
+        <h3>Category: <%= @clothe.category %></h3>
+        <h3>Brand: <%= @clothe.brand %></h3>
+        <h3>Size: <%= @clothe.size %></h3>
+        <h3>Color: <%= @clothe.colour %></h3>
+        <h3>Fabric: <%= @clothe.material %></h3>
+      </div>
+
     </div>
+
     <ul><% @clothe.tags.each do |tag| %>
       <div class="tag-flag show-tag-flag" data-edit-tag-target="card">
         <li><p><%= tag.name %></p></li>

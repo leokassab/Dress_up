@@ -6,6 +6,13 @@
   margin: 20px auto;
   background-position: center;
   background-repeat: no-repeat;
+  h3 {
+    color: $light-gray;
+    text-align: right;
+    line-height: 40px;
+    margin-right: 10px;
+    font-size: 18px;
+  }
 }
 
 .clothe-infos {
