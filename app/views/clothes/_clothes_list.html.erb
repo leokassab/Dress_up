@@ -9,7 +9,13 @@
             <% end %>
           <% end %>
               <div class="favorite" data-controller="favorite-clothe">
-                <%= icon 'far', 'heart', data: { cloth_id: clothe.id, action: 'click->favorite-clothe#favorite'} %>
+                <% if clothe.bookmark %>
+                  <%= icon 'fas', 'heart', data: { cloth_id: clothe.id, action: 'click->favorite-clothe#favorite'} %>
+                <% else %>
+                  <%= icon 'far', 'heart', data: { cloth_id: clothe.id, action: 'click->favorite-clothe#favorite'} %>
+                <% end %>
+                <%# , favorite_clothe_target: 'heart' %>
+                <%# <i class="fas fa-heart" data-favorite-clothe-target="heart"></i> %>
               </div>
         </div>
       <% end %>
