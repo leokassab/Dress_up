@@ -3,9 +3,9 @@
   width: 350px;
   background-color: white;
   border-radius: 20px;
+  margin: 20px auto;
   background-position: center;
   background-repeat: no-repeat;
-  margin: 20px auto;
 }
 
 .clothe-infos {
@@ -47,16 +47,10 @@
   margin-top: 30px;
 }
 
-.button-delete {
-  background-color: $color-primary;
-  color: white;
-  padding: 5px 15px;
-  border-radius: 10px;
-}
 
 .delete-clothe {
-  margin-bottom: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  a {
+    font-size: 24px;
+    color: white;
+  }
 }

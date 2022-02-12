@@ -6,6 +6,8 @@
   width: 167px;
   height: 52px;
   text-align: center;
+  border: solid 2px white;
+  margin-bottom: 20px;
 }
 
 .button-sign-in h3 {
@@ -20,4 +22,7 @@
   width: 167px;
   height: 52px;
   text-align: center;
+  h3 {
+    color: $color-primary;
+  }
 }

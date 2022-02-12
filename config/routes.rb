@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   end
   resources :outfits, only: [:index, :show, :new, :create]
   resources :tags, only: [:index, :show, :new, :create]
+  resources :users, only: [:show]
 
 end
