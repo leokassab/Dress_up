@@ -1,5 +1,5 @@
 class ClothesController < ApplicationController
-  before_action :find_clothe, only: [ :show, :destroy ]
+  before_action :find_clothe, only: [ :show, :destroy, :update]
 
   def new
     @clothe = Clothe.new
@@ -45,6 +45,16 @@ class ClothesController < ApplicationController
     end
   end
 
+  def update
+    @clothe.update(clothes_params)
+
+    respond_to do |format|
+      format.html { redirect_to clothes_path(@clothe) }
+      format.text { render partial: 'clothes/clothe_information', locals: { clothes: @clothes }, formats: [:html] }
+      end
+  end
+
+
   private
 
   def find_clothe
@@ -52,7 +62,7 @@ class ClothesController < ApplicationController
   end
 
   def clothes_params
-    params.require(:clothe).permit(:category, :bookmark, :brand, :size, :colour, :material, :product_ref, :name, :clothes_tags_attributes => [:clothe_id, :tag_id])
+    params.require(:clothe).permit(:category, :bookmark, :brand, :size, :color, :material, :product_ref, :name, :clothes_tags_attributes => [:clothe_id, :tag_id])
   end
 
 
