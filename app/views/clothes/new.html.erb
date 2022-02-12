@@ -1,21 +1,25 @@
-<h1>New Clothes</h1>
+<h1 class="header">New Clothes</h1>
 
 <%= simple_form_for(@clothe) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :category %>
-  <%= f.text_field :category %>
-  <%= f.label :bookmark %>
-  <%= f.text_field :bookmark %>
-  <%= f.label :brand %>
-  <%= f.text_field :brand %>
-  <%= f.label :size %>
-  <%= f.text_field :size %>
-  <%= f.label :colour %>
-  <%= f.text_field :colour %>
-  <%= f.label :material %>
-  <%= f.text_field :material %>
-  <%= f.label :product_ref %>
-  <%= f.text_field :product_ref %>
+      <%= f.text_field :name, :placeholder => 'Clothe name' %>
+      <%= f.text_field :category, :placeholder => 'Category' %>
+      <%= f.text_field :bookmark, :placeholder => 'Favorite clothe' %>
+      <%= f.text_field :brand, :placeholder => 'Brand name' %>
+      <%= f.text_field :size, :placeholder => 'Size' %>
+      <%= f.text_field :colour, :placeholder => 'colour' %>
+      <%= f.text_field :material, :placeholder => 'material' %>
+      <%= f.text_field :product_ref, :placeholder => 'product ref' %>
+  <div>
+    <h1 class= mb-5>Upload Clothe Picture</h3>
+    <img src="" class="preview" height="200" alt="Image preview...">
+    <div class="file-select mt-5">
+      <label  class="btn btn-primary">
+        Add a file !
+        <span style="display:none;">
+          <%= f.input :photo, as: :file %>
+        </span>
+      </label>
+    </div>
+  </div>
   <%= f.submit %>
 <% end %>
