@@ -1,11 +1,14 @@
 <div class="sign-in">
   <div class="container">
 
-    <div class="pic-logo" style="background-image: url('<%= cl_image_path "Capture_d_écran_2022-02-11_à_14.59.54-removebg-preview_zggmba", width: 250, height: 400 %>')">
+    <div class="pic-logo">
+      <%= cl_image_tag("Dress-Up_1_dtvhyz", width: 370, height: 370) %>
     </div>
 
     <div class="button-to-sign">
       <%= render "shared/button_sign_in" %>
+    </div>
+    <div class="button-to-sign">
       <%= render "shared/button_sign_up" %>
     </div>
 
