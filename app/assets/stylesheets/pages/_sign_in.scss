@@ -1,7 +1,7 @@
 .pic-logo {
   display: flex;
   justify-content: center;
-  margin-top: 80px;
+  margin-top: 50px;
   margin-bottom: 60px;
   margin-left: 40px;
 }
@@ -38,4 +38,8 @@
     border-radius: 20px;
     color: $color-primary;
   }
+}
+
+.form-sign-in {
+  margin: 0 auto;
 }
