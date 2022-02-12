@@ -1,6 +1,6 @@
 class Clothe < ApplicationRecord
   belongs_to :user
-  belongs :shop
+  belongs_to :shop, required: false
   has_many :clothes_outfits
   has_many :clothes_tags
   has_one_attached :photo
