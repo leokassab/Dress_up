@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   resources :clothes, only: [:show, :index, :new, :create, :edit, :update] do
       resources :clothes_tags, only: :create
       resources :tags, only: :create
+      member do
+        patch :favorite
+      end
   end
   resources :outfits, only: [:index, :show, :new, :create]
   resources :tags, only: [:index, :show, :new, :create]
