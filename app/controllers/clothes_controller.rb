@@ -1,5 +1,5 @@
 class ClothesController < ApplicationController
-  before_action :find_clothe, only: [ :show, :destroy ]
+  before_action :find_clothe, only: [ :show, :destroy, :update]
 
   def new
     @clothe = Clothe.new
@@ -18,6 +18,17 @@ class ClothesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def bookmark
+
+  end
+
+  def update
+    puts "salam"
   end
 
   def show

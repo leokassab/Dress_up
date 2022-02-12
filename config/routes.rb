@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  resources :clothes, only: [:show, :index, :new, :create] do
+  resources :clothes, only: [:show, :index, :new, :create, :edit, :update] do
       resources :clothes_tags, only: :create
       resources :tags, only: :create
   end
