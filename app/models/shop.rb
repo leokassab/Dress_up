@@ -1,4 +1,4 @@
 class Shop < ApplicationRecord
   has_many :clothes
-  has_one_attached :photo
+  has_many_attached :photos
 end
