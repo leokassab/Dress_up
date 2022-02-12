@@ -52,66 +52,85 @@ elliott = User.create(
 puts "Finished!"
 
 puts "--------------------------------------------------------------------------"
-# puts "Creating shops ..."
+puts "Creating shops ..."
 
-# jordan = Shop.new(
-#   brand_name: "Jordan",
-#   url_website: "nike.com/fr/jordan"
-# )
-# jordan.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665879/Clothes/Shop/jordan_logo_hr97h7.jpg"), filename: "shop #{jordan.id}.jpeg", content_type: 'image/jpeg')
-# jordan.save!
+jordan = Shop.new(
+  brand_name: "Jordan",
+  url_website: "nike.com/fr/jordan"
+)
+jordan.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665879/Clothes/Shop/jordan_logo_hr97h7.jpg"), filename: "shop #{jordan.id}.jpeg", content_type: 'image/jpeg')
+jordan.save!
 
-# nike = Shop.new(
-#   brand_name: "Nike",
-#   url_website: "nike.com/fr"
-# )
-# nike.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665790/Clothes/Shop/nike_logo_ccnpma.jpg"), filename: "shop #{nike.id}.jpeg", content_type: 'image/jpeg')
-# nike.save!
-# https://eu.kith.com/
+nike = Shop.new(
+  brand_name: "Nike",
+  url_website: "nike.com/fr"
+)
+nike.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665790/Clothes/Shop/nike_logo_ccnpma.jpg"), filename: "shop #{nike.id}.jpeg", content_type: 'image/jpeg')
+nike.save!
 
-# kith = Shop.new(
-#   brand_name: "Kith",
-#   url_website: "https://eu.kith.com/"
-# )
-# kith.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665790/Clothes/Shop/kith_logo_ccnpma.jpg"), filename: "shop #{kith.id}.jpeg", content_type: 'image/jpeg')
-# kith.save!
+kith = Shop.new(
+  brand_name: "Kith",
+  url_website: "https://eu.kith.com/"
+)
+kith.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665789/Clothes/Shop/kith_logo_srnap9.jpg"), filename: "shop #{kith.id}.jpeg", content_type: 'image/jpeg')
+kith.save!
 
-# diesel = Shop.new(
-#   brand_name: "Diesel",
-#   url_website: "https://fr.diesel.com/fr/?utm_source=google&utm_medium=cpc&utm_campaign=conversion-ADW/FR/FR/DIESEL/SRC/BRN/BRAND/U/NONE/EM/DESKTOP--BRAND/U/GENERAL/GENERAL_cross_brand&utm_content=diesel--e&gclsrc=ds"
-# )
-# diesel.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665992/Clothes/Shop/diesel_logo_m7quin.png"), filename: "shop #{diesel.id}.jpeg", content_type: 'image/jpeg')
-# diesel.save!
+diesel = Shop.new(
+  brand_name: "Diesel",
+  url_website: "https://fr.diesel.com/fr/?utm_source=google&utm_medium=cpc&utm_campaign=conversion-ADW/FR/FR/DIESEL/SRC/BRN/BRAND/U/NONE/EM/DESKTOP--BRAND/U/GENERAL/GENERAL_cross_brand&utm_content=diesel--e&gclsrc=ds"
+)
+diesel.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665992/Clothes/Shop/diesel_logo_m7quin.png"), filename: "shop #{diesel.id}.jpeg", content_type: 'image/jpeg')
+diesel.save!
 
-# dior = Shop.new(
-#   brand_name: "Dior",
-#   url_website: "https://www.dior.com/fr_fr/fashion"
-# )
-# dior.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665789/Clothes/Shop/dior_logo_ap4qfi.jpg"), filename: "shop #{dior.id}.jpeg", content_type: 'image/jpeg')
-# dior.save!
+dior = Shop.new(
+  brand_name: "Dior",
+  url_website: "https://www.dior.com/fr_fr/fashion"
+)
+dior.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665789/Clothes/Shop/dior_logo_ap4qfi.jpg"), filename: "shop #{dior.id}.jpeg", content_type: 'image/jpeg')
+dior.save!
 
-# gucci = Shop.new(
-#   brand_name: "Gucci",
-#   url_website: "https://www.gucci.com/fr/fr/?gclsrc=aw.ds&gclsrc=ds"
-# )
-# kith.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665823/Clothes/Shop/gucci_logo_wclpbx.jpg"), filename: "shop #{kith.id}.jpeg", content_type: 'image/jpeg')
-# kith.save!
+gucci = Shop.new(
+  brand_name: "Gucci",
+  url_website: "https://www.gucci.com/fr/fr/?gclsrc=aw.ds&gclsrc=ds"
+)
+kith.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665823/Clothes/Shop/gucci_logo_wclpbx.jpg"), filename: "shop #{kith.id}.jpeg", content_type: 'image/jpeg')
+kith.save!
 
-# louisvuitton = Shop.new(
-#   brand_name: "Louis Vuitton",
-#   url_website: "https://fr.louisvuitton.com/fra-fr/homepage?campaign=sem_LV_FLG_FRA_ALWON_MIXT_OTHER_OnGoing_EC_BREX_GTAD_MUL_FRA_EUR_EXTM_&utm_source=google&utm_medium=cpc&utm_campaign=LV_FLG_FRA_ALWON_MIXT_OTHER_OnGoing_EC_BREX_GTAD_MUL_FRA_EUR_EXTM_&utm_term=louis%20vuitton"
-# )
-# louisvuitton.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665858/Clothes/Shop/louisV_logo_emcjbj.jpg"), filename: "shop #{louisvuitton.id}.jpeg", content_type: 'image/jpeg')
-# louisvuitton.save!
+louisvuitton = Shop.new(
+  brand_name: "Louis Vuitton",
+  url_website: "https://fr.louisvuitton.com/fra-fr/homepage?campaign=sem_LV_FLG_FRA_ALWON_MIXT_OTHER_OnGoing_EC_BREX_GTAD_MUL_FRA_EUR_EXTM_&utm_source=google&utm_medium=cpc&utm_campaign=LV_FLG_FRA_ALWON_MIXT_OTHER_OnGoing_EC_BREX_GTAD_MUL_FRA_EUR_EXTM_&utm_term=louis%20vuitton"
+)
+louisvuitton.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665858/Clothes/Shop/louisV_logo_emcjbj.jpg"), filename: "shop #{louisvuitton.id}.jpeg", content_type: 'image/jpeg')
+louisvuitton.save!
 
-# zara = Shop.new(
-#   brand_name: "Zara",
-#   url_website: "https://www.zara.com/fr/"
-# )
-# zara.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644678204/Clothes/Shop/Zara_logo_zyqkg2.png"), filename: "shop #{zara.id}.jpeg", content_type: 'image/jpeg')
-# zara.save!
+zara = Shop.new(
+  brand_name: "Zara",
+  url_website: "https://www.zara.com/fr/"
+)
+zara.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644678204/Clothes/Shop/Zara_logo_zyqkg2.png"), filename: "shop #{zara.id}.jpeg", content_type: 'image/jpeg')
+zara.save!
 
-# puts "Finished!"
+rhude = Shop.new(
+  brand_name: "Rhude",
+  url_website: "https://www.rhude.com/fr/"
+)
+rhude.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644683301/Clothes/Shop/rhude_logo_bypmem.webp"), filename: "shop #{rhude.id}.jpeg", content_type: 'image/jpeg')
+rhude.save!
+
+adidas = Shop.new(
+  brand_name: "Adidas",
+  url_website: "https://www.adidas.fr/hommes?cm_mmc=AdieSEM_Google-_-adidas-Brand-B-Exact-HVU-_-Brand-adidas-Men-RLSA-_-adidas&cm_mmca1=FR&cm_mmca2=e&ds_kid=43700052113502612&af_reengagement_window=30d&is_retargeting=true&pid=googleadwords_temp&c=adidas-Brand-B-Exact-HVU&af_channel=Search&gclsrc=ds&gclsrc=ds"
+)
+adidas.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644683300/Clothes/Shop/adidas_logo_bz8j2w.png"), filename: "shop #{adidas.id}.jpeg", content_type: 'image/jpeg')
+adidas.save!
+
+celine = Shop.new(
+  brand_name: "Celine",
+  url_website: "celine.com/fr-fr/home?gclid=Cj0KCQiA0p2QBhDvARIsAACSOOO7IFOqkN2KN4G9oLnXmlIvTx9iCBFGVRAIF91eb4waehJQzFQKZKoaAlefEALw_wcB"
+)
+celine.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644683301/Clothes/Shop/Celine_logo_wazjkg.jpg"), filename: "shop #{celine.id}.jpeg", content_type: 'image/jpeg')
+celine.save!
+puts "Finished!"
 
 puts "--------------------------------------------------------------------------"
 
