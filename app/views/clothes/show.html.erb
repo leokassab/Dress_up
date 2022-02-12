@@ -26,7 +26,7 @@
   <div class="add-tag" data-action="click->edit-tag#displayForm">
     <p>Add Tag</p>
     <div>
-      <%= simple_form_for [@clothe, @clothes_tag], html: { class: 'd-none', data: { edit_tag_target: 'form', action: 'submit->edit-tag#update' } } do |f| %>
+      <%= simple_form_for [@clothe, @clothes_tag], html: { class: 'd-none', data: { edit_tag_target: 'form', action: 'edit-tag#update' } } do |f| %>
         <%= f.association :tag,
                           as: :check_boxes,
                           collection: @tags,
