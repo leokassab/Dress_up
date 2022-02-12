@@ -22,7 +22,7 @@ puts "Start creating DB"
 
 puts "--------------------------------------------------------------------------"
 puts "create Travis"
-adriana = User.create(
+travis = User.create(
   email: "travis@dressup.com",
   password: "123456",
   user_name: "Travis",
@@ -37,7 +37,7 @@ adriana = User.create(
 puts "Finished!"
 
 puts "create Elliott"
-naomi = User.create(
+elliott = User.create(
   email: "elliott@dressup.com",
   password: "123456",
   user_name: "Elliott",
@@ -49,6 +49,62 @@ naomi = User.create(
   hip_circ: 95,
   id: 2
 )
+puts "Finished!"
+
+puts "--------------------------------------------------------------------------"
+puts "Creating shops ..."
+
+jordan = Shop.new(
+  brand_name: "Jordan",
+  url_website: "nike.com/fr/jordan"
+)
+jordan.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665879/Clothes/Shop/jordan_logo_hr97h7.jpg"), filename: "clothe #{jordan.id}.jpeg", content_type: 'image/jpeg')
+jordan.save!
+
+nike = Shop.new(
+  brand_name: "Nike",
+  url_website: "nike.com/fr"
+)
+nike.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665790/Clothes/Shop/nike_logo_ccnpma.jpg"), filename: "clothe #{nike.id}.jpeg", content_type: 'image/jpeg')
+nike.save!
+https://eu.kith.com/
+
+kith = Shop.new(
+  brand_name: "Kith",
+  url_website: "https://eu.kith.com/"
+)
+kith.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665790/Clothes/Shop/kith_logo_ccnpma.jpg"), filename: "clothe #{kith.id}.jpeg", content_type: 'image/jpeg')
+kith.save!
+
+diesel = Shop.new(
+  brand_name: "Diesel",
+  url_website: "https://fr.diesel.com/fr/?utm_source=google&utm_medium=cpc&utm_campaign=conversion-ADW/FR/FR/DIESEL/SRC/BRN/BRAND/U/NONE/EM/DESKTOP--BRAND/U/GENERAL/GENERAL_cross_brand&utm_content=diesel--e&gclsrc=ds"
+)
+diesel.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665992/Clothes/Shop/diesel_logo_m7quin.png"), filename: "clothe #{diesel.id}.jpeg", content_type: 'image/jpeg')
+diesel.save!
+
+dior = Shop.new(
+  brand_name: "Dior",
+  url_website: "https://www.dior.com/fr_fr/fashion"
+)
+dior.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665789/Clothes/Shop/dior_logo_ap4qfi.jpg"), filename: "clothe #{dior.id}.jpeg", content_type: 'image/jpeg')
+dior.save!
+
+gucci = Shop.new(
+  brand_name: "Gucci",
+  url_website: "https://www.gucci.com/fr/fr/?gclsrc=aw.ds&gclsrc=ds"
+)
+kith.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665823/Clothes/Shop/gucci_logo_wclpbx.jpg"), filename: "clothe #{kith.id}.jpeg", content_type: 'image/jpeg')
+kith.save!
+
+louisvuitton = Shop.new(
+  brand_name: "Louis Vuitton",
+  url_website: "https://fr.louisvuitton.com/fra-fr/homepage?campaign=sem_LV_FLG_FRA_ALWON_MIXT_OTHER_OnGoing_EC_BREX_GTAD_MUL_FRA_EUR_EXTM_&utm_source=google&utm_medium=cpc&utm_campaign=LV_FLG_FRA_ALWON_MIXT_OTHER_OnGoing_EC_BREX_GTAD_MUL_FRA_EUR_EXTM_&utm_term=louis%20vuitton"
+)
+louisvuitton.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665858/Clothes/Shop/louisV_logo_emcjbj.jpg"), filename: "clothe #{louisvuitton.id}.jpeg", content_type: 'image/jpeg')
+louisvuitton.save!
+
+
 puts "Finished!"
 
 puts "--------------------------------------------------------------------------"
@@ -64,6 +120,7 @@ diesel_tshirt = Clothe.new(
   material: "coton",
   product_ref: rand(1..1000000),
   user_id: 1
+
 )
 diesel_tshirt.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644058350/Clothes/Tshirt/t-shirt_blue_diesel_u7zsyk.png"), filename: "clothe #{diesel_tshirt.id}.jpeg", content_type: 'image/jpeg')
 diesel_tshirt.save!

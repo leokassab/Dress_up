@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_02_172403) do
+ActiveRecord::Schema.define(version: 2022_02_12_103411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,16 +45,19 @@ ActiveRecord::Schema.define(version: 2022_02_02_172403) do
 
   create_table "clothes", force: :cascade do |t|
     t.string "category"
-    t.string "bookmark"
+    t.boolean "bookmark"
     t.string "brand"
     t.string "size"
-    t.string "colour"
+    t.string "color"
     t.string "material"
     t.string "product_ref"
     t.string "name"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "bought", default: true
+    t.bigint "shop_id"
+    t.index ["shop_id"], name: "index_clothes_on_shop_id"
     t.index ["user_id"], name: "index_clothes_on_user_id"
   end
 
@@ -93,6 +96,13 @@ ActiveRecord::Schema.define(version: 2022_02_02_172403) do
     t.index ["user_id"], name: "index_outfits_on_user_id"
   end
 
+  create_table "shops", force: :cascade do |t|
+    t.string "brand_name"
+    t.string "url_website"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string "name"
     t.bigint "user_id", null: false
@@ -122,6 +132,7 @@ ActiveRecord::Schema.define(version: 2022_02_02_172403) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "clothes", "shops"
   add_foreign_key "clothes", "users"
   add_foreign_key "clothes_outfits", "clothes"
   add_foreign_key "clothes_outfits", "outfits"
