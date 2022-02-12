@@ -1,4 +1,5 @@
 <%# à la fois dcréer de sobjects outflits et outfit_clothe %>
+<%# <% OUTFIT =[] %> %>
 <div class="text-center">
   <%= simple_form_for(@outfit) do |f| %>
     <%# <%= f.label :head %>
@@ -11,6 +12,9 @@
     <%# <%= select_tag :foot, options_from_collection_for_select(@Foot, "id", "name"), include_blank: true %>
     <%# <%= f.label :name %>
     <%# <%= f.input :name %>
+
+
+    <%# <% = f.input_field :head, as: :hidden, value: OUTFIT[0] %> %>
     <%= f.submit "Save outfit", class: "button-delete mt-40" %>
 
   <% end %>
@@ -25,10 +29,12 @@
         <div class="carousel-inner ">
           <div class="carousel-item active">
             <%= cl_image_tag @clothe.photo.key, style:"height: 43px;"%>
+            <%# <% OUTFIT[0] = @clothe %> %>
           </div>
           <% @head.each do |i| %>
             <div class="carousel-item">
               <%= cl_image_tag i.photo.key, style:"height: 43px;" %>
+              <%# <% OUTFIT[0] = i %> %>
             </div>
           <% end %>
         </div>
@@ -36,10 +42,12 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
               <%= cl_image_tag @head.first.photo.key,   style:"height: 43px;"%>
+              <%# <% OUTFIT[0] = @head %> %>
             </div>
             <% @head.last(@head.length-1).each do |i| %>
               <div class="carousel-item">
                 <%= cl_image_tag i.photo.key,   style:"height: 43px;"%>
+                <%# <% OUTFIT[0] = i %> %>
               </div>
             <% end %>
           </div>

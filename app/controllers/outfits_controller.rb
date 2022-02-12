@@ -12,6 +12,7 @@ class OutfitsController < ApplicationController
 
   def create
     @outfit = Outfit.new(outfit_params)
+    raise
     @outfit.user = current_user
     if @outfit.save
       # @head = ClothesOutfit.create(clothe_id: params[:head], outfit_id: @outfit.id)
