@@ -8,6 +8,9 @@
               </div>
             <% end %>
           <% end %>
+              <div class="favorite" data-controller="favorite-clothe">
+                <%= icon 'far', 'heart', data: { cloth_id: clothe.id, action: 'click->favorite-clothe#favorite'} %>
+              </div>
         </div>
       <% end %>
     </div>
