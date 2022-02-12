@@ -5,9 +5,11 @@
       <p>Welcome back</p>
       <p><%= @user.user_name %></p>
     </div>
-    <%= link_to destroy_user_session_path, class: "nav-link", method: :delete  do %>
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
+
+    <%= link_to user_path(@user) do %>
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar", alt: "avatar" %>
     <% end %>
+
 
   </div>
 
