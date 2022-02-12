@@ -1,0 +1,41 @@
+.pic-logo {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  margin-bottom: 60px;
+  margin-left: 40px;
+}
+
+.button-to-sign {
+  display: flex;
+  justify-content: center;
+}
+
+.form-inputs {
+  input {
+    background-color: white;
+    &:hover {
+      background-color: white;
+    }
+  }
+  label {
+    color: white;
+  }
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  .sub-sign {
+    padding: 3px 10px;
+    background-color: white;
+    border-radius: 20px;
+    color: $color-primary;
+  }
+}

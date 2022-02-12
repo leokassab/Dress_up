@@ -22,7 +22,7 @@ puts "Start creating DB"
 
 puts "--------------------------------------------------------------------------"
 puts "create Travis"
-adriana = User.create(
+travis = User.create(
   email: "travis@dressup.com",
   password: "123456",
   user_name: "Travis",
@@ -37,7 +37,7 @@ adriana = User.create(
 puts "Finished!"
 
 puts "create Elliott"
-naomi = User.create(
+elliott = User.create(
   email: "elliott@dressup.com",
   password: "123456",
   user_name: "Elliott",
@@ -52,6 +52,62 @@ naomi = User.create(
 puts "Finished!"
 
 puts "--------------------------------------------------------------------------"
+# puts "Creating shops ..."
+
+# jordan = Shop.new(
+#   brand_name: "Jordan",
+#   url_website: "nike.com/fr/jordan"
+# )
+# jordan.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665879/Clothes/Shop/jordan_logo_hr97h7.jpg"), filename: "clothe #{jordan.id}.jpeg", content_type: 'image/jpeg')
+# jordan.save!
+
+# nike = Shop.new(
+#   brand_name: "Nike",
+#   url_website: "nike.com/fr"
+# )
+# nike.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665790/Clothes/Shop/nike_logo_ccnpma.jpg"), filename: "clothe #{nike.id}.jpeg", content_type: 'image/jpeg')
+# nike.save!
+# https://eu.kith.com/
+
+# kith = Shop.new(
+#   brand_name: "Kith",
+#   url_website: "https://eu.kith.com/"
+# )
+# kith.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665790/Clothes/Shop/kith_logo_ccnpma.jpg"), filename: "clothe #{kith.id}.jpeg", content_type: 'image/jpeg')
+# kith.save!
+
+# diesel = Shop.new(
+#   brand_name: "Diesel",
+#   url_website: "https://fr.diesel.com/fr/?utm_source=google&utm_medium=cpc&utm_campaign=conversion-ADW/FR/FR/DIESEL/SRC/BRN/BRAND/U/NONE/EM/DESKTOP--BRAND/U/GENERAL/GENERAL_cross_brand&utm_content=diesel--e&gclsrc=ds"
+# )
+# diesel.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665992/Clothes/Shop/diesel_logo_m7quin.png"), filename: "clothe #{diesel.id}.jpeg", content_type: 'image/jpeg')
+# diesel.save!
+
+# dior = Shop.new(
+#   brand_name: "Dior",
+#   url_website: "https://www.dior.com/fr_fr/fashion"
+# )
+# dior.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665789/Clothes/Shop/dior_logo_ap4qfi.jpg"), filename: "clothe #{dior.id}.jpeg", content_type: 'image/jpeg')
+# dior.save!
+
+# gucci = Shop.new(
+#   brand_name: "Gucci",
+#   url_website: "https://www.gucci.com/fr/fr/?gclsrc=aw.ds&gclsrc=ds"
+# )
+# kith.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665823/Clothes/Shop/gucci_logo_wclpbx.jpg"), filename: "clothe #{kith.id}.jpeg", content_type: 'image/jpeg')
+# kith.save!
+
+# louisvuitton = Shop.new(
+#   brand_name: "Louis Vuitton",
+#   url_website: "https://fr.louisvuitton.com/fra-fr/homepage?campaign=sem_LV_FLG_FRA_ALWON_MIXT_OTHER_OnGoing_EC_BREX_GTAD_MUL_FRA_EUR_EXTM_&utm_source=google&utm_medium=cpc&utm_campaign=LV_FLG_FRA_ALWON_MIXT_OTHER_OnGoing_EC_BREX_GTAD_MUL_FRA_EUR_EXTM_&utm_term=louis%20vuitton"
+# )
+# louisvuitton.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665858/Clothes/Shop/louisV_logo_emcjbj.jpg"), filename: "clothe #{louisvuitton.id}.jpeg", content_type: 'image/jpeg')
+# louisvuitton.save!
+
+
+puts "Finished!"
+
+puts "--------------------------------------------------------------------------"
 
 puts "Creating clothes ..."
 diesel_tshirt = Clothe.new(
@@ -60,10 +116,11 @@ diesel_tshirt = Clothe.new(
   bookmark: [true, false].sample,
   brand: "Diesel",
   size: "L",
-  colour: "blue",
+  color: "blue",
   material: "coton",
   product_ref: rand(1..1000000),
   user_id: 1
+
 )
 diesel_tshirt.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644058350/Clothes/Tshirt/t-shirt_blue_diesel_u7zsyk.png"), filename: "clothe #{diesel_tshirt.id}.jpeg", content_type: 'image/jpeg')
 diesel_tshirt.save!
@@ -74,7 +131,7 @@ diesel_tiger_tshirt = Clothe.new(
   bookmark: [true, false].sample,
   brand: "Diesel",
   size: "L",
-  colour: "black",
+  color: "black",
   material: "coton",
   product_ref: rand(1..1000000),
   user_id: 1
@@ -88,7 +145,7 @@ dior_sacai_black_tshirt = Clothe.new(
   bookmark: [true, false].sample,
   brand: "Dior",
   size: "L",
-  colour: "black",
+  color: "black",
   material: "coton",
   product_ref: rand(1..1000000),
   user_id: 1
@@ -102,7 +159,7 @@ dior_sacai_white_tshirt = Clothe.new(
   bookmark: [true, false].sample,
   brand: "Dior",
   size: "L",
-  colour: "red",
+  color: "red",
   material: "coton",
   product_ref: rand(1..1000000),
   user_id: 1
@@ -116,7 +173,7 @@ kith_red_tshirt = Clothe.new(
   bookmark: [true, false].sample,
   brand: "Kith",
   size: "L",
-  colour: "white",
+  color: "white",
   material: "coton",
   product_ref: rand(1..1000000),
   user_id: 1
@@ -130,7 +187,7 @@ kith_cream_tshirt = Clothe.new(
   bookmark: [true, false].sample,
   brand: "Kith",
   size: "L",
-  colour: "cream",
+  color: "cream",
   material: "coton",
   product_ref: rand(1..1000000),
   user_id: 1
@@ -144,7 +201,7 @@ rhude_tiger_tshirt = Clothe.new(
   bookmark: [true, false].sample,
   brand: "Rhude",
   size: "L",
-  colour: "white",
+  color: "white",
   material: "coton",
   product_ref: rand(1..1000000),
   user_id: 1
@@ -158,7 +215,7 @@ rhude_white_tshirt = Clothe.new(
   bookmark: [true, false].sample,
   brand: "Rhude",
   size: "L",
-  colour: "white",
+  color: "white",
   material: "coton",
   product_ref: rand(1..1000000),
   user_id: 1
@@ -172,7 +229,7 @@ kith_hat_blue = Clothe.new(
   bookmark: [true, false].sample,
   brand: "Kith",
   size: "Unique",
-  colour: "blue",
+  color: "blue",
   material: "coton",
   product_ref: rand(1..1000000),
   user_id: 1
@@ -186,7 +243,7 @@ kith_hat_grey = Clothe.new(
   bookmark: [true, false].sample,
   brand: "Kith",
   size: "Unique",
-  colour: "grey",
+  color: "grey",
   material: "coton",
   product_ref: rand(1..1000000),
   user_id: 1
@@ -200,7 +257,7 @@ mitchell_navy_hat = Clothe.new(
   bookmark: [true, false].sample,
   brand: "Mitchell & Ness",
   size: "Unique",
-  colour: "navy",
+  color: "navy",
   material: "coton",
   product_ref: rand(1..1000000),
   user_id: 1
@@ -214,7 +271,7 @@ celine_pant_jean = Clothe.new(
   bookmark: [true, false].sample,
   brand: "Celine",
   size: "L",
-  colour: "black",
+  color: "black",
   material: "jean",
   product_ref: rand(1..1000000),
   user_id: 1
@@ -228,7 +285,7 @@ kith_jean_black = Clothe.new(
   bookmark: [true, false].sample,
   brand: "Kith",
   size: "34",
-  colour: "black",
+  color: "black",
   material: "coton",
   product_ref: rand(1..1000000),
   user_id: 1
@@ -242,7 +299,7 @@ kith_jean_black_hole = Clothe.new(
   bookmark: [true, false].sample,
   brand: "Kith",
   size: "34",
-  colour: "black",
+  color: "black",
   material: "jean",
   product_ref: rand(1..1000000),
   user_id: 1
@@ -256,7 +313,7 @@ kith_jean_black_red = Clothe.new(
   bookmark: [true, false].sample,
   brand: "Kith",
   size: "34",
-  colour: "Black",
+  color: "Black",
   material: "jean",
   product_ref: rand(1..1000000),
   user_id: 1
@@ -270,7 +327,7 @@ adidas_jogging_whith = Clothe.new(
   bookmark: [true, false].sample,
   brand: "Kith",
   size: "L",
-  colour: "white",
+  color: "white",
   material: "coton",
   product_ref: rand(1..1000000),
   user_id: 1
@@ -284,7 +341,7 @@ kith_pant_ski = Clothe.new(
   bookmark: [true, false].sample,
   brand: "Kith",
   size: "L",
-  colour: "grey",
+  color: "grey",
   material: "coton",
   product_ref: rand(1..1000000),
   user_id: 1
@@ -298,7 +355,7 @@ adidas_jogging_black = Clothe.new(
   bookmark: [true, false].sample,
   brand: "Adidas",
   size: "L",
-  colour: "black",
+  color: "black",
   material: "coton",
   product_ref: rand(1..1000000),
   user_id: 1
@@ -312,7 +369,7 @@ jordan_1 = Clothe.new(
   bookmark: [true, false].sample,
   brand: "Jordan",
   size: "44",
-  colour: "white",
+  color: "white",
   material: "nubuck",
   product_ref: rand(1..1000000),
   user_id: 1
@@ -326,7 +383,7 @@ jordan_2 = Clothe.new(
   bookmark: [true, false].sample,
   brand: "Jordan",
   size: "44",
-  colour: "blue",
+  color: "blue",
   material: "nubuck",
   product_ref: rand(1..1000000),
   user_id: 1
@@ -340,7 +397,7 @@ jordan_3 = Clothe.new(
   bookmark: [true, false].sample,
   brand: "Jordan",
   size: "44",
-  colour: "navy",
+  color: "navy",
   material: "nubuck",
   product_ref: rand(1..1000000),
   user_id: 1
@@ -354,7 +411,7 @@ jordan_4 = Clothe.new(
   bookmark: [true, false].sample,
   brand: "Jordan",
   size: "44",
-  colour: "black",
+  color: "black",
   material: "nubuck",
   product_ref: rand(1..1000000),
   user_id: 1
@@ -368,7 +425,7 @@ jordan_5 = Clothe.new(
   bookmark: [true, false].sample,
   brand: "Jordan",
   size: "44",
-  colour: "grey",
+  color: "grey",
   material: "nubuck",
   product_ref: rand(1..1000000),
   user_id: 1
@@ -382,7 +439,7 @@ jordan_6 = Clothe.new(
   bookmark: [true, false].sample,
   brand: "Jordan",
   size: "44",
-  colour: "white",
+  color: "white",
   material: "nubuck",
   product_ref: rand(1..1000000),
   user_id: 1

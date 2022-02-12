@@ -12,12 +12,14 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body>
+  <body style="background-color:<%= controller_name == 'sessions' && action_name == 'new' ? 'rgba(29, 96, 187, 1)' : 'rgba(46, 46, 47, 1)' %>">
     <%= render 'shared/flashes' %>
 
     <%= yield %>
 
-    <%= render 'shared/navbar' %>
+    <% unless controller_name == "sessions" && action_name == "new"%>
+      <%= render 'shared/navbar' %>
+    <% end %>
 
   </body>
 </html>
