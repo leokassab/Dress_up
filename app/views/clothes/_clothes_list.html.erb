@@ -1,7 +1,7 @@
 <div data-search-clothes-target="list">
     <div class="card-section">
       <% @clothes.each do |clothe| %>
-        <div class="card-product" >
+        <div class="card-product">
           <% if clothe.photo.attached? %>
             <%= link_to clothe_path(clothe) do %>
               <div class="product-photo" style="background-image: url('<%= cl_image_path clothe.photo.key, height: 120, crop: :fill %>')">
