@@ -49,9 +49,9 @@ class ClothesController < ApplicationController
     @clothe.update(clothes_params)
 
     respond_to do |format|
-      format.html { redirect_to clothes_path(@clothe) }
-      format.text { render partial: 'clothes/clothe_information', locals: { clothes: @clothes }, formats: [:html] }
-      end
+      format.html { redirect_to clothe_path(@clothe) }
+      format.text { render partial: 'clothes/clothe_information', locals: { clothe: @clothe }, formats: [:html] }
+    end
   end
 
 

@@ -10,14 +10,17 @@
   <div class="clothe-infos">
 
 
-      <div class="update-clothe-infos">
-      <%= simple_form_for @clothe, html: { class: 'd-none', data: { update_clothe_target: 'form', action: 'submit->update-clothe#update'}} do |f| %>
-        <%= f.input :name, :label => 'Name:' %>
-        <%= f.input :category, :label => 'Category:' %>
-        <%= f.input :brand, :label => 'Brand:' %>
-        <%= f.input :size, :label => 'Size:' %>
-        <%= f.input :color, :label => 'Color:' %>
-        <%= f.input :material, :label => 'Fabric:' %>
+    <div class="update-clothe-infos">
+      <%= simple_form_for @clothe, html: { class: 'd-none', data: { update_clothe_target: 'form', action: 'update-clothe#update'}} do |f| %>
+        <div class="form-edit-clothe">
+          <%= f.input :name, :label => 'Name: ' %>
+          <%= f.input :category, :label => 'Category: ' %>
+          <%= f.input :brand, :label => 'Brand: ' %>
+          <%= f.input :size, :label => 'Size: ' %>
+          <%= f.input :color, :label => 'Color: ' %>
+          <%= f.input :material, :label => 'Fabric: ' %>
+
+        </div>
         <%= f.submit %>
 
         <div class="delete-clothe">
@@ -25,11 +28,11 @@
             <i class="fas fa-trash-alt"></i>
           <% end %>
         </div>
-        <% end %>
-      </div>
-      <div data-update_clothe-target="card">
-        <%= render "clothe_information", clothe:@clothe %>
-      </div>
+      <% end %>
+    </div>
+    <div data-update-clothe-target="card">
+      <%= render "clothe_information", clothe: @clothe %>
+    </div>
 
 
 
