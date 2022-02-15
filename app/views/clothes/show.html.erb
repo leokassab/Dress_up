@@ -1,9 +1,7 @@
 <div class="container" data-controller="edit-tag update-clothe" >
 
   <div class="show-pic" style="background-image: url('<%= cl_image_path @clothe.photo.key, height: 320, width: 320 %>')">
-
       <h3><i class="fas fa-pencil-alt" data-action="click->update-clothe#displayForm"></i></h3>
-
   </div>
 
 
@@ -18,7 +16,6 @@
           <%= f.input :size, :label => 'Size: ' %>
           <%= f.input :color, :label => 'Color: ' %>
           <%= f.input :material, :label => 'Fabric: ' %>
-
         </div>
         <%= f.submit %>
 
@@ -27,14 +24,8 @@
             <i class="fas fa-trash-alt"></i>
           <% end %>
         </div>
+    <% end %>
 
-    <h3>Name: <%= @clothe.name %></h3>
-    <h3>Category: <%= @clothe.category %></h3>
-    <h3>Brand: <%= @clothe.brand %></h3>
-    <h3>Size: <%= @clothe.size %></h3>
-    <h3>Color: <%= @clothe.color %></h3>
-    <h3>Fabric: <%= @clothe.material %></h3>
-      
     <div data-update-clothe-target="card">
       <%= render "clothe_information", clothe: @clothe %>
     </div>
@@ -46,7 +37,6 @@
       <div class="tag-flag show-tag-flag" data-edit-tag-target="card">
         <li><p><%= tag.name %></p></li>
       </div>
-
     <% end %></ul>
   </div>
 

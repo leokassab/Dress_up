@@ -12,7 +12,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body style="background-color:<%= controller_name == 'sessions' && action_name == 'new' ? 'rgba(29, 96, 187, 1)' : 'rgba(46, 46, 47, 1)' %>">
+  <body style="background-color:<%= controller_name == 'sessions' && action_name == 'new' ? '#1D60BB' : '#1F1D2B' %>">
     <%= render 'shared/flashes' %>
 
     <%= yield %>
