@@ -2,15 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: lightgrey;
+  background-color: white;
   color: $light-gray;
-  width: 300px;
-  padding: 6px 15px;
-  border-radius: 30px;
-}
-
-.loup i {
-  color: $light-gray;
+  width: 100%;
+  padding: 6px 6px;
+  border-radius: 8px;
 }
 
 .filter i {
@@ -23,10 +19,6 @@
 }
  .loup p {
     margin: 0;
- }
-
- .loup i {
-   margin-right: 10px;
  }
 
  .form-control {

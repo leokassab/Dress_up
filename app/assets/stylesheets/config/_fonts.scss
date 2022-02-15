@@ -2,22 +2,9 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 
 // Define fonts for body and headers
-$body-font: "Nunito", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font: "Poppins", "Nunito", "Helvetica", "sans-serif";
+$headers-font: "Poppins", "Nunito", "Helvetica", "sans-serif";
 
-
-h4 {
-  font-size: 16px;
-}
-
-h3 {
-  font-size: 24px;
-}
-
-h2, h3, h4, h5, h6 {
-  font-weight: 300;
-  color: white;
-}
 
 h1 {
   font-size: 32px;
@@ -26,6 +13,28 @@ h1 {
   font-weight: bold;
 }
 
+h2 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h2, h3, h4, h5, h6 {
+  font-weight: 300;
+  color: white;
+  font-family: $headers-font;
+}
+
+p {
+  font-family: $body-font;
+}
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";

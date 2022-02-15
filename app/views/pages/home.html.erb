@@ -1,40 +1,39 @@
+<div class="my-banner">
+  <div class="container">
+    <div class="log-avatar">
+      <%= link_to user_path(@user) do %>
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar", alt: "avatar" %>
+      <% end %>
 
-<div class="container">
-  <div class="log-avatar">
-    <div>
-      <p>Welcome back</p>
-      <p><%= @user.user_name %></p>
+      <div>
+        <p>Welcome back</p>
+        <p><%= @user.user_name %></p>
+      </div>
     </div>
 
-    <%= link_to user_path(@user) do %>
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar", alt: "avatar" %>
-    <% end %>
-
-
-  </div>
-
-  <div class="home-search">
-    <h2>How would you like to dress today?</h2>
-    <div class="align-search">
-      <div class="search-bar">
-        <div class="loup">
-          <i class="fas fa-search"></i>
-          <%= form_with url: clothes_path, method: :get do |f| %>
-            <%= f.text_field :query,
-                              class: "form-control",
-                              :placeholder => 'Search your outfit',
-                              value: params[:query] %>
-            <% end %>
-        </div>
-        <div class="filter">
-          <i class="fas fa-filter"></i>
+    <div class="home-search">
+      <h2>How would you like to dress today?</h2>
+      <div class="align-search">
+        <div class="search-bar">
+          <div class="loup">
+            <%= form_with url: clothes_path, method: :get do |f| %>
+              <%= f.text_field :query,
+                                class: "form-control",
+                                :placeholder => 'Search your outfit',
+                                value: params[:query] %>
+              <% end %>
+          </div>
+          <div class="filter">
+            <i class="fas fa-filter"></i>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
+</div>
+<div class="container">
   <div class="categories">
-    <h3>Categories</h3>
+    <h3>Select a categorie</h3>
     <ul class="horizontal-list hide-scrollbar"><% @user.tags.each do |tag| %>
       <%= link_to clothes_path(tag_id: tag.id) do %>
         <li><%= render "shared/category", tag: tag %></li>
@@ -43,13 +42,13 @@
   </div>
 
   <div class="favorites">
-    <h3>Your favorites</h3>
+    <h3>Your favorite</h3>
     <ul class="horizontal-list hide-scrollbar"><% @user.clothes.each do |clothe| %>
       <% if clothe.bookmark %>
-        <div class="card-product">
+        <div class="card-product-slide">
           <li><% if clothe.photo.attached? %>
             <%= link_to clothe_path(clothe) do %>
-              <div class="product-photo" style="background-image: url('<%= cl_image_path clothe.photo.key, height: 120, crop: :fill %>')">
+              <div class="product-photo-slide" style="background-image: url('<%= cl_image_path clothe.photo.key %>')">
               </div>
             <% end %>
           <% end %></li>
