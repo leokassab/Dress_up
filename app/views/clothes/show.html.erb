@@ -8,7 +8,7 @@
     <h3>Category: <%= @clothe.category %></h3>
     <h3>Brand: <%= @clothe.brand %></h3>
     <h3>Size: <%= @clothe.size %></h3>
-    <h3>Color: <%= @clothe.colour %></h3>
+    <h3>Color: <%= @clothe.color %></h3>
     <h3>Fabric: <%= @clothe.material %></h3>
     <div class="delete-clothe">
       <%= link_to clothe_path(@clothe), method: :delete, data: { confirm: "Sure?" } do %>
@@ -19,6 +19,7 @@
       <div class="tag-flag show-tag-flag" data-edit-tag-target="card">
         <li><p><%= tag.name %></p></li>
       </div>
+
     <% end %></ul>
   </div>
 

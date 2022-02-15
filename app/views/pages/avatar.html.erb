@@ -1,180 +1,184 @@
-<%# à la fois dcréer de sobjects outflits et outfit_clothe %>
-<%# <% OUTFIT =[] %> %>
-<div class="text-center">
-  <%= simple_form_for(@outfit) do |f| %>
-    <%# <%= f.label :head %>
-    <%# <%= select_tag :head, options_from_collection_for_select(@head, "id", "name"), include_blank: true %>
-    <%# <%= f.label :chest %>
-    <%# <%= select_tag :chest, options_from_collection_for_select(@chest, "id", "name"), include_blank: true %>
-    <%# <%= f.label :leg %>
-    <%# <%= select_tag :leg, options_from_collection_for_select(@leg, "id", "name"), include_blank: true %>
-    <%# <%= f.label :foot %>
-    <%# <%= select_tag :foot, options_from_collection_for_select(@Foot, "id", "name"), include_blank: true %>
-    <%# <%= f.label :name %>
-    <%# <%= f.input :name %>
+
+<div data-controller="create-clothesoutfits">
+  <div class="text-center">
+    <%= simple_form_for(@outfit,
+                        data: {
+                          create_clothesoutfits_target: 'form',
+                          action: 'submit->create-clothesoutfits#send'
+                        }) do |f| %>
+      <%# <%= f.label :head %>
+      <%# <%= select_tag :head, options_from_collection_for_select(@head, "id", "name"), include_blank: true %>
+      <%# <%= f.label :chest %>
+      <%# <%= select_tag :chest, options_from_collection_for_select(@chest, "id", "name"), include_blank: true %>
+      <%# <%= f.label :leg %>
+      <%# <%= select_tag :leg, options_from_collection_for_select(@leg, "id", "name"), include_blank: true %>
+      <%# <%= f.label :foot %>
+      <%# <%= select_tag :foot, options_from_collection_for_select(@Foot, "id", "name"), include_blank: true %>
+
+      <%= f.input :name %>
 
 
-    <%# <% = f.input_field :head, as: :hidden, value: OUTFIT[0] %> %>
-    <%= f.submit "Save outfit", class: "button-delete mt-40" %>
 
-  <% end %>
-</div>
-<%# Affichage avatar %>
+      <%= f.submit "Save outfit", class: "button-delete mt-40" %>
 
-<div id="avatar"  style=" background-image: url(https://res.cloudinary.com/detkinqcf/image/upload/v1644343102/avatar-removebg-nofoot-removebg-preview_wm0ler.png); height: 530px; background-size: contain; background-repeat: no-repeat; background-position: center;">
+    <% end %>
+  </div>
+  <%# Affichage avatar %>
 
-  <%# Carousel des hats %>
-  <div id="carouselExampleControls0" class="carousel slide" data-interval="false" >
-      <% if @clothe != nil && @clothe.category == "Head" && @clothe.photo.attached? %>
-        <div class="carousel-inner ">
-          <div class="carousel-item active">
-            <%= cl_image_tag @clothe.photo.key, style:"height: 43px;"%>
-            <%# <% OUTFIT[0] = @clothe %> %>
-          </div>
-          <% @head.each do |i| %>
-            <div class="carousel-item">
-              <%= cl_image_tag i.photo.key, style:"height: 43px;" %>
-              <%# <% OUTFIT[0] = i %> %>
+  <div id="avatar"  style=" background-image: url(https://res.cloudinary.com/detkinqcf/image/upload/v1644343102/avatar-removebg-nofoot-removebg-preview_wm0ler.png); height: 530px; background-size: contain; background-repeat: no-repeat; background-position: center;">
+
+    <%# Carousel des hats %>
+    <div id="carouselExampleControls0" class="carousel slide" data-interval="false" >
+        <% if @clothe != nil && @clothe.category == "Head" && @clothe.photo.attached? %>
+          <div class="carousel-inner ">
+            <div class="carousel-item active" id="<%= @clothe.id %>" data-create-clothesoutfits-target="head">
+              <%= cl_image_tag @clothe.photo.key, style:"height: 43px;"%>
+
             </div>
-          <% end %>
-        </div>
-      <% else %>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-              <%= cl_image_tag @head.first.photo.key,   style:"height: 43px;"%>
-              <%# <% OUTFIT[0] = @head %> %>
-            </div>
-            <% @head.last(@head.length-1).each do |i| %>
-              <div class="carousel-item">
-                <%= cl_image_tag i.photo.key,   style:"height: 43px;"%>
-                <%# <% OUTFIT[0] = i %> %>
+            <% @head.each do |i| %>
+              <div class="carousel-item" id="<%= i.id %>" data-create-clothesoutfits-target="head">
+                <%= cl_image_tag i.photo.key, style:"height: 43px;" %>
+
               </div>
             <% end %>
           </div>
-      <% end %>
+        <% else %>
+          <div class="carousel-inner">
+              <div class="carousel-item active" id="<%= @head.first.id %>" data-create-clothesoutfits-target="head">
+                <%= cl_image_tag @head.first.photo.key,   style:"height: 43px;"%>
 
-      <a class="carousel-control-prev" href="#carouselExampleControls0" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls0" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-    <%# <div style="heigh: 100px;">
-    </div> %>
+              </div>
+              <% @head.last(@head.length-1).each do |i| %>
+                <div class="carousel-item" id="<%= i.id %>" data-create-clothesoutfits-target="head">
+                  <%= cl_image_tag i.photo.key,   style:"height: 43px;"%>
 
-  <%# Carousel des Hauts %>
-
-    <div id="carouselExampleControls1" class="carousel slide" data-interval="false" >
-      <% if @clothe != nil && @clothe.category == "Chest" && @clothe.photo.attached? %>
-        <div class="carousel-inner ">
-          <div class="carousel-item active">
-            <%= cl_image_tag @clothe.photo.key, style:"height: 200px;"%>
-          </div>
-          <% @chest.each do |i| %>
-            <div class="carousel-item">
-              <%= cl_image_tag i.photo.key, style:"height: 200px;" %>
+                </div>
+              <% end %>
             </div>
-          <% end %>
-        </div>
-      <% else %>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-              <%= cl_image_tag @chest.first.photo.key,   style:"height: 200px;"%>
+        <% end %>
+
+        <a class="carousel-control-prev" href="#carouselExampleControls0" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls0" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+
+    <%# Carousel des Hauts %>
+
+      <div id="carouselExampleControls1" class="carousel slide" data-interval="false" >
+        <% if @clothe != nil && @clothe.category == "Chest" && @clothe.photo.attached? %>
+          <div class="carousel-inner ">
+            <div class="carousel-item active" id="<%= @clothe.id %>" data-create-clothesoutfits-target="chest">
+              <%= cl_image_tag @clothe.photo.key, style:"height: 200px;"%>
             </div>
-            <% @chest.last(@chest.length-1).each do |i| %>
-              <div class="carousel-item">
-                <%= cl_image_tag i.photo.key,   style:"height: 200px;"%>
+            <% @chest.each do |i| %>
+              <div class="carousel-item" id="<%= i.id %>" data-create-clothesoutfits-target="chest">
+                <%= cl_image_tag i.photo.key, style:"height: 200px;" %>
               </div>
             <% end %>
           </div>
-      <% end %>
-
-      <a class="carousel-control-prev" href="#carouselExampleControls1" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls1" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-
-
-    <%# Carousel des Bas %>
-    <div id="carouselExampleControls2" class="carousel slide" data-interval="false" >
-      <% if @clothe != nil && @clothe.category == "Leg" && @clothe.photo.attached? %>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <%= cl_image_tag @clothe.photo.key, style:"height: 270px;" %>
-          </div>
-          <% @leg.each do |i| %>
-            <div class="carousel-item">
-              <%= cl_image_tag i.photo.key, style:"height: 270px;" %>
+        <% else %>
+          <div class="carousel-inner">
+              <div class="carousel-item active" id="<%= @chest.first.id %>" data-create-clothesoutfits-target="chest">
+                <%= cl_image_tag @chest.first.photo.key,   style:"height: 200px;"%>
+              </div>
+              <% @chest.last(@chest.length-1).each do |i| %>
+                <div class="carousel-item" id="<%= i.id %>" data-create-clothesoutfits-target="chest">
+                  <%= cl_image_tag i.photo.key,   style:"height: 200px;"%>
+                </div>
+              <% end %>
             </div>
-          <% end %>
-        </div>
-      <% else %>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-              <%= cl_image_tag @leg.first.photo.key, style:"height: 270px;" %>
+        <% end %>
+
+        <a class="carousel-control-prev" href="#carouselExampleControls1" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls1" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+
+      <%# Carousel des Bas %>
+      <div id="carouselExampleControls2" class="carousel slide" data-interval="false" >
+        <% if @clothe != nil && @clothe.category == "Leg" && @clothe.photo.attached? %>
+          <div class="carousel-inner">
+            <div class="carousel-item active" id="<%= @clothe.id %>" data-create-clothesoutfits-target="leg">
+              <%= cl_image_tag @clothe.photo.key, style:"height: 270px;" %>
             </div>
-            <% @leg.last(@leg.length-1).each do |i| %>
-              <div class="carousel-item">
+            <% @leg.each do |i| %>
+              <div class="carousel-item" id="<%= i.id %>" data-create-clothesoutfits-target="leg">
                 <%= cl_image_tag i.photo.key, style:"height: 270px;" %>
               </div>
             <% end %>
           </div>
-      <% end %>
-
-      <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-
-  <%# Carousel des Shoes %>
-    <div id="carouselExampleControls3" class="carousel slide" data-interval="false" style="height: 70px;">
-      <% if @clothe != nil && @clothe.category == "Foot" && @clothe.photo.attached? %>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <%= cl_image_tag @clothe.photo.key, style:"height: 70px;" %>
-          </div>
-          <% @foot.each do |i| %>
-            <div class="carousel-item">
-              <%= cl_image_tag i.photo.key, style:"height: 70px;" %>
+        <% else %>
+          <div class="carousel-inner">
+              <div class="carousel-item active" id="<%= @leg.first.id %>" data-create-clothesoutfits-target="leg">
+                <%= cl_image_tag @leg.first.photo.key, style:"height: 270px;" %>
+              </div>
+              <% @leg.last(@leg.length-1).each do |i| %>
+                <div class="carousel-item" id="<%= i.id %>" data-create-clothesoutfits-target="leg">
+                  <%= cl_image_tag i.photo.key, style:"height: 270px;" %>
+                </div>
+              <% end %>
             </div>
-          <% end %>
-        </div>
-      <% else %>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-              <%= cl_image_tag @foot.first.photo.key, style:"height: 70px;" %>
+        <% end %>
+
+        <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+    <%# Carousel des Shoes %>
+      <div id="carouselExampleControls3" class="carousel slide" data-interval="false" style="height: 70px;">
+        <% if @clothe != nil && @clothe.category == "Foot" && @clothe.photo.attached? %>
+          <div class="carousel-inner">
+            <div class="carousel-item active" id="<%= @clothe.id %>" data-create-clothesoutfits-target="foot">
+              <%= cl_image_tag @clothe.photo.key, style:"height: 70px;" %>
             </div>
-            <% @foot.last(@foot.length-1).each do |i| %>
-              <div class="carousel-item">
+            <% @foot.each do |i| %>
+              <div class="carousel-item" id="<%= i.id %>" data-create-clothesoutfits-target="foot">
                 <%= cl_image_tag i.photo.key, style:"height: 70px;" %>
               </div>
             <% end %>
           </div>
-      <% end %>
+        <% else %>
+          <div class="carousel-inner">
+              <div class="carousel-item active" id="<%= @foot.first.id %>" data-create-clothesoutfits-target="foot">
+                <%= cl_image_tag @foot.first.photo.key, style:"height: 70px;" %>
+              </div>
+              <% @foot.last(@foot.length-1).each do |i| %>
+                <div class="carousel-item" id="<%= i.id %>" data-create-clothesoutfits-target="foot">
+                  <%= cl_image_tag i.photo.key, style:"height: 70px;" %>
+                </div>
+              <% end %>
+            </div>
+        <% end %>
 
-      <a class="carousel-control-prev" href="#carouselExampleControls3" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls3" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls3" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls3" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
 
 
 
+  </div>
 </div>
