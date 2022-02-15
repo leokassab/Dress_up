@@ -11,8 +11,10 @@ class OutfitsController < ApplicationController
   end
 
   def create
+    raise
     @outfit = Outfit.new(outfit_params)
     @outfit.user = current_user
+
     if @outfit.save
       # @head = ClothesOutfit.create(clothe_id: params[:head], outfit_id: @outfit.id)
       @chest = ClothesOutfit.create(clothe_id: params[:chest], outfit_id: @outfit.id)
@@ -43,7 +45,7 @@ class OutfitsController < ApplicationController
   end
 
   def outfit_params
-    params.require(:outfit).permit(:name)
+    params.require(:outfit).permit(:name,:head_id, :chest_id, :leg_id, :foot_id )
   end
 
 end
