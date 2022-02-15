@@ -26,6 +26,14 @@
   align-items: center;
   justify-content: center;
   padding: 40px;
+  position: relative;
+}
+
+.card-product-slide .favorite {
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
+  color: pink !important;
 }
 
 .product-photo-slide {
