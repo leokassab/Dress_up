@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = ['form', 'head', 'chest', 'leg', 'foot'];
 
   send(event) {
-    event.preventDefault();
+    // event.preventDefault();
 
     // Récupère le nom de l'outfit
     const outfit_name = this.formTarget.outfit_name.value;
