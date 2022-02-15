@@ -6,6 +6,13 @@
   margin: 20px auto;
   background-position: center;
   background-repeat: no-repeat;
+  h3 {
+    color: $light-gray;
+    text-align: right;
+    line-height: 40px;
+    margin-right: 10px;
+    font-size: 18px;
+  }
 }
 
 .clothe-infos {
@@ -53,4 +60,38 @@
     font-size: 24px;
     color: white;
   }
+}
+
+.form-edit-clothe {
+
+
+
+  input, label {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 24px;
+    font-weight: 300;
+    color: white;
+  }
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    // line-height: 1,2;
+  }
+
+  .form-control {
+    padding: 0rem 0rem 0rem 0.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1,2;
+  }
+
+  .is-valid, .is-invalid {
+    // border-color: $gray-400;
+    background-image: inherit;
+    &:focus {
+      border-color: inherit;
+      // box-shadow: 0 0 0 .2rem $gray-400;
+    }
+  }
+
 }
