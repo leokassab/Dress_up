@@ -1,4 +1,5 @@
 class ClothesController < ApplicationController
+
   before_action :find_clothe, only: [ :show, :destroy, :update, :favorite]
 
   def new
@@ -51,6 +52,17 @@ class ClothesController < ApplicationController
     end
   end
 
+
+  def update
+    @clothe.update(clothes_params)
+
+    respond_to do |format|
+      format.html { redirect_to clothe_path(@clothe) }
+      format.text { render partial: 'clothes/clothe_information', locals: { clothe: @clothe }, formats: [:html] }
+    end
+  end
+
+
   def favorite
     p 'FAVORITE==='
     @clothe.update(bookmark: !@clothe.bookmark)
@@ -64,7 +76,7 @@ class ClothesController < ApplicationController
   end
 
   def clothes_params
-    params.require(:clothe).permit(:category, :bookmark, :brand, :size, :colour, :material, :product_ref, :name, :clothes_tags_attributes => [:clothe_id, :tag_id])
+    params.require(:clothe).permit(:category, :bookmark, :brand, :size, :color, :material, :product_ref, :name, :clothes_tags_attributes => [:clothe_id, :tag_id])
   end
 
 
