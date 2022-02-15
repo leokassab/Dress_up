@@ -5,7 +5,7 @@ export default class extends Controller {
 
   displayForm() {
     this.formTarget.classList.toggle('d-none');
-    // this.infosTarget.classList.toggle('d-none');
+    this.cardTarget.classList.toggle('d-none');
   }
 
   update(event) {
@@ -20,6 +20,7 @@ export default class extends Controller {
       .then((data) => {
         this.cardTarget.innerHTML = data;
         this.formTarget.classList.add('d-none');
+        this.cardTarget.classList.remove('d-none');
       })
   }
 }
