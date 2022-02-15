@@ -1,5 +1,6 @@
 class ClothesController < ApplicationController
-  before_action :find_clothe, only: [ :show, :destroy, :update]
+
+  before_action :find_clothe, only: [ :show, :destroy, :update, :favorite]
 
   def new
     @clothe = Clothe.new
@@ -18,6 +19,12 @@ class ClothesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
   end
 
   def show
@@ -45,6 +52,7 @@ class ClothesController < ApplicationController
     end
   end
 
+
   def update
     @clothe.update(clothes_params)
 
@@ -54,6 +62,12 @@ class ClothesController < ApplicationController
     end
   end
 
+
+  def favorite
+    p 'FAVORITE==='
+    @clothe.update(bookmark: !@clothe.bookmark)
+    # byebug
+  end
 
   private
 

@@ -18,6 +18,5 @@ class PagesController < ApplicationController
     @chest = Clothe.where(category: "Chest")
     @foot = Clothe.where(category: "Foot")
     @outfit = Outfit.new
-
   end
 end

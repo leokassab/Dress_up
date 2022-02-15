@@ -9,7 +9,6 @@
 
   <div class="clothe-infos">
 
-
     <div class="update-clothe-infos">
       <%= simple_form_for @clothe, html: { class: 'd-none', data: { update_clothe_target: 'form', action: 'update-clothe#update'}} do |f| %>
         <div class="form-edit-clothe">
@@ -28,8 +27,14 @@
             <i class="fas fa-trash-alt"></i>
           <% end %>
         </div>
-      <% end %>
-    </div>
+
+    <h3>Name: <%= @clothe.name %></h3>
+    <h3>Category: <%= @clothe.category %></h3>
+    <h3>Brand: <%= @clothe.brand %></h3>
+    <h3>Size: <%= @clothe.size %></h3>
+    <h3>Color: <%= @clothe.color %></h3>
+    <h3>Fabric: <%= @clothe.material %></h3>
+      
     <div data-update-clothe-target="card">
       <%= render "clothe_information", clothe: @clothe %>
     </div>
@@ -41,6 +46,7 @@
       <div class="tag-flag show-tag-flag" data-edit-tag-target="card">
         <li><p><%= tag.name %></p></li>
       </div>
+
     <% end %></ul>
   </div>
 

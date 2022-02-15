@@ -5,7 +5,8 @@
 .card-section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
+  grid-gap: 10px 0px !important;
+  // margin-left: 2%;
 }
 
 .button-add {
@@ -20,4 +21,17 @@
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+}
+
+.card-product {
+  position: relative;
+}
+
+.product-photo {
+}
+
+.card-product .favorite {
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
 }
