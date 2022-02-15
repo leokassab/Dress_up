@@ -1,7 +1,16 @@
 <div class="container" data-controller="edit-tag update-clothe" >
 
   <div class="show-pic" style="background-image: url('<%= cl_image_path @clothe.photo.key, height: 320, width: 320 %>')">
-      <h3><i class="fas fa-pencil-alt" data-action="click->update-clothe#displayForm"></i></h3>
+      <div>
+        <h3><i class="fas fa-pencil-alt" data-action="click->update-clothe#displayForm"></i></h3>
+      </div>
+      <div class="favorite" data-controller="favorite-clothe">
+        <% if @clothe.bookmark %>
+          <%= icon 'fas', 'heart', data: { cloth_id: @clothe.id, action: 'click->favorite-clothe#favorite'} %>
+        <% else %>
+          <%= icon 'far', 'heart', data: { cloth_id: @clothe.id, action: 'click->favorite-clothe#favorite'} %>
+        <% end %>
+      </div>
   </div>
 
 

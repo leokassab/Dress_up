@@ -6,6 +6,7 @@
   margin: 20px auto;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
   h3 {
     color: $light-gray;
     text-align: right;
@@ -13,6 +14,13 @@
     margin-right: 10px;
     font-size: 18px;
   }
+  .favorite {
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
+  color: pink !important;
+  }
+
 }
 
 .clothe-infos {
