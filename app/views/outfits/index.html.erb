@@ -2,5 +2,6 @@
 
 
 <%  @outfits.each do |o| %>
-<h2><%= o.id %> <%= o.name %></h2>
+  <h2> <%= o.name %></h2>
+  <%= image_tag o.photo, width: 300 %>
 <% end %>

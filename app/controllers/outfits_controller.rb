@@ -11,20 +11,33 @@ class OutfitsController < ApplicationController
   end
 
   def create
-    raise
     @outfit = Outfit.new(outfit_params)
     @outfit.user = current_user
 
     if @outfit.save
-      # @head = ClothesOutfit.create(clothe_id: params[:head], outfit_id: @outfit.id)
-      @chest = ClothesOutfit.create(clothe_id: params[:chest], outfit_id: @outfit.id)
-      @leg = ClothesOutfit.create(clothe_id: params[:leg], outfit_id: @outfit.id)
-      # @foot = ClothesOutfit.create(clothe_id: params[:foot], outfit_id: @outfit.id)
-
-      redirect_to outfit_path(@outfit)
+      ClothesOutfit.create(clothe_id: params[:outfit][:head_id], outfit_id: @outfit.id)
+      ClothesOutfit.create(clothe_id: params[:outfit][:chest_id], outfit_id: @outfit.id)
+      ClothesOutfit.create(clothe_id: params[:outfit][:leg_id], outfit_id: @outfit.id)
+      ClothesOutfit.create(clothe_id: params[:outfit][:foot_id], outfit_id: @outfit.id)
+      outfit_image
+      redirect_to outfits_path
       else
       render :new
     end
+  end
+
+  def outfit_image
+    puts (@outfit)
+    @ids =[]
+    ClothesOutfit.where(outfit_id: @outfit.id).order(id: :asc).each do |el|
+      @ids << Clothe.find(el.clothe_id)
+    end
+    puts(render_to_string)
+    @kit = IMGKit.new(render_to_string)
+    file = @kit.to_file('/tmp/template_#{@outfit.id.to_s}.jpg')
+    @outfit.photo.attach(io: File.open('/tmp/template_#{@outfit.id.to_s}.jpg'), filename: 'outfit.jpg', content_type: 'image/jpg')
+
+    @outfit.save
   end
 
   def show
@@ -45,7 +58,7 @@ class OutfitsController < ApplicationController
   end
 
   def outfit_params
-    params.require(:outfit).permit(:name,:head_id, :chest_id, :leg_id, :foot_id )
+    params.require(:outfit).permit(:name)
   end
 
 end
