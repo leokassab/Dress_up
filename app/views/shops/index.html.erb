@@ -1,1 +1,6 @@
 <h1>index shop</h1>
+
+<%= @shops.each do |shop| %>
+  <%= shop.brand_name %>
+  <%= shop.description %>
+<% end %>
