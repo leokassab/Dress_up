@@ -52,6 +52,13 @@
               </div>
             <% end %>
           <% end %></li>
+          <div class="favorite" data-controller="favorite-clothe">
+            <% if clothe.bookmark %>
+              <%= icon 'fas', 'heart', data: { cloth_id: clothe.id, action: 'click->favorite-clothe#favorite'} %>
+            <% else %>
+              <%= icon 'far', 'heart', data: { cloth_id: clothe.id, action: 'click->favorite-clothe#favorite'} %>
+            <% end %>
+          </div>
         </div>
       <% end %>
     <% end %></ul>

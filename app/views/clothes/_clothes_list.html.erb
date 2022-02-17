@@ -1,6 +1,6 @@
 <div data-search-clothes-target="list">
     <div class="card-section">
-      <% @clothes.each do |clothe| %>
+      <% @clothes.sort.each do |clothe| %>
         <div class="card-product">
           <% if clothe.photo.attached? %>
             <%= link_to clothe_path(clothe) do %>
@@ -14,8 +14,6 @@
                 <% else %>
                   <%= icon 'far', 'heart', data: { cloth_id: clothe.id, action: 'click->favorite-clothe#favorite'} %>
                 <% end %>
-                <%# , favorite_clothe_target: 'heart' %>
-                <%# <i class="fas fa-heart" data-favorite-clothe-target="heart"></i> %>
               </div>
         </div>
       <% end %>

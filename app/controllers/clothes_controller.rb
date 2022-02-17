@@ -66,7 +66,6 @@ class ClothesController < ApplicationController
   def favorite
     p 'FAVORITE==='
     @clothe.update(bookmark: !@clothe.bookmark)
-    # byebug
   end
 
   private
