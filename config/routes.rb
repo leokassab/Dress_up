@@ -16,5 +16,5 @@ Rails.application.routes.draw do
   resources :outfits, only: [:index, :show, :new, :create]
   resources :tags, only: [:index, :show, :new, :create]
   resources :users, only: [:show]
-  resources :shop
+  resources :shops
 end
