@@ -32,3 +32,46 @@
   margin-top: 30px;
   margin-bottom: 30px;
 }
+
+.avatar-page {
+  margin-top: 30px;
+}
+
+.button-outfit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter-button {
+  width: 120px;
+  background-color: rgba(29, 96, 187, 0.16);
+  padding: 15px 0;
+  border-radius: 10px;
+  text-decoration: none;
+  h3 {
+    margin: 0;
+    color: #AACEFF;
+  }
+  margin-right: 10px;
+}
+
+.confirm-style {
+  background-color: $color-primary;
+  width: 200px;
+  border-radius: 8px;
+  h3 {
+    color: white;
+    margin: 0;
+  }
+  padding: 15px 0;
+  margin-left: 10px;
+  input {
+    background-color: white;
+  }
+  label {
+    margin-top: 10px;
+    color: white;
+    text-align: left;
+  }
+}

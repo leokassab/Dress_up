@@ -62,9 +62,9 @@ export default class extends Controller {
     .then((data) => {
       console.log(data);
     });
-
-
-
   }
 
+  displayForm() {
+    this.formTarget.classList.toggle('d-none');
+  }
 }
