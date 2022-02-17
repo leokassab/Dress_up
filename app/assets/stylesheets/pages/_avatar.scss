@@ -68,6 +68,9 @@
   margin-left: 10px;
   input {
     background-color: white;
+    &:hover {
+      background-color: white;
+    }
   }
   label {
     margin-top: 10px;
