@@ -360,7 +360,7 @@ kith_jean_black_red = Clothe.new(
   bookmark: [true, false].sample,
   brand: "Kith",
   size: "34",
-  color: "Black",
+  color: "black",
   material: "jean",
   product_ref: rand(1..1000000),
   user_id: 1

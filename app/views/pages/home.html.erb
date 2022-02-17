@@ -33,7 +33,7 @@
 </div>
 <div class="container">
   <div class="categories">
-    <h3>Select a categorie</h3>
+    <h3>Select a category</h3>
     <ul class="horizontal-list hide-scrollbar"><% @user.tags.each do |tag| %>
       <%= link_to clothes_path(tag_id: tag.id) do %>
         <li><%= render "shared/category", tag: tag %></li>
