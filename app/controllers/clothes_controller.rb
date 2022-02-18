@@ -52,6 +52,24 @@ class ClothesController < ApplicationController
     end
   end
 
+  def filter
+    @clothes = Clothe.all
+    colors = params[:search][:colors]
+    categories = params[:search][:categories]
+    # tags = params ...
+    # raise
+    if colors
+      @clothes = @clothes.where(color: colors)
+    end
+    # # raise
+    if categories
+      @clothes = @clothes.where(category: categories)
+      # raise
+    end
+    # raise
+    render :index
+  end
+
 
   def update
     @clothe.update(clothes_params)
@@ -66,7 +84,6 @@ class ClothesController < ApplicationController
   def favorite
     p 'FAVORITE==='
     @clothe.update(bookmark: !@clothe.bookmark)
-    # byebug
   end
 
   private

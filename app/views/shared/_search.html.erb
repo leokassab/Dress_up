@@ -1,6 +1,5 @@
 <div class="search-bar">
   <div class="loup">
-    <i class="fas fa-search"></i>
     <%= form_with url: clothes_path, method: :get,
       html: { data: { search_clothes_target: 'form' } } do |f| %>
       <%= f.text_field :query,

@@ -1,19 +1,7 @@
 
-<div data-controller="create-clothesoutfits">
-  <div class="text-center">
-    <%= simple_form_for(@outfit,
-                        data: {
-                          create_clothesoutfits_target: 'form',
-                          action: 'submit->create-clothesoutfits#send'
-                        }) do |f| %>
-
-      <%= f.input :name %>
-      <%= f.submit "Save outfit", class: "button-delete mt-40" %>
-    <% end %>
-  </div>
+<div class="avatar-page" data-controller="create-clothesoutfits">
   <%# Affichage avatar %>
-
-  <div id="avatar" data-create-clothesoutfits-target="avatar" style=" background-image: url(https://res.cloudinary.com/detkinqcf/image/upload/v1644343102/avatar-removebg-nofoot-removebg-preview_wm0ler.png); height: 530px; background-size: contain; background-repeat: no-repeat; background-position: center;">
+  <div id="avatar"  style=" background-image: url(https://res.cloudinary.com/detkinqcf/image/upload/v1644343102/avatar-removebg-nofoot-removebg-preview_wm0ler.png); height: 530px; background-size: contain; background-repeat: no-repeat; background-position: center;">
 
     <%# Carousel des hats %>
     <div id="carouselExampleControls0" class="carousel slide" data-interval="false" >
@@ -165,8 +153,33 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
+  </div>
 
 
+  <div class=" container text-center button-outfit">
+    <div class="confirm-style" data-action="click->create-clothesoutfits#displayForm">
+      <h3>Save this style</h3>
+      <%= simple_form_for(@outfit,  html: { class: 'd-none'},
+                          data: {
+                            create_clothesoutfits_target: 'form',
+                            action: 'submit->create-clothesoutfits#send'
+                          }) do |f| %>
+        <%# <%= f.label :head %>
+        <%# <%= select_tag :head, options_from_collection_for_select(@head, "id", "name"), include_blank: true %>
+        <%# <%= f.label :chest %>
+        <%# <%= select_tag :chest, options_from_collection_for_select(@chest, "id", "name"), include_blank: true %>
+        <%# <%= f.label :leg %>
+        <%# <%= select_tag :leg, options_from_collection_for_select(@leg, "id", "name"), include_blank: true %>
+        <%# <%= f.label :foot %>
+        <%# <%= select_tag :foot, options_from_collection_for_select(@Foot, "id", "name"), include_blank: true %>
+        <%= f.input :name %>
+        <%= f.submit "Save outfit", class: "button-delete mt-40" %>
+      <% end %>
+    </div>
+
+    <div class="filter-button">
+      <h3>Filter</h3>
+    </div>
 
   </div>
 </div>

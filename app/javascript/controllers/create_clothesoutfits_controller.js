@@ -61,7 +61,9 @@ export default class extends Controller {
           window.location.href = response.url;
         }
       })
-
   }
 
+  displayForm() {
+    this.formTarget.classList.toggle('d-none');
+  }
 }

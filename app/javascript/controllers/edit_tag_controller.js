@@ -10,6 +10,16 @@ export default class extends Controller {
   //update(event) {
     //event.preventDefault();
     //const url = this.formTarget.action
+    //fetch(url, {
+      //method: 'POST',
+      //body: new FormData(this.formTarget)
+    //})
+    //.then(response => response.text())
+    //.then(html => this.element.innerHTML = html)
+  //}
+  //update(event) {
+    //event.preventDefault();
+    //const url = this.formTarget.action
     //console.log("hello")
     //console.log(new FormData(this.formTarget))
     //fetch(url, {
