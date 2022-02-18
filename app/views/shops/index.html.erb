@@ -1,6 +1,7 @@
-<h1>index shop</h1>
-<div class="shop_card_selection">
-  <%= @shops.each do |shop| %>
-    <%= render "shared/shop_card", shop: shop %>
-  <% end %>
+<div class="container">
+  <div class="shop_card_selection">
+    <%= @shops.each do |shop| %>
+      <%= render "shared/shop_card", shop: shop %>
+    <% end %>
+  </div>
 </div>
