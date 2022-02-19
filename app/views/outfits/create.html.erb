@@ -1,0 +1,17 @@
+<div id="screenshot" style="background-color:white;">
+  <div id="avatar"  style=" background-image: url(http://res.cloudinary.com/detkinqcf/image/upload/v1644343102/avatar-removebg-nofoot-removebg-preview_wm0ler.png); height: 530px; width: 450px; margin-left: 300px; background-repeat: no-repeat; ">
+
+    <div id="hat" >
+      <%= cl_image_tag @ids[0].photo.key, style:"height: 43px; margin-left: 188px;  margin-top: 7px;"%>
+    </div>
+    <div id="chest" >
+      <%= cl_image_tag @ids[1].photo.key, style:"height: 181px; margin-left: 122px; margin-top: 45px;z-index:100; position: fixed;"%>
+    </div>
+    <div id="leg" >
+      <%= cl_image_tag @ids[2].photo.key, style:"height: 287px; margin-left: 160px; margin-top: 177px; z-index: -1;"%>
+    </div>
+    <div id="foot" style="background-color:white">
+      <%= cl_image_tag @ids[3].photo.key, style:"height: 70px; margin-left: 170px; margin-top: -14px;"%>
+    </div>
+  </div>
+</div>

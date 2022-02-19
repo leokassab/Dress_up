@@ -5,63 +5,58 @@ export default class extends Controller {
   static targets = ['form', 'head', 'chest', 'leg', 'foot'];
 
   send(event) {
-    // event.preventDefault();
-
+    event.preventDefault();
+    const ids = {}
     // Récupère le nom de l'outfit
-    const outfit_name = this.formTarget.outfit_name.value;
+    ids["name"]  = this.formTarget.outfit_name.value;
 
     // Donne le head affiché à l'écran
-    const headextraction = () => {
+
       this.headTargets.forEach((div) => {
         if (div.classList[1] === "active") {
-          return div.id;
+          ids["head_id"] = div.id;
         }
       });
-    };
+
 
     // Donne le chest affiché à l'écran
-    const chestextraction = () => {
-      this.chestTargets.forEach((div) => {
-        if (div.classList[1] === "active") {
-          return div.id;
-        }
-      });
-    };
+    this.chestTargets.forEach((div) => {
+      if (div.classList[1] === "active") {
+        ids["chest_id"] = div.id;
+      }
+    });
 
     // Donne le leg affiché à l'écran
-    const legextraction = () => {
-      this.legTargets.forEach((div) => {
-        if (div.classList[1] === "active") {
-          return div.id;
-        }
-      });
-    };
+    this.legTargets.forEach((div) => {
+      if (div.classList[1] === "active") {
+        ids["leg_id"] = div.id;
+      }
+    });
 
     // Donne le foot affiché à l'écran
-    const footextraction = () => {
-      this.footTargets.forEach((div) => {
-        if (div.classList[1] === "active") {
-          return div.id;
-        }
-      });
-    };
+    this.footTargets.forEach((div) => {
+      if (div.classList[1] === "active") {
+        ids["foot_id"] = div.id;
+      }
+    });
 
-    // je tente d'enoyer mes 4 données à l'outfits controller
-    const url = "outfits/new";
-    console.log(url);
+
+
+
+
+    // envoi des 5 données à l'outfits controller
+    const url = "outfits";
+
     fetch(url, {
       method: 'POST',
-      headers: { 'Accept': "application/json", 'X-CSRF-Token': csrfToken()},
-      body: JSON.stringify({ name: this.formTarget.outfit_name.value,
-                              head_id: headextraction(),
-                              chest_id: chestextraction(),
-                              leg_id: legextraction(),
-                              foot_id: footextraction()})
+      headers: { "Content-Type": "application/json",  "X-CSRF-Token": csrfToken()},
+      body: JSON.stringify({"outfit": ids })
      })
-    .then(response => response.json())
-    .then((data) => {
-      console.log(data);
-    });
+      .then(response => {
+        if (response.redirected) {
+          window.location.href = response.url;
+        }
+      })
   }
 
   displayForm() {

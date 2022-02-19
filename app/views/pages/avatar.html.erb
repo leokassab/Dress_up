@@ -161,14 +161,6 @@
                             create_clothesoutfits_target: 'form',
                             action: 'submit->create-clothesoutfits#send'
                           }) do |f| %>
-        <%# <%= f.label :head %>
-        <%# <%= select_tag :head, options_from_collection_for_select(@head, "id", "name"), include_blank: true %>
-        <%# <%= f.label :chest %>
-        <%# <%= select_tag :chest, options_from_collection_for_select(@chest, "id", "name"), include_blank: true %>
-        <%# <%= f.label :leg %>
-        <%# <%= select_tag :leg, options_from_collection_for_select(@leg, "id", "name"), include_blank: true %>
-        <%# <%= f.label :foot %>
-        <%# <%= select_tag :foot, options_from_collection_for_select(@Foot, "id", "name"), include_blank: true %>
         <%= f.input :name %>
         <%= f.submit "Save outfit", class: "button-delete mt-40" %>
       <% end %>
