@@ -1,0 +1,76 @@
+.head-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+i {
+  color: white;
+}
+
+.category-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  grid-gap: 10px 10px !important;
+}
+
+.category-item {
+  flex: 0 0 30%;
+}
+
+.category-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.category-selector + label {
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 12px;
+  text-align: left;
+  padding: 10px 10px 30px 10px;
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  background-color: white;
+  color: transparent !important;
+}
+
+.category-selector:checked + label {
+  color: transparent !important;
+  border: 1px solid #EAEAEA;
+}
+
+input[color="blue"] + label {
+  background-color: blue;
+}
+
+input[color="black"] + label {
+  background-color: black;
+}
+
+input[color="red"] + label {
+  background-color: red;
+}
+
+input[color="grey"] + label {
+  background-color: grey;
+}
+
+input[color="white"] + label {
+  background-color: white;
+}
+
+input[color="brown"] + label {
+  background-color: brown;
+}
+
+input[color="navy"] + label {
+  background-color: navy;
+}
+
+input[color="cream"] + label {
+  background-color: wheat;
+}
