@@ -2,13 +2,6 @@
   <div class="search">
       <%= render "shared/search" %>
   </div>
-  <div class="favorites">
-    <%= simple_form_for :search, url: filter_path, method: :get do |f| %>
-    <%= f.input :colors, as: :check_boxes, collection: [["red","red"],["black","black"],["blue","blue"],["grey","grey"],["white","white"],["cream","cream"],["navy","navy"]], include_hidden: false %>
-    <%= f.input :categories, as: :check_boxes, collection: [["leg","Leg"],["foot","Foot"],["chest","Chest"],["head","Head"]], include_hidden: false %>
-    <%= f.submit "apply filter" %>
-    <% end %>
-  </div>
+  <%= render "shared/filters" %>
   <%= render "clothes_list" %>
 </div>
-<div></div>

@@ -1,6 +1,6 @@
-<div class="avatar-page" data-controller="create-clothesoutfits">
+<div class="avatar-page" data-controller="create-clothesoutfits search-clothes">
   <%# Affichage avatar %>
-  <div id="avatar"  style=" background-image: url(https://res.cloudinary.com/detkinqcf/image/upload/v1644343102/avatar-removebg-nofoot-removebg-preview_wm0ler.png); height: 530px; background-size: contain; background-repeat: no-repeat; background-position: center;">
+  <div data-search-clothes-target="avatar" id="avatar" style=" background-image: url(https://res.cloudinary.com/detkinqcf/image/upload/v1644343102/avatar-removebg-nofoot-removebg-preview_wm0ler.png); height: 530px; background-size: contain; background-repeat: no-repeat; background-position: center;">
 
     <%# Carousel des hats %>
     <div id="carouselExampleControls0" class="carousel slide" data-interval="false" >
@@ -153,9 +153,7 @@
         </a>
       </div>
   </div>
-
-
-  <div class=" container text-center button-outfit">
+  <div data-search-clothes-target="avatar" class=" container text-center button-outfit">
     <div class="confirm-style" data-action="click->create-clothesoutfits#displayForm">
       <h3>Save this style</h3>
       <%= simple_form_for(@outfit,  html: { class: 'd-none'},
@@ -176,9 +174,9 @@
       <% end %>
     </div>
 
-    <div class="filter-button">
+    <div class="filter-button" data-action="click->search-clothes#displayFilters" >
       <h3>Filter</h3>
     </div>
-
   </div>
+  <%= render "shared/filters" %>
 </div>
