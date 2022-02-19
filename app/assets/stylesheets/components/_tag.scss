@@ -5,13 +5,14 @@
 .tag-selector {
   position: absolute;
   transform: scale(0);
+  border-radius: 8px;
 }
 
 .tag-selector + label {
   cursor: pointer;
   display: inline-block;
   font-size: 0.7rem;
-  border-radius: 50rem;
+  border-radius: 8px;
   padding: 0.1rem 0.5rem;
   background-color: #ECEAFF;
   color: $color-primary;
@@ -28,8 +29,11 @@
 .tag-submit {
   background-color: $color-primary;
   color: white;
-  border-radius: 50rem;
+  border-radius: 8px;
   padding: 5px 15px;
   text-align: center;
   margin: 5px auto;
+  &:hover {
+    color: white;
+  }
 }
