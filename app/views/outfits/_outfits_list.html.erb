@@ -4,10 +4,12 @@
       <div class="card-product">
         <% if outfit.photo.attached? %>
           <%= link_to outfit_path(outfit) do %>
-            <div class="product-photo" style="background-image: url('<%= cl_image_path outfit.photo.key, width: 275, crop: :fill %>')">
-            </div>
+            <div  class="product-photo" >
+                <div class="photo-outfit" style="background-image: url('<%= cl_image_path outfit.photo.key, height: 145, crop: :fill %>')">
+                </div>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
       </div>
     <% end %>
   </div>
