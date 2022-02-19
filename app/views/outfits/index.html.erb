@@ -1,6 +1,15 @@
-<h1  class="text-align-center">Outfits </h1>
-
-
 <div class="container">
+  <div class="search">
+    <%= render "shared/search" %>
+  </div>
+  <div class="dot">
+    <%= link_to clothes_path do  %>
+      <p>Clothes</p>
+    <% end %>
+    <p class="active-index">Outfits</p>
+    <%= link_to tags_path do %>
+      <p>Tags</p>
+    <% end %>
+  </div>
   <%= render "outfits_list" %>
 </div>
