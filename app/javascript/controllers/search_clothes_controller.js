@@ -13,7 +13,6 @@ export default class extends Controller {
   }
 
   displayFilters() {
-    console.log("coucou")
     this.filtersTarget.classList.toggle('d-none');
     this.crossTarget.classList.toggle('d-none')
     if (this.hasSearchbarTarget) {
