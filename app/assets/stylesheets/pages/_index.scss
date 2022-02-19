@@ -6,6 +6,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px 0px !important;
+  align-items: center;
+  justify-items: center;
   // margin-left: 2%;
 }
 
@@ -27,9 +29,6 @@
   position: relative;
 }
 
-.product-photo {
-}
-
 .card-product .favorite {
   position: absolute;
   right: 10px;
@@ -39,4 +38,33 @@
 
 .favorite {
   color: white;
+}
+
+.dot {
+  margin: 20px 5px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  a {
+    text-decoration: none;
+  }
+  p {
+    padding: 5px 30px;
+    color: white;
+    background-color: $color-primary;
+    border-radius: 8px;
+    margin: 0;
+    opacity: 50%;
+  }
+
+  .active-index {
+    padding: 5px 30px;
+    color: white;
+    background-color: $color-primary;
+    border-radius: 8px;
+    margin: 0;
+    opacity: 1;
+  }
+
 }

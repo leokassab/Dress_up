@@ -1,0 +1,12 @@
+.tag-index {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px 0px !important;
+  align-items: center;
+  justify-items: center;
+  color: white;
+  margin-top: 50px;
+  .tag-flag {
+    margin-right: 0;
+  }
+}
