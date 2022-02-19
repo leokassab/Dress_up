@@ -1,6 +1,5 @@
 import { Controller } from "stimulus";
 import { csrfToken } from "@rails/ujs";
-// import html2canvas from 'html2canvas';
 
 export default class extends Controller {
   static targets = ['form', 'head', 'chest', 'leg', 'foot'];
@@ -43,12 +42,9 @@ export default class extends Controller {
 
 
 
-    // html2canvas(this.avatarTarget, {allowTaint: true}).then(canvas => {
-    //   document.body.appendChild(canvas)
-    // });
 
 
-    // je tente d'enoyer mes 4 données à l'outfits controller
+    // envoi des 5 données à l'outfits controller
     const url = "outfits";
 
     fetch(url, {

@@ -33,7 +33,7 @@ class OutfitsController < ApplicationController
       @ids << Clothe.find(el.clothe_id)
     end
     puts(render_to_string)
-    @kit = IMGKit.new(render_to_string)
+    @kit = IMGKit.new(render_to_string  layout: false)
     file = @kit.to_file('/tmp/template_#{@outfit.id.to_s}.jpg')
     @outfit.photo.attach(io: File.open('/tmp/template_#{@outfit.id.to_s}.jpg'), filename: 'outfit.jpg', content_type: 'image/jpg')
 

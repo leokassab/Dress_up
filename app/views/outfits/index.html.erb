@@ -1,7 +1,6 @@
-<h1>Outfits index</h1>
+<h1  class="text-align-center">Outfits </h1>
 
 
-<%  @outfits.each do |o| %>
-  <h2> <%= o.name %></h2>
-  <%= image_tag o.photo, width: 300 %>
-<% end %>
+<div class="container">
+  <%= render "outfits_list" %>
+</div>
