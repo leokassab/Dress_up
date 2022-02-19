@@ -13,9 +13,7 @@
   </div>
   <div class="tag-index">
     <% @tags.each do |tag| %>
-      <%= link_to clothes_path(tag_id: tag.id) do %>
-        <%= render "shared/category", tag: tag %>
-      <% end %>
+      <%= render "shared/category", tag: tag %>
     <% end %>
   </div>
 </div>
