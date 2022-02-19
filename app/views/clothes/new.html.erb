@@ -1,12 +1,13 @@
 <h1 class="header">New Clothes</h1>
 
+
 <%= simple_form_for(@clothe) do |f| %>
       <%= f.text_field :name, :placeholder => 'Clothe name' %>
       <%= f.text_field :category, :placeholder => 'Category' %>
       <%= f.text_field :bookmark, :placeholder => 'Favorite clothe' %>
       <%= f.text_field :brand, :placeholder => 'Brand name' %>
       <%= f.text_field :size, :placeholder => 'Size' %>
-      <%= f.text_field :colour, :placeholder => 'colour' %>
+      <%= f.text_field :color, :placeholder => 'colour' %>
       <%= f.text_field :material, :placeholder => 'material' %>
       <%= f.text_field :product_ref, :placeholder => 'product ref' %>
   <div>
@@ -15,9 +16,7 @@
     <div class="file-select mt-5">
       <label  class="btn btn-primary">
         Add a file !
-        <span style="display:none;">
-          <%= f.input :photo, as: :file %>
-        </span>
+        <input type="file" name="image" accept="image/*" capture="environment">
       </label>
     </div>
   </div>
