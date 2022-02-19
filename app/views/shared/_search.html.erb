@@ -1,4 +1,4 @@
-<div class="search-bar">
+<div class="search-bar" data-search-clothes-target="searchbar" >
   <div class="loup">
     <%= form_with url: clothes_path, method: :get,
       html: { data: { search_clothes_target: 'form' } } do |f| %>
@@ -10,7 +10,7 @@
                         action: 'keyup->search-clothes#update' } %>
       <% end %>
   </div>
-  <div class="filter">
+  <div class="filter" data-action="click->search-clothes#displayFilters">
     <i class="fas fa-filter"></i>
   </div>
 </div>

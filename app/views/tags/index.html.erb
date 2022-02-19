@@ -1,5 +1,19 @@
-<h1>Tags index</h1>
-
-<% @tags.each do |t| %>
-  <h2><%= t.name %></h2>
-<% end %>
+<div class="container" data-controller="search-clothes">
+  <div class="search">
+      <%= render "shared/search" %>
+  </div>
+  <div class="dot">
+    <%= link_to clothes_path do  %>
+      <p>Clothes</p>
+    <% end %>
+    <%= link_to outfits_path do %>
+      <p>Outfits</p>
+    <% end %>
+    <p class="active-index">Tags</p>
+  </div>
+  <div class="tag-index">
+    <% @tags.each do |tag| %>
+      <%= render "shared/category", tag: tag %>
+    <% end %>
+  </div>
+</div>
