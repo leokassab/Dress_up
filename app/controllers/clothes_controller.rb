@@ -56,17 +56,16 @@ class ClothesController < ApplicationController
     @clothes = Clothe.all
     colors = params[:search][:colors]
     categories = params[:search][:categories]
-    # tags = params ...
-    # raise
+    tags = params[:search][:tags]
     if colors
       @clothes = @clothes.where(color: colors)
     end
-    # # raise
     if categories
       @clothes = @clothes.where(category: categories)
-      # raise
     end
-    # raise
+    if tags
+      @clothes = @clothes.joins(:clothes_tags).where(clothes_tags: {tag: tags})
+    end
     render :index
   end
 

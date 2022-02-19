@@ -2,6 +2,7 @@
   <div class="search">
       <%= render "shared/search" %>
   </div>
+
   <div class="dot">
     <p class="active-index">Clothes</p>
     <%= link_to outfits_path do  %>
@@ -18,6 +19,8 @@
     <%= f.submit "apply filter" %>
     <% end %>
   </div>
+
+  <%= render "shared/filters" %>
+
   <%= render "clothes_list" %>
 </div>
-<div></div>
