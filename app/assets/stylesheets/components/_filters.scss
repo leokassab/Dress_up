@@ -8,22 +8,22 @@ i {
   color: white;
 }
 
-.category-wrapper {
+.color-wrapper {
   display: grid;
   grid-template-columns: repeat(4, 2fr);
   grid-gap: 10px 10px !important;
 }
 
-.category-item {
+.color-item {
   flex: 0 0 30%;
 }
 
-.category-selector {
+.color-selector {
   position: absolute;
   transform: scale(0);
 }
 
-.category-selector + label {
+.color-selector + label {
   display: block;
   cursor: pointer;
   box-sizing: border-box;
@@ -38,7 +38,7 @@ i {
   color: transparent !important;
 }
 
-.category-selector:checked + label {
+.color-selector:checked + label {
   color: transparent !important;
   border: 1px solid #EAEAEA;
 }
@@ -73,4 +73,28 @@ input[color="navy"] + label {
 
 input[color="cream"] + label {
   background-color: wheat;
+}
+
+.cate-wraper {
+  display: flex;
+}
+
+.cate-item {
+  flex: 0 0 30%;
+}
+
+.cate-flag {
+  text-align: center;
+  color: white;
+  background-color: $light-gray;
+  width: 100px;
+  border-radius: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-right: 20px;
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }

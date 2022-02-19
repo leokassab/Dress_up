@@ -9,15 +9,18 @@
     <%= f.input :colors,
             as: :check_boxes,
             collection_wrapper_tag: 'div',
-            collection_wrapper_class: 'category-wrapper',
-            item_wrapper_class: 'category-item',
-            input_html: {class: 'category-selector'},
+            collection_wrapper_class: 'color-wrapper',
+            item_wrapper_class: 'color-item',
+            input_html: {class: 'color-selector'},
             collection: Clothe.all.pluck(:color).uniq.map { |color| [color, color, color: color ] },
             include_hidden: false %>
             <%# LE premier oitem c'est le label, le second l'id et le dernier les iptions hmtl de l'input %>
     <%= f.input :categories,
             as: :check_boxes,
             collection: Clothe.all.pluck(:category, :category).uniq,
+            collection_wrapper_class: 'cate-wrapper',
+            item_wrapper_class: 'cate-flag',
+            input_html: {class: 'cate-flag'},
             include_hidden: false %>
     <%= f.input :tags, as: :check_boxes, collection: Tag.pluck(:name, :id), include_hidden: false %>
     <%= f.submit "apply filter" %>
