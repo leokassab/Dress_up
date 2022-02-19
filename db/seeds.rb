@@ -57,7 +57,7 @@ puts "Creating shops ..."
 kith = Shop.new(
   brand_name: "Kith",
   url_website: "https://eu.kith.com/",
-  description: "New collection Spring 2022"
+  description: "Spring 2022"
 )
 kith.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665789/Clothes/Shop/kith_logo_srnap9.jpg"), filename: "shop_kith_1.jpeg", content_type: 'image/jpeg')
 kith.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644951204/Clothes/Shop/kith_collection_vmg1ye.jpg"), filename: "shop_kith_2.jpeg", content_type: 'image/jpeg')
@@ -66,7 +66,7 @@ kith.save!
 jordan = Shop.new(
   brand_name: "Jordan",
   url_website: "nike.com/fr/jordan",
-  description: "blablabla"
+  description: "Spring 2022"
 )
 jordan.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665879/Clothes/Shop/jordan_logo_hr97h7.jpg"), filename: "shop_jordan_1.jpeg", content_type: 'image/jpeg')
 jordan.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644951204/Clothes/Shop/jordan_collection_gdytyx.jpg"), filename: "shop_jordan_2.jpeg", content_type: 'image/jpeg')
@@ -866,7 +866,7 @@ kith_legs_short = Clothe.new(
   category: "Legs",
   bookmark: false,
   size: "L",
-  color: "rey",
+  color: "Grey",
   material: "coton",
   product_ref: rand(1..1000000),
   user_id: 1,
@@ -896,7 +896,7 @@ Clothe.all.each do |clothe|
   puts "#{clothe.id}_ #{clothe.brand} - #{clothe.name}"
 end
 
-puts "--------------------------------------------------------------------------"
+puts "-------------------------------------------------------------------------"
 puts "Creating tag clothes ..."
 
 Tag.create(
