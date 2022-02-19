@@ -813,7 +813,7 @@ ysl_legs_camo = Clothe.new(
   shop_id: 2,
   bought: false
 )
-ysl_legs_camo.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1645266687/Clothes/Shop/kit-hat-bob_logo_q39fvi.png"), filename: "clothe #{ysl_legs_camo.id}.jpeg", content_type: 'image/jpeg')
+ysl_legs_camo.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1645272708/Clothes/Shop/kith-legs-shortYSL_j8zlhu.png"), filename: "clothe #{ysl_legs_camo.id}.jpeg", content_type: 'image/jpeg')
 ysl_legs_camo.save!
 
 kith_bleu_jean = Clothe.new(
@@ -904,6 +904,7 @@ Tag.create(
   user_id: 1
 )
 
+
 Tag.create(
   name: "T-shirts",
   user_id: 1
@@ -926,6 +927,21 @@ Tag.create(
 
 Tag.create(
   name: "5 stars",
+  user_id: 1
+)
+
+Tag.create(
+  name: "Night",
+  user_id: 1
+)
+
+Tag.create(
+  name: "Office",
+  user_id: 1
+)
+
+Tag.create(
+  name: "Hollyday",
   user_id: 1
 )
 
