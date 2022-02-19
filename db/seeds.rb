@@ -878,7 +878,7 @@ kith_legs_short.save!
 
 kith_legs_satin = Clothe.new(
   name: "Satin's pant",
-  category: "Hat",
+  category: "Legs",
   bookmark: false,
   size: "L",
   color: "black",
