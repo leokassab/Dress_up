@@ -866,7 +866,7 @@ kith_legs_short = Clothe.new(
   category: "Legs",
   bookmark: false,
   size: "L",
-  color: "Grey",
+  color: "rey",
   material: "coton",
   product_ref: rand(1..1000000),
   user_id: 1,
