@@ -1,0 +1,13 @@
+<div class="d-none" data-search-clothes-target="cross">
+  <i class="fas fa-times" data-action="click->search-clothes#displayFilters"></i>
+</div>
+
+<div class="filter">
+    <%= simple_form_for :search, url: filter_path, method: :get, html: { class: "d-none", data: { search_clothes_target: 'filters' } }  do |f| %>
+    <%= f.input :colors, as: :check_boxes, collection: Clothe.all.pluck(:color, :color).uniq, include_hidden: false %>
+    <%= f.input :categories, as: :check_boxes, collection: Clothe.all.pluck(:category, :category).uniq, include_hidden: false %>
+    <%= f.input :tags, as: :check_boxes, collection: Tag.pluck(:name, :id), include_hidden: false %>
+
+    <%= f.submit "apply filter" %>
+    <% end %>
+</div>
