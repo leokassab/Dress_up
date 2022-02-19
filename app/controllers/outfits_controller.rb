@@ -41,6 +41,10 @@ class OutfitsController < ApplicationController
   end
 
   def show
+    @ids =[]
+    ClothesOutfit.where(outfit_id: @outfit.id).order(id: :asc).each do |el|
+      @ids << Clothe.find(el.clothe_id)
+    end
   end
 
   def index

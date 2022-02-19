@@ -1,3 +1,25 @@
-<h1>show outfit</h1>
 
-<%= cl_image_tag @outfit.photo.key %>
+
+<div id="outfit-show" class="container" >
+  <h2> <%= @outfit.name %> </h2>
+  <div class="show-pic" style="background-image: url('<%= cl_image_path @outfit.photo.key, width: 400, crop: :fill %>')">
+  </div>
+  <div class="button-add-avatar">
+    <%= link_to "Try on avatar"%>
+  </div>
+
+  <div class="clothes_outfit">
+    <div class="card-section">
+      <% @ids.each do |clothe| %>
+        <div class="card-product">
+          <% if clothe.photo.attached? %>
+            <%= link_to clothe_path(clothe) do %>
+              <div class="product-photo" style="background-image: url('<%= cl_image_path clothe.photo.key, width: 120 %>')">
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
