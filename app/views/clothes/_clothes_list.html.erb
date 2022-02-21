@@ -10,17 +10,14 @@
               </div>
             <% end %>
           <% end %>
-              <div class="favorite" data-controller="favorite-clothe">
-                <% if clothe.bookmark %>
-                  <%= icon 'fas', 'heart', data: { cloth_id: clothe.id, action: 'click->favorite-clothe#favorite'} %>
-                <% else %>
-                  <%= icon 'far', 'heart', data: { cloth_id: clothe.id, action: 'click->favorite-clothe#favorite'} %>
-                <% end %>
-              </div>
+            <div class="favorite" data-controller="favorite-clothe">
+              <% if clothe.bookmark %>
+                <%= icon 'fas', 'heart', data: { cloth_id: clothe.id, action: 'click->favorite-clothe#favorite'} %>
+              <% else %>
+                <%= icon 'far', 'heart', data: { cloth_id: clothe.id, action: 'click->favorite-clothe#favorite'} %>
+              <% end %>
+            </div>
         </div>
       <% end %>
     </div>
-  </div>
-
-  <div style="background-image: url('<%= cl_image_path Clothe.first.photo.key, height: 120, width: 120, crop: :fill %>')">
   </div>
