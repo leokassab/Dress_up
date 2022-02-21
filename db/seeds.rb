@@ -802,18 +802,18 @@ kith_bob_blue.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/im
 kith_bob_blue.save!
 
 ysl_legs_camo = Clothe.new(
-  name: "YSL short camo",
+  name: "YSL jogging white",
   category: "Leg",
   bookmark: false,
   size: "L",
-  color: "camo",
+  color: "white",
   material: "satin",
   product_ref: rand(1..1000000),
   user_id: 1,
   shop_id: 2,
   bought: false
 )
-ysl_legs_camo.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1645272708/Clothes/Shop/kith-legs-shortYSL_j8zlhu.png"), filename: "clothe #{ysl_legs_camo.id}.jpeg", content_type: 'image/jpeg')
+ysl_legs_camo.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1645470301/Clothes/Shop/PA47122-GRY-3886_2048x-removebg-preview_1_le7d26.png"), filename: "clothe #{ysl_legs_camo.id}.jpeg", content_type: 'image/jpeg')
 ysl_legs_camo.save!
 
 kith_bleu_jean = Clothe.new(
@@ -862,18 +862,18 @@ kith_legs_cargo_kaki.photo.attach(io: URI.open("https://res.cloudinary.com/detki
 kith_legs_cargo_kaki.save!
 
 kith_legs_short = Clothe.new(
-  name: "Short cargo grey",
+  name: "Pant cargo black",
   category: "Leg",
   bookmark: false,
   size: "L",
-  color: "Grey",
+  color: "black",
   material: "coton",
   product_ref: rand(1..1000000),
   user_id: 1,
   shop_id: 2,
   bought: false
 )
-kith_legs_short.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1645266686/Clothes/Shop/kith-legs-short_ewpzio.png"), filename: "clothe #{kith_legs_short.id}.jpeg", content_type: 'image/jpeg')
+kith_legs_short.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1645470278/Clothes/Shop/29028-Metric-Insulated-Pant-Black-F21_2048x-removebg-preview_1_kvioqy.png"), filename: "clothe #{kith_legs_short.id}.jpeg", content_type: 'image/jpeg')
 kith_legs_short.save!
 
 kith_legs_satin = Clothe.new(
