@@ -803,7 +803,7 @@ kith_bob_blue.save!
 
 ysl_legs_camo = Clothe.new(
   name: "YSL short camo",
-  category: "legs",
+  category: "Legs",
   bookmark: false,
   size: "L",
   color: "camo",
