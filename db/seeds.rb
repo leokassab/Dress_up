@@ -803,7 +803,7 @@ kith_bob_blue.save!
 
 ysl_legs_camo = Clothe.new(
   name: "YSL short camo",
-  category: "Legs",
+  category: "Leg",
   bookmark: false,
   size: "L",
   color: "camo",
@@ -818,7 +818,7 @@ ysl_legs_camo.save!
 
 kith_bleu_jean = Clothe.new(
   name: "Bleu jean",
-  category: "Legs",
+  category: "Leg",
   bookmark: false,
   size: "L",
   color: "navy",
@@ -833,7 +833,7 @@ kith_bleu_jean.save!
 
 kith_legs_cargo = Clothe.new(
   name: "Pant Cargo Grey",
-  category: "Legs",
+  category: "Leg",
   bookmark: false,
   size: "L",
   color: "grey",
@@ -848,7 +848,7 @@ kith_legs_cargo.save!
 
 kith_legs_cargo_kaki = Clothe.new(
   name: "Pant Cargo Kaki",
-  category: "Legs",
+  category: "Leg",
   bookmark: false,
   size: "L",
   color: "kaki",
@@ -863,7 +863,7 @@ kith_legs_cargo_kaki.save!
 
 kith_legs_short = Clothe.new(
   name: "Short cargo grey",
-  category: "Legs",
+  category: "Leg",
   bookmark: false,
   size: "L",
   color: "Grey",
@@ -878,7 +878,7 @@ kith_legs_short.save!
 
 kith_legs_satin = Clothe.new(
   name: "Satin's pant",
-  category: "Legs",
+  category: "Leg",
   bookmark: false,
   size: "L",
   color: "black",
