@@ -1,6 +1,6 @@
 <div data-search-clothes-target="list">
     <div class="card-section">
-      <% @clothes.sort.each do |clothe| %>
+      <% @clothes.where(bought: true).sort.each do |clothe| %>
         <div class="card-product">
           <% if clothe.photo.attached? %>
             <%= link_to clothe_path(clothe) do %>
