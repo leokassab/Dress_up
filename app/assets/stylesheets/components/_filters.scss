@@ -45,6 +45,7 @@
 
 input[color="blue"] + label {
   background-color: blue;
+  opacity: 60%;
 }
 
 input[color="black"] + label {
@@ -53,6 +54,10 @@ input[color="black"] + label {
 
 input[color="red"] + label {
   background-color: red;
+}
+
+input[color="camo"] + label {
+  background-color: darkgreen;
 }
 
 input[color="grey"] + label {
@@ -75,26 +80,64 @@ input[color="cream"] + label {
   background-color: wheat;
 }
 
-.cate-wraper {
-  display: flex;
+input[color="yellow"] + label {
+  background-color: yellow;
 }
 
-.cate-item {
-  flex: 0 0 30%;
+input[color="purple"] + label {
+  background-color: purple;
 }
 
-.cate-flag {
-  text-align: center;
-  color: white;
-  background-color: $light-gray;
+input[color="kaki"] + label {
+  background-color: darkolivegreen;
+}
+
+input[color="pink"] + label {
+  background-color: pink;
+}
+
+.tags-item {
+  display: inline-block;
+}
+
+.tags-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.tags-selector + label {
+  cursor: pointer;
+  display: inline-block;
   width: 100px;
   border-radius: 12px;
   padding-top: 10px;
   padding-bottom: 10px;
+  margin-bottom: 10px;
   margin-right: 20px;
-  a {
-    &:hover {
-      text-decoration: none;
-    }
-  }
+  text-align: center;
+  color: rgba(124, 126, 134, 1);
+  background-color: rgba(255, 255, 255, 0.05);
+
+}
+
+.tags-selector:checked + label {
+  background-color: rgba(72, 74, 86, 1);;
+  color: white;
+}
+
+.blue-button {
+  color: white;
+  background-color: rgb(29, 96, 187);
+  opacity: 1;
+  padding: 10px 60px;
+  border-radius: 8px;
+  box-shadow: none;
+  border: none;
+  font-weight: bold ;
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -536,7 +536,7 @@ j1_off_white = Clothe.new(
   category: "Foot",
   bookmark: false,
   size: "44",
-  color: "bleu",
+  color: "blue",
   material: "leather",
   product_ref: rand(1..1000000),
   user_id: 1,
