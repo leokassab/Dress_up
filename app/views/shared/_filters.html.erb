@@ -8,21 +8,32 @@
     <%= simple_form_for :search, url: filter_path, method: :get, html: { class: "d-none", data: { search_clothes_target: 'filters' } }  do |f| %>
     <%= f.input :colors,
             as: :check_boxes,
+            :label => false,
             collection_wrapper_tag: 'div',
             collection_wrapper_class: 'color-wrapper',
             item_wrapper_class: 'color-item',
             input_html: {class: 'color-selector'},
             collection: Clothe.all.pluck(:color).uniq.map { |color| [color, color, color: color ] },
             include_hidden: false %>
-            <%# LE premier oitem c'est le label, le second l'id et le dernier les iptions hmtl de l'input %>
+    <h3>Category</h3>
     <%= f.input :categories,
+            legend_tag: false,
             as: :check_boxes,
             collection: Clothe.all.pluck(:category, :category).uniq,
-            collection_wrapper_class: 'cate-wrapper',
-            item_wrapper_class: 'cate-flag',
-            input_html: {class: 'cate-flag'},
+            input_html: { class: "tags-selector" },
+            item_wrapper_class: 'tags-item',
             include_hidden: false %>
-    <%= f.input :tags, as: :check_boxes, collection: Tag.pluck(:name, :id), include_hidden: false %>
-    <%= f.submit "apply filter" %>
+    <h3>Tags</h3>
+    <%= f.input :tags,
+            as: :check_boxes,
+            legend_tag: false,
+            collection: Tag.pluck(:name, :id),
+            input_html: { class: "tags-selector" },
+            item_wrapper_class: 'tags-item',
+            include_hidden: false %>
+    <div class="submit">
+      <%= f.submit "Apply filter",
+              class: "blue-button" %>
+    </div>
     <% end %>
 </div>
