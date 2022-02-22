@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://github.com/wkhtmltopdf/wkhtmltopdf/releases/0.12.5/
+HostUrl=https://objects.githubusercontent.com/github-production-release-asset-2e65be/271714/628ec626-6e42-11e8-941b-3a6829f29d9d?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20220222%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220222T190219Z&X-Amz-Expires=300&X-Amz-Signature=c9d0d131193967c3097d08b58af028f5d6c0715a896d243824bc0794a2424a71&X-Amz-SignedHeaders=host&actor_id=89781891&key_id=0&repo_id=271714&response-content-disposition=attachment%3B%20filename%3Dwkhtmltox_0.12.5-1.bionic_amd64.deb&response-content-type=application%2Foctet-stream

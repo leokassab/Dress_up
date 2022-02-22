@@ -44,57 +44,100 @@
 }
 
 input[color="blue"] + label {
-  background-color: blue;
+  background-color: #096FD1;
+  opacity: 60%;
 }
 
 input[color="black"] + label {
-  background-color: black;
+  background-color: #000000;
 }
 
 input[color="red"] + label {
-  background-color: red;
+  background-color: #FC2E2B;
+}
+
+input[color="camo"] + label {
+  background-color: #484D2C;
 }
 
 input[color="grey"] + label {
-  background-color: grey;
+  background-color: #B1B3BB;
 }
 
 input[color="white"] + label {
-  background-color: white;
+  background-color: #EEEEF0;
 }
 
 input[color="brown"] + label {
-  background-color: brown;
+  background-color: #7D695A;
 }
 
 input[color="navy"] + label {
-  background-color: navy;
+  background-color: #25293D;
 }
 
 input[color="cream"] + label {
-  background-color: wheat;
+  background-color: #F0E3B5;
 }
 
-.cate-wraper {
-  display: flex;
+input[color="yellow"] + label {
+  background-color: #BA972C;
 }
 
-.cate-item {
-  flex: 0 0 30%;
+input[color="purple"] + label {
+  background-color: #2E1A4F;
 }
 
-.cate-flag {
-  text-align: center;
-  color: white;
-  background-color: $light-gray;
+input[color="kaki"] + label {
+  background-color: #7C7E6B;
+}
+
+input[color="pink"] + label {
+  background-color: #B58F8B;
+}
+
+.tags-item {
+  display: inline-block;
+}
+
+.tags-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.tags-selector + label {
+  cursor: pointer;
+  display: inline-block;
   width: 100px;
   border-radius: 12px;
   padding-top: 10px;
   padding-bottom: 10px;
+  margin-bottom: 10px;
   margin-right: 20px;
-  a {
-    &:hover {
-      text-decoration: none;
-    }
-  }
+  text-align: center;
+  color: rgba(124, 126, 134, 1);
+  background-color: rgba(255, 255, 255, 0.05);
+
+}
+
+.tags-selector:checked + label {
+  background-color: rgba(72, 74, 86, 1);;
+  color: white;
+}
+
+.blue-button {
+  color: white;
+  background-color: rgb(29, 96, 187);
+  opacity: 1;
+  padding: 10px 60px;
+  border-radius: 8px;
+  box-shadow: none;
+  border: none;
+  font-weight: bold ;
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

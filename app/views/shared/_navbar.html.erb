@@ -3,29 +3,29 @@
     <% if user_signed_in? %>
       <li class="nav-item active">
         <%= link_to root_path, class: "nav-link"  do %>
-          <i class="fas fa-home"></i>
-        <% end %>
-      </li>
-      <li class="nav-item">
-        <%= link_to clothes_path, class: "nav-link"  do %>
-          <i class="fas fa-tshirt"></i>
-        <% end %>
-      </li>
-      <li class="nav-item">
-        <%= link_to new_clothe_path, class: "nav-link"  do %>
-        <i class="fas fa-plus"></i>
+          <%= image_tag("Home 3.png") %>
         <% end %>
       </li>
       <li class="nav-item">
         <%= link_to avatar_path, class: "nav-link"  do %>
-          <i class="fas fa-male"></i>
+          <%= image_tag("Profile Octagon.png") %>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to new_clothe_path, class: "nav-link"  do %>
+          <%= image_tag("Group 459.png") %>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to clothes_path, class: "nav-link"  do %>
+          <%= image_tag("Vector.png") %>
         <% end %>
       </li>
 
 
       <li class="nav-item">
         <%= link_to shops_path, class: "nav-link"  do %>
-          <i class="fas fa-shopping-bag"></i>
+          <%= image_tag("Bag 4.png") %>
         <% end %>
       </li>
 
