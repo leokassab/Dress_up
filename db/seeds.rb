@@ -588,7 +588,7 @@ j1_sb_ts = Clothe.new(
   shop_id: 2,
   bought: false
 )
-j1_sb_ts.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1645266686/Clothes/Shop/kith-ts-AJ1L_zh8g9c.png"), filename: "clothe #{j1_sb_ts.id}.jpeg", content_type: 'image/jpeg')
+j1_sb_ts.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1645553829/Clothes/Shop/1_rt7zc7.png"), filename: "clothe #{j1_sb_ts.id}.jpeg", content_type: 'image/jpeg')
 j1_sb_ts.save!
 
 loewe_tshirt = Clothe.new(
