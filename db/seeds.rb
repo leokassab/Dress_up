@@ -75,7 +75,7 @@ jordan.save!
 nike = Shop.new(
   brand_name: "Nike",
   url_website: "nike.com/fr",
-  description: "blablabla"
+  description: "Summer 2022"
 )
 nike.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665790/Clothes/Shop/nike_logo_ccnpma.jpg"), filename: "shop_nike_1.jpeg", content_type: 'image/jpeg')
 nike.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644951204/Clothes/Shop/nike_colleciton_wjbg5j.webp"), filename: "shop_nike_2.jpeg", content_type: 'image/jpeg')
@@ -84,7 +84,7 @@ nike.save!
 diesel = Shop.new(
   brand_name: "Diesel",
   url_website: "https://fr.diesel.com/fr/?utm_source=google&utm_medium=cpc&utm_campaign=conversion-ADW/FR/FR/DIESEL/SRC/BRN/BRAND/U/NONE/EM/DESKTOP--BRAND/U/GENERAL/GENERAL_cross_brand&utm_content=diesel--e&gclsrc=ds",
-  description: "blablabla"
+  description: "Winter 2022"
 )
 diesel.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665992/Clothes/Shop/diesel_logo_m7quin.png"), filename: "shop_diesel_1.jpeg", content_type: 'image/jpeg')
 diesel.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644951204/Clothes/Shop/diesel_collection_bmpbtz.png"), filename: "shop_diesel_2.jpeg", content_type: 'image/jpeg')
@@ -93,7 +93,7 @@ diesel.save!
 dior = Shop.new(
   brand_name: "Dior",
   url_website: "https://www.dior.com/fr_fr/fashion",
-  description: "blablabla"
+  description: "Spring 2022"
 )
 dior.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665789/Clothes/Shop/dior_logo_ap4qfi.jpg"), filename: "shop_dior_1.jpeg", content_type: 'image/jpeg')
 dior.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644951204/Clothes/Shop/dior_collection_bt5ba3.jpg"), filename: "shop_dior_2.jpeg", content_type: 'image/jpeg')
@@ -102,7 +102,7 @@ dior.save!
 gucci = Shop.new(
   brand_name: "Gucci",
   url_website: "https://www.gucci.com/fr/fr/?gclsrc=aw.ds&gclsrc=ds",
-  description: "blablabla"
+  description: "The only one"
 )
 gucci.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665823/Clothes/Shop/gucci_logo_wclpbx.jpg"), filename: "shop_gucci_1.jpeg", content_type: 'image/jpeg')
 gucci.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644952498/Clothes/Shop/gucci_collection_olcdy4.jpg"), filename: "shop_gucci_2.jpeg", content_type: 'image/jpeg')
@@ -111,7 +111,7 @@ gucci.save!
 louisvuitton = Shop.new(
   brand_name: "Louis Vuitton",
   url_website: "https://fr.louisvuitton.com/fra-fr/homepage?campaign=sem_LV_FLG_FRA_ALWON_MIXT_OTHER_OnGoing_EC_BREX_GTAD_MUL_FRA_EUR_EXTM_&utm_source=google&utm_medium=cpc&utm_campaign=LV_FLG_FRA_ALWON_MIXT_OTHER_OnGoing_EC_BREX_GTAD_MUL_FRA_EUR_EXTM_&utm_term=louis%20vuitton",
-  description: "blablabla"
+  description: "Spring 2022"
 )
 louisvuitton.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644665858/Clothes/Shop/louisV_logo_emcjbj.jpg"), filename: "shop_louisvuitton_1.jpeg", content_type: 'image/jpeg')
 louisvuitton.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644951204/Clothes/Shop/lv_collection_wyqjzl.jpg"), filename: "shop_louisvuitton_2.jpeg", content_type: 'image/jpeg')
@@ -120,7 +120,7 @@ louisvuitton.save!
 zara = Shop.new(
   brand_name: "Zara",
   url_website: "https://www.zara.com/fr/",
-  description: "blablabla"
+  description: "Spring 2022"
 )
 zara.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644678204/Clothes/Shop/Zara_logo_zyqkg2.png"), filename: "shop_zara_1.jpeg", content_type: 'image/jpeg')
 zara.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644950361/Clothes/Shop/zara_collection_xobfte_ejwiwi.jpg"), filename: "shop_zara_2.jpeg", content_type: 'image/jpeg')
@@ -129,7 +129,7 @@ zara.save!
 rhude = Shop.new(
   brand_name: "Rhude",
   url_website: "https://www.rhude.com/fr/",
-  description: "blablabla"
+  description: "Spring 2022"
 )
 rhude.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644683301/Clothes/Shop/rhude_logo_bypmem.webp"), filename: "shop_rhude_1.jpeg", content_type: 'image/jpeg')
 rhude.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644951204/Clothes/Shop/rhude_collection_yxgz0w.jpg"), filename: "shop_rhude_2.jpeg", content_type: 'image/jpeg')
@@ -138,7 +138,7 @@ rhude.save!
 adidas = Shop.new(
   brand_name: "Adidas",
   url_website: "https://www.adidas.fr/hommes?cm_mmc=AdieSEM_Google-_-adidas-Brand-B-Exact-HVU-_-Brand-adidas-Men-RLSA-_-adidas&cm_mmca1=FR&cm_mmca2=e&ds_kid=43700052113502612&af_reengagement_window=30d&is_retargeting=true&pid=googleadwords_temp&c=adidas-Brand-B-Exact-HVU&af_channel=Search&gclsrc=ds&gclsrc=ds",
-  description: "blablabla"
+  description: "Spring 2022"
 )
 adidas.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644683300/Clothes/Shop/adidas_logo_bz8j2w.png"), filename: "shop_adidas_1.jpeg", content_type: 'image/jpeg')
 adidas.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644951205/Clothes/Shop/adidas-collection_ejqchl.jpg"), filename: "shop_adidas_2.jpeg", content_type: 'image/jpeg')
@@ -147,7 +147,7 @@ adidas.save!
 celine = Shop.new(
   brand_name: "Celine",
   url_website: "celine.com/fr-fr/home?gclid=Cj0KCQiA0p2QBhDvARIsAACSOOO7IFOqkN2KN4G9oLnXmlIvTx9iCBFGVRAIF91eb4waehJQzFQKZKoaAlefEALw_wcB",
-  description: "blablabla"
+  description: "Spring 2022"
 )
 celine.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644683301/Clothes/Shop/Celine_logo_wazjkg.jpg"), filename: "shop_celine_1.jpeg", content_type: 'image/jpeg')
 celine.photos.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1644951204/Clothes/Shop/celine__colleciton_n4equl.jpg"), filename: "shop_celine_2.jpeg", content_type: 'image/jpeg')
