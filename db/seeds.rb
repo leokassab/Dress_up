@@ -513,7 +513,7 @@ aj1_travis_scott = Clothe.new(
   shop_id: 1,
   bought: false
 )
-aj1_travis_scott.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1645266685/Clothes/Shop/kith-foot-tsAJ1h_guoinf.png"), filename: "clothe #{aj1_travis_scott.id}.jpeg", content_type: 'image/jpeg')
+aj1_travis_scott.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1645553557/Clothes/Shop/2_vqobdr.png"), filename: "clothe #{aj1_travis_scott.id}.jpeg", content_type: 'image/jpeg')
 aj1_travis_scott.save!
 
 j6_travis_scott = Clothe.new(
@@ -528,7 +528,7 @@ j6_travis_scott = Clothe.new(
   shop_id: 1,
   bought: false
 )
-j6_travis_scott.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1645266686/Clothes/Shop/kith-foot-tsJ6_vb9nkv.png"), filename: "clothe #{j6_travis_scott.id}.jpeg", content_type: 'image/jpeg')
+j6_travis_scott.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1645553557/Clothes/Shop/3_rdhlsk.png"), filename: "clothe #{j6_travis_scott.id}.jpeg", content_type: 'image/jpeg')
 j6_travis_scott.save!
 
 j1_off_white = Clothe.new(
@@ -543,7 +543,7 @@ j1_off_white = Clothe.new(
   shop_id: 1,
   bought: false
 )
-j1_off_white.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1645266685/Clothes/Shop/kith-_hfm1oz.png"), filename: "clothe #{j1_off_white.id}.jpeg", content_type: 'image/jpeg')
+j1_off_white.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1645553557/Clothes/Shop/4_oeaoom.png"), filename: "clothe #{j1_off_white.id}.jpeg", content_type: 'image/jpeg')
 j1_off_white.save!
 
 j4_bred = Clothe.new(
@@ -558,7 +558,7 @@ j4_bred = Clothe.new(
   shop_id: 2,
   bought: false
 )
-j4_bred.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1645266686/Clothes/Shop/kith-foot-AJ3_nk5tlv.png"), filename: "clothe #{j4_bred.id}.jpeg", content_type: 'image/jpeg')
+j4_bred.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1645553557/Clothes/Shop/6_zpingd.png"), filename: "clothe #{j4_bred.id}.jpeg", content_type: 'image/jpeg')
 j4_bred.save!
 
 j1_maison_chateau_rouge = Clothe.new(
@@ -573,7 +573,7 @@ j1_maison_chateau_rouge = Clothe.new(
   shop_id: 2,
   bought: false
 )
-j1_maison_chateau_rouge.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1645266686/Clothes/Shop/kith-foot-AJ1MCR_h1nbos.png"), filename: "clothe #{j1_maison_chateau_rouge.id}.jpeg", content_type: 'image/jpeg')
+j1_maison_chateau_rouge.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1645553557/Clothes/Shop/5_ylgx8p.png"), filename: "clothe #{j1_maison_chateau_rouge.id}.jpeg", content_type: 'image/jpeg')
 j1_maison_chateau_rouge.save!
 
 j1_sb_ts = Clothe.new(
@@ -588,7 +588,7 @@ j1_sb_ts = Clothe.new(
   shop_id: 2,
   bought: false
 )
-j1_sb_ts.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1645266686/Clothes/Shop/kith-ts-AJ1L_zh8g9c.png"), filename: "clothe #{j1_sb_ts.id}.jpeg", content_type: 'image/jpeg')
+j1_sb_ts.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1645553557/Clothes/Shop/1_rt7zc7.png"), filename: "clothe #{j1_sb_ts.id}.jpeg", content_type: 'image/jpeg')
 j1_sb_ts.save!
 
 loewe_tshirt = Clothe.new(
