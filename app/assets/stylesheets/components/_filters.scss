@@ -2,6 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  i {
+    font-size: 20px;
+    color: gray;
+  }
 }
 
 .white {
@@ -140,4 +144,9 @@ input[color="pink"] + label {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.category-wrapper h3 {
+  margin-top: 20px;
+  margin-bottom: 15px;
 }
