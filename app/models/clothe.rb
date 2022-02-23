@@ -5,5 +5,5 @@ class Clothe < ApplicationRecord
   has_many :clothes_tags
   has_one_attached :photo
   has_many :tags, through: :clothes_tags
-  delegate :brand, to: :shop
+  delegate :brand, to: :shop, allow_nil: true
 end

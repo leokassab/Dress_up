@@ -13,7 +13,7 @@
             collection_wrapper_class: 'color-wrapper',
             item_wrapper_class: 'color-item',
             input_html: {class: 'color-selector'},
-            collection: Clothe.all.pluck(:color).uniq.map { |color| [color, color, color: color ] },
+            collection: Clothe.all.pluck(:color).sort.uniq.map { |color| [color, color, color: color ] },
             include_hidden: false %>
     <h3>Category</h3>
     <%= f.input :categories,
