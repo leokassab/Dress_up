@@ -34,9 +34,15 @@ class OutfitsController < ApplicationController
     end
     puts(render_to_string)
     @kit = IMGKit.new(render_to_string  layout: false)
-    file = @kit.to_file('/tmp/template_#{@outfit.id.to_s}.jpg')
-    @outfit.photo.attach(io: File.open('/tmp/template_#{@outfit.id.to_s}.jpg'), filename: 'outfit.jpg', content_type: 'image/jpg')
-
+    dir = File.dirname("/tmp")
+    FileUtils.mkdir_p(dir) unless File.directory?(dir)
+    # @kit = IMGKit.new("/views/outfits/create.html.erb")
+    # test = File.open("/tmp/template_#{@outfit.id}.jpg", "w+")
+    file = @kit.to_file("/tmp/template_#{@outfit.id}.jpg")
+    # new_file = File.open("/tmp/outfit7.jpg", "ab+")
+    # file = @kit.to_file("/tmp/outfit7.jpg")
+    @outfit.photo.attach(io: File.open("/tmp/template_#{@outfit.id}.jpg"), filename: 'outfit.jpg', content_type: 'image/jpg')
+    # @outfit.photo.attach(io: File.open('/tmp/outfit7.jpg'), filename: 'outfit7.jpg', content_type: 'image/jpg')
     @outfit.save
   end
 
