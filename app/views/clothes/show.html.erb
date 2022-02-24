@@ -47,27 +47,29 @@
     <% end %></ul>
   </div>
 
-  <div class="add-tag" data-action="click->edit-tag#displayForm">
-    <p>Add Tag</p>
-    <div>
-      <%= simple_form_for [@clothe, @clothes_tag], html: { class: 'd-none', data: { edit_tag_target: 'form', action: 'edit-tag#update' } } do |f| %>
-        <%= f.association :tag,
-                          as: :check_boxes,
-                          collection: @tags,
-                          checked: @clothe.tags.ids,
-                          input_html: { class: "tag-selector" },
-                          item_wrapper_class: 'tag-item'  %>
-        <%= f.button :submit, "Save", class: "tag-submit" %>
-      <% end %>
+  <% if @clothe.bought == true %>
+    <div class="add-tag" data-action="click->edit-tag#displayForm">
+      <p>Add Tag</p>
+      <div>
+        <%= simple_form_for [@clothe, @clothes_tag], html: { class: 'd-none', data: { edit_tag_target: 'form', action: 'edit-tag#update' } } do |f| %>
+          <%= f.association :tag,
+                            as: :check_boxes,
+                            collection: @tags,
+                            checked: @clothe.tags.ids,
+                            input_html: { class: "tag-selector" },
+                            item_wrapper_class: 'tag-item'  %>
+          <%= f.button :submit, "Save", class: "tag-submit" %>
+        <% end %>
+      </div>
+      <div>
+        <%#= simple_form_for @new_tag do |f| %>
+          <%#= f.input :name %>
+          <%#= f.input_field :clothe_id, as: :hidden, value: @clothe.id %>
+          <%#= f.submit "Create a new tag", class: "tag-submit" %>
+        <%# end %>
+      </div>
     </div>
-    <div>
-      <%#= simple_form_for @new_tag do |f| %>
-        <%#= f.input :name %>
-        <%#= f.input_field :clothe_id, as: :hidden, value: @clothe.id %>
-        <%#= f.submit "Create a new tag", class: "tag-submit" %>
-      <%# end %>
-    </div>
-  </div>
+  <% end %>
 
   <div class="button-add-avatar">
     <%= link_to "Try on avatar", avatar_path(clothe_id: @clothe.id) %>
