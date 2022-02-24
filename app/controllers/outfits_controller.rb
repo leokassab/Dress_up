@@ -1,3 +1,6 @@
+require "htmlcsstoimage"
+require "open-uri"
+
 class OutfitsController < ApplicationController
   before_action :find_outfit, only: [ :show, :destroy ]
 
@@ -32,17 +35,12 @@ class OutfitsController < ApplicationController
     ClothesOutfit.where(outfit_id: @outfit.id).order(id: :asc).each do |el|
       @ids << Clothe.find(el.clothe_id)
     end
-    puts(render_to_string)
-    @kit = IMGKit.new(render_to_string  layout: false)
-    dir = File.dirname("/tmp")
-    FileUtils.mkdir_p(dir) unless File.directory?(dir)
-    # @kit = IMGKit.new("/views/outfits/create.html.erb")
-    # test = File.open("/tmp/template_#{@outfit.id}.jpg", "w+")
-    file = @kit.to_file("/tmp/template_#{@outfit.id}.jpg")
-    # new_file = File.open("/tmp/outfit7.jpg", "ab+")
-    # file = @kit.to_file("/tmp/outfit7.jpg")
-    @outfit.photo.attach(io: File.open("/tmp/template_#{@outfit.id}.jpg"), filename: 'outfit.jpg', content_type: 'image/jpg')
-    # @outfit.photo.attach(io: File.open('/tmp/outfit7.jpg'), filename: 'outfit7.jpg', content_type: 'image/jpg')
+    client = HTMLCSSToImage.new(user_id: "1ab14c93-282f-4089-af6f-ec2af53bff4e", api_key: "3d4f4b0d-143a-46ca-8793-181930abf040")
+    html = render_to_string("../views/outfits/create.html.erb", formats: :html, layout: false)
+    image = client.create_image(html)
+    file = URI.open(image.url)
+    @outfit.photo.attach(io: file, filename: 'outfit.jpg', content_type: 'image/jpg')
+
     @outfit.save
   end
 
