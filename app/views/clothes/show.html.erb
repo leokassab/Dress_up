@@ -33,12 +33,12 @@
             <i class="fas fa-trash-alt"></i>
           <% end %>
         </div>
-    <% end %>
+     <% end %>
+    </div>
 
     <div class="information-clothe" data-update-clothe-target="card">
       <%= render "clothe_information", clothe: @clothe %>
     </div>
-
 
     <ul><% @clothe.tags.each do |tag| %>
       <div class="tag-flag show-tag-flag" data-edit-tag-target="card">
@@ -61,25 +61,10 @@
           <%= f.button :submit, "Save", class: "tag-submit" %>
         <% end %>
       </div>
-      <div>
-        <%#= simple_form_for @new_tag do |f| %>
-          <%#= f.input :name %>
-          <%#= f.input_field :clothe_id, as: :hidden, value: @clothe.id %>
-          <%#= f.submit "Create a new tag", class: "tag-submit" %>
-        <%# end %>
-      </div>
     </div>
   <% end %>
 
   <div class="button-add-avatar">
     <%= link_to "Try on avatar", avatar_path(clothe_id: @clothe.id) %>
   </div>
-</div>
-
-
-<div>
-    <%# <% @tags.each do |t| %>
-      <%# Create a ClothesTag %>
-      <%# <%= link_to t.name,  clothe_clothes_tags_path(@clothe, tag_id: t), method: :post %>
-    <%# <% end %>
 </div>
