@@ -33,7 +33,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
 gem 'faker'
 gem 'imgkit'
-gem "wkhtmltoimage-binary", "0.12.4"
+# gem "wkhtmltoimage-binary", "0.12.4"
 gem 'mini_magick'
 
 gem 'autoprefixer-rails', '10.2.5'
