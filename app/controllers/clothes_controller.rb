@@ -2,8 +2,6 @@ class ClothesController < ApplicationController
 
   before_action :find_clothe, only: [ :show, :destroy, :update, :favorite]
 
-
-
   def new
     @clothe = Clothe.new
   end
@@ -36,8 +34,6 @@ class ClothesController < ApplicationController
   end
 
   def index
-
-    # COLOR = Clothe.all.pluck(:color, :color).uniq
 
     if params[:tag_id]
       @clothes = Tag.find(params[:tag_id]).clothes
