@@ -49,22 +49,22 @@
         <% if @clothe != nil && @clothe.category == "Chest" && @clothe.photo.attached? %>
           <div class="carousel-inner ">
             <div class="carousel-item active" id="<%= @clothe.id %>" data-create-clothesoutfits-target="chest">
-              <%= cl_image_tag @clothe.photo.key, style:"height: 160px;"%>
+              <%= cl_image_tag @clothe.photo.key, style:"height: 213px;"%>
             </div>
             <% @chest.each do |i| %>
               <div class="carousel-item" id="<%= i.id %>" data-create-clothesoutfits-target="chest">
-                <%= cl_image_tag i.photo.key, style:"height: 160px;" %>
+                <%= cl_image_tag i.photo.key, style:"height: 213px;" %>
               </div>
             <% end %>
           </div>
         <% else %>
           <div class="carousel-inner">
               <div class="carousel-item active" id="<%= @chest.first.id %>" data-create-clothesoutfits-target="chest">
-                <%= cl_image_tag @chest.first.photo.key,   style:"height: 160px;"%>
+                <%= cl_image_tag @chest.first.photo.key,   style:"height: 213px;"%>
               </div>
               <% @chest.last(@chest.length-1).each do |i| %>
                 <div class="carousel-item" id="<%= i.id %>" data-create-clothesoutfits-target="chest">
-                  <%= cl_image_tag i.photo.key,   style:"height: 160px;"%>
+                  <%= cl_image_tag i.photo.key,   style:"height: 213px;"%>
                 </div>
               <% end %>
             </div>
@@ -86,22 +86,22 @@
         <% if @clothe != nil && @clothe.category == "Leg" && @clothe.photo.attached? %>
           <div class="carousel-inner">
             <div class="carousel-item active" id="<%= @clothe.id %>" data-create-clothesoutfits-target="leg">
-              <%= cl_image_tag @clothe.photo.key, style:"height: 270px;" %>
+              <%= cl_image_tag @clothe.photo.key, style:"height: 283px;" %>
             </div>
             <% @leg.each do |i| %>
               <div class="carousel-item" id="<%= i.id %>" data-create-clothesoutfits-target="leg">
-                <%= cl_image_tag i.photo.key, style:"height: 270px;" %>
+                <%= cl_image_tag i.photo.key, style:"height: 283px;" %>
               </div>
             <% end %>
           </div>
         <% else %>
           <div class="carousel-inner">
               <div class="carousel-item active" id="<%= @leg.first.id %>" data-create-clothesoutfits-target="leg">
-                <%= cl_image_tag @leg.first.photo.key, style:"height: 270px;" %>
+                <%= cl_image_tag @leg.first.photo.key, style:"height: 283px;" %>
               </div>
               <% @leg.last(@leg.length-1).each do |i| %>
                 <div class="carousel-item" id="<%= i.id %>" data-create-clothesoutfits-target="leg">
-                  <%= cl_image_tag i.photo.key, style:"height: 270px;" %>
+                  <%= cl_image_tag i.photo.key, style:"height: 283px;" %>
                 </div>
               <% end %>
             </div>
