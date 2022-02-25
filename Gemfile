@@ -35,6 +35,7 @@ gem 'faker'
 gem 'imgkit'
 gem 'wkhtmltopdf-heroku', '2.12.6.0'
 gem 'mini_magick'
+gem 'htmlcsstoimage-api'
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
