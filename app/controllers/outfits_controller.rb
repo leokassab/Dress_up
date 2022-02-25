@@ -35,12 +35,16 @@ class OutfitsController < ApplicationController
     ClothesOutfit.where(outfit_id: @outfit.id).order(id: :asc).each do |el|
       @ids << Clothe.find(el.clothe_id)
     end
+
+
+    # client = HTMLCSSToImage.new
     client = HTMLCSSToImage.new(user_id: "1ab14c93-282f-4089-af6f-ec2af53bff4e", api_key: "3d4f4b0d-143a-46ca-8793-181930abf040")
     html = render_to_string("../views/outfits/create.html.erb", formats: :html, layout: false)
+    puts(html)
     image = client.create_image(html)
+    puts("---------------")
     file = URI.open(image.url)
     @outfit.photo.attach(io: file, filename: 'outfit.jpg', content_type: 'image/jpg')
-
     @outfit.save
   end
 
