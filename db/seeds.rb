@@ -21,7 +21,7 @@ User.destroy_all
 puts "Start creating DB"
 
 puts "--------------------------------------------------------------------------"
-puts "create Travis"
+puts "create Elliott"
 travis = User.create(
   email: "travis@dressup.com",
   password: "123456",
@@ -36,7 +36,7 @@ travis = User.create(
 )
 puts "Finished!"
 
-puts "create Elliott"
+puts "create Travis"
 elliott = User.create(
   email: "elliott@dressup.com",
   password: "123456",
@@ -207,7 +207,7 @@ dior_sacai_white_tshirt = Clothe.new(
   category: "Chest",
   bookmark: [true, false].sample,
   size: "L",
-  color: "red",
+  color: "white",
   material: "coton",
   product_ref: rand(1..1000000),
   user_id: 1,
@@ -221,7 +221,7 @@ kith_red_tshirt = Clothe.new(
   category: "Chest",
   bookmark: [true, false].sample,
   size: "L",
-  color: "white",
+  color: "red",
   material: "coton",
   product_ref: rand(1..1000000),
   user_id: 1,
@@ -315,12 +315,12 @@ kith_hat.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/u
 kith_hat.save!
 
 celine_pant_jean = Clothe.new(
-  name: "Celine Black Jean",
+  name: "Purple Pant",
   category: "Leg",
   bookmark: [true, false].sample,
   size: "L",
-  color: "black",
-  material: "jean",
+  color: "purple",
+  material: "coton",
   product_ref: rand(1..1000000),
   user_id: 1,
   shop_id: 11
@@ -329,11 +329,11 @@ celine_pant_jean.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf
 celine_pant_jean.save!
 
 kith_jean_black = Clothe.new(
-  name: "Kith Black Jean",
+  name: "Kith Kaki cargo",
   category: "Leg",
   bookmark: [true, false].sample,
   size: "34",
-  color: "black",
+  color: "kaki",
   material: "coton",
   product_ref: rand(1..1000000),
   user_id: 1,
@@ -343,11 +343,11 @@ kith_jean_black.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/
 kith_jean_black.save!
 
 kith_jean_black_hole = Clothe.new(
-  name: "Kith Jean Black w/ hole",
+  name: "Kith Jean crunch",
   category: "Leg",
   bookmark: [true, false].sample,
   size: "34",
-  color: "black",
+  color: "blue",
   material: "jean",
   product_ref: rand(1..1000000),
   user_id: 1,
@@ -357,11 +357,11 @@ kith_jean_black_hole.photo.attach(io: URI.open("https://res.cloudinary.com/detki
 kith_jean_black_hole.save!
 
 kith_jean_black_red = Clothe.new(
-  name: "Kith Jean Black & Red",
+  name: "Kith Brown Shino",
   category: "Leg",
   bookmark: [true, false].sample,
   size: "34",
-  color: "black",
+  color: "brown",
   material: "jean",
   product_ref: rand(1..1000000),
   user_id: 1,
