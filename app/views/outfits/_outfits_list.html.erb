@@ -1,6 +1,6 @@
 <div>
   <div class="card-section">
-    <% @outfits.sort.each do |outfit| %>
+    <% @outfits.each do |outfit| %>
       <div class="card-product">
         <% if outfit.photo.attached? %>
           <%= link_to outfit_path(outfit) do %>

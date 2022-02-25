@@ -56,7 +56,7 @@ class OutfitsController < ApplicationController
   end
 
   def index
-    @outfits = Outfit.all
+    @outfits = Outfit.all.order(id: :desc)
   end
 
   private
