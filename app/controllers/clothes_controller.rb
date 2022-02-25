@@ -36,7 +36,6 @@ class ClothesController < ApplicationController
   end
 
   def index
-
     # COLOR = Clothe.all.pluck(:color, :color).uniq
 
     if params[:tag_id]
@@ -46,7 +45,7 @@ class ClothesController < ApplicationController
     end
 
     if params[:query].present?
-      sql_query = "name ILIKE :query OR brand ILIKE :query"
+      sql_query = "name ILIKE :query OR color ILIKE :query"
       @clothes = @clothes.where(sql_query, query: "%#{params[:query]}%")
     end
 
