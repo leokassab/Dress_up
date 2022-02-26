@@ -13,8 +13,25 @@
 .product-photo {
   height: 150px;
   width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.photo {
+  height: 145px;
+  width: 145px;
+  background-size: contain;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat
+}
+
+.photo-outfit {
+  height: 145px;
+  width: 145px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat
 }
 
 .card-product-slide {

@@ -44,6 +44,7 @@
   border-radius: 10px;
   padding: 8px 0px;
   margin: 0 auto;
+  margin-top: 15px;
   a {
     color: white;
   }
@@ -61,7 +62,6 @@
   p {
     margin: 0px;
   }
-  margin-bottom: 15px;
   margin-top: 30px;
 }
 
@@ -108,5 +108,8 @@
       // box-shadow: 0 0 0 .2rem $gray-400;
     }
   }
+}
 
+.information-clothe {
+  margin-left: 22px;
 }

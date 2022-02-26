@@ -1,3 +1,6 @@
+require "htmlcsstoimage"
+require "open-uri"
+
 class OutfitsController < ApplicationController
   before_action :find_outfit, only: [ :show, :destroy ]
 
@@ -32,11 +35,16 @@ class OutfitsController < ApplicationController
     ClothesOutfit.where(outfit_id: @outfit.id).order(id: :asc).each do |el|
       @ids << Clothe.find(el.clothe_id)
     end
-    puts(render_to_string)
-    @kit = IMGKit.new(render_to_string  layout: false)
-    file = @kit.to_file('/tmp/template_#{@outfit.id.to_s}.jpg')
-    @outfit.photo.attach(io: File.open('/tmp/template_#{@outfit.id.to_s}.jpg'), filename: 'outfit.jpg', content_type: 'image/jpg')
 
+
+    # client = HTMLCSSToImage.new
+    client = HTMLCSSToImage.new(user_id: "75078c1f-710e-4eea-8410-c1da4aa5fc02", api_key: "442ef21c-7eed-4f2a-9035-475ed9c883d6")
+    html = render_to_string("../views/outfits/create.html.erb", formats: :html, layout: false)
+    puts(html)
+    image = client.create_image(html)
+    puts("---------------")
+    file = URI.open(image.url)
+    @outfit.photo.attach(io: file, filename: 'outfit.jpg', content_type: 'image/jpg')
     @outfit.save
   end
 
@@ -48,7 +56,7 @@ class OutfitsController < ApplicationController
   end
 
   def index
-    @outfits = Outfit.all
+    @outfits = Outfit.all.order(id: :desc)
   end
 
   private

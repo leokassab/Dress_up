@@ -7,12 +7,12 @@
         <% if @clothe != nil && @clothe.category == "Head" && @clothe.photo.attached? %>
           <div class="carousel-inner ">
             <div class="carousel-item active" id="<%= @clothe.id %>" data-create-clothesoutfits-target="head">
-              <%= cl_image_tag @clothe.photo.key, style:"height: 43px;"%>
+              <%= cl_image_tag @clothe.photo.key, style:"height: 40px;"%>
 
             </div>
             <% @head.each do |i| %>
               <div class="carousel-item" id="<%= i.id %>" data-create-clothesoutfits-target="head">
-                <%= cl_image_tag i.photo.key, style:"height: 43px;" %>
+                <%= cl_image_tag i.photo.key, style:"height: 40px;" %>
 
               </div>
             <% end %>
@@ -20,12 +20,12 @@
         <% else %>
           <div class="carousel-inner">
               <div class="carousel-item active" id="<%= @head.first.id %>" data-create-clothesoutfits-target="head">
-                <%= cl_image_tag @head.first.photo.key,   style:"height: 43px;"%>
+                <%= cl_image_tag @head.first.photo.key,   style:"height: 40px;"%>
 
               </div>
               <% @head.last(@head.length-1).each do |i| %>
                 <div class="carousel-item" id="<%= i.id %>" data-create-clothesoutfits-target="head">
-                  <%= cl_image_tag i.photo.key,   style:"height: 43px;"%>
+                  <%= cl_image_tag i.photo.key,   style:"height: 40px;"%>
 
                 </div>
               <% end %>
@@ -42,29 +42,28 @@
         </a>
       </div>
 
-
     <%# Carousel des Hauts %>
 
       <div id="carouselExampleControls1" class="carousel slide" data-interval="false" >
         <% if @clothe != nil && @clothe.category == "Chest" && @clothe.photo.attached? %>
           <div class="carousel-inner ">
             <div class="carousel-item active" id="<%= @clothe.id %>" data-create-clothesoutfits-target="chest">
-              <%= cl_image_tag @clothe.photo.key, style:"height: 200px;"%>
+              <%= cl_image_tag @clothe.photo.key, style:"height: 213px;"%>
             </div>
             <% @chest.each do |i| %>
               <div class="carousel-item" id="<%= i.id %>" data-create-clothesoutfits-target="chest">
-                <%= cl_image_tag i.photo.key, style:"height: 200px;" %>
+                <%= cl_image_tag i.photo.key, style:"height: 213px;" %>
               </div>
             <% end %>
           </div>
         <% else %>
           <div class="carousel-inner">
               <div class="carousel-item active" id="<%= @chest.first.id %>" data-create-clothesoutfits-target="chest">
-                <%= cl_image_tag @chest.first.photo.key,   style:"height: 200px;"%>
+                <%= cl_image_tag @chest.first.photo.key,   style:"height: 213px;"%>
               </div>
               <% @chest.last(@chest.length-1).each do |i| %>
                 <div class="carousel-item" id="<%= i.id %>" data-create-clothesoutfits-target="chest">
-                  <%= cl_image_tag i.photo.key,   style:"height: 200px;"%>
+                  <%= cl_image_tag i.photo.key,   style:"height: 213px;"%>
                 </div>
               <% end %>
             </div>
@@ -86,22 +85,22 @@
         <% if @clothe != nil && @clothe.category == "Leg" && @clothe.photo.attached? %>
           <div class="carousel-inner">
             <div class="carousel-item active" id="<%= @clothe.id %>" data-create-clothesoutfits-target="leg">
-              <%= cl_image_tag @clothe.photo.key, style:"height: 270px;" %>
+              <%= cl_image_tag @clothe.photo.key, style:"height: 283px;" %>
             </div>
             <% @leg.each do |i| %>
               <div class="carousel-item" id="<%= i.id %>" data-create-clothesoutfits-target="leg">
-                <%= cl_image_tag i.photo.key, style:"height: 270px;" %>
+                <%= cl_image_tag i.photo.key, style:"height: 283px;" %>
               </div>
             <% end %>
           </div>
         <% else %>
           <div class="carousel-inner">
               <div class="carousel-item active" id="<%= @leg.first.id %>" data-create-clothesoutfits-target="leg">
-                <%= cl_image_tag @leg.first.photo.key, style:"height: 270px;" %>
+                <%= cl_image_tag @leg.first.photo.key, style:"height: 283px;" %>
               </div>
               <% @leg.last(@leg.length-1).each do |i| %>
                 <div class="carousel-item" id="<%= i.id %>" data-create-clothesoutfits-target="leg">
-                  <%= cl_image_tag i.photo.key, style:"height: 270px;" %>
+                  <%= cl_image_tag i.photo.key, style:"height: 283px;" %>
                 </div>
               <% end %>
             </div>
@@ -154,21 +153,25 @@
       </div>
   </div>
   <div data-search-clothes-target="avatar" class=" container text-center button-outfit">
-    <div class="confirm-style" data-action="click->create-clothesoutfits#displayForm">
-      <h3>Save this style</h3>
-      <%= simple_form_for(@outfit,  html: { class: 'd-none'},
-                          data: {
-                            create_clothesoutfits_target: 'form',
-                            action: 'submit->create-clothesoutfits#send'
-                          }) do |f| %>
-        <%= f.input :name %>
-        <%= f.submit "Save outfit", class: "button-delete mt-40" %>
-      <% end %>
-    </div>
+      <div class="confirm-style" data-action="click->create-clothesoutfits#displayForm">
+        <h3>Save this style</h3>
+        <%= simple_form_for(@outfit,  html: { class: 'd-none'},
+                            data: {
+                              create_clothesoutfits_target: 'form',
+                              action: 'submit->create-clothesoutfits#send'
+                            }) do |f| %>
+          <%= f.input :name %>
+          <%= f.submit "Save outfit", class: "button-delete mt-40" %>
+        <% end %>
+
+      </div>
 
     <div class="filter-button" data-action="click->search-clothes#displayFilters" >
-      <h3>Filter</h3>
+      <h3>Filters</h3>
+
     </div>
   </div>
-  <%= render "shared/filters" %>
+  <div class="container">
+     <%= render "shared/filters" %>
+  </div>
 </div>

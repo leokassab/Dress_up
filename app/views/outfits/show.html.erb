@@ -2,7 +2,7 @@
 
 <div id="outfit-show" class="container" >
   <h2> <%= @outfit.name %> </h2>
-  <div class="show-pic" style="background-image: url('<%= cl_image_path @outfit.photo.key, width: 400, crop: :fill %>')">
+  <div class="show-pic" style="background-image: url('<%= cl_image_path @outfit.photo.key %>')">
   </div>
   <div class="button-add-avatar">
     <%= link_to "Try on avatar"%>
@@ -11,10 +11,12 @@
   <div class="clothes_outfit">
     <div class="card-section">
       <% @ids.each do |clothe| %>
-        <div class="card-product">
+       <div class="card-product">
           <% if clothe.photo.attached? %>
             <%= link_to clothe_path(clothe) do %>
-              <div class="product-photo" style="background-image: url('<%= cl_image_path clothe.photo.key, width: 120 %>')">
+              <div  class="product-photo" >
+                <div class="photo" style="background-image: url('<%= cl_image_path clothe.photo.key, height: 145, crop: :fill %>')">
+                </div>
               </div>
             <% end %>
           <% end %>

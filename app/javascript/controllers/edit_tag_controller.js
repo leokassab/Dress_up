@@ -7,16 +7,16 @@ export default class extends Controller {
     this.formTarget.classList.toggle('d-none');
   }
 
-  update(event) {
-    event.preventDefault();
-    const url = this.formTarget.action
-    fetch(url, {
-      method: 'POST',
-      body: new FormData(this.formTarget)
-    })
-    .then(response => response.text())
-    .then(html => this.element.innerHTML = html)
-  }
+  //update(event) {
+   // event.preventDefault();
+    //const url = this.formTarget.action
+    //fetch(url, {
+      //method: 'POST',
+     // body: new FormData(this.formTarget)
+    //})
+    //.then(response => response.text())
+    //.then(html => this.element.innerHTML = html)
+  //}
   //update(event) {
     //event.preventDefault();
     //const url = this.formTarget.action
