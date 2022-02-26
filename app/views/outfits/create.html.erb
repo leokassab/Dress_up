@@ -1,19 +1,19 @@
-<div id="screenshot" style="background-color:white;">
-  <div id="avatar"  style=" background-image: url(http://res.cloudinary.com/detkinqcf/image/upload/v1644343102/avatar-removebg-nofoot-removebg-preview_wm0ler.png); height: 530px; width: 450px; margin-left: 300px; background-repeat: no-repeat; ">
+<div id="screenshot" class="d-flex justify-content center" style="background-color:white; padding-bottom: 50px; margin-left: -180px" >
+  <div id="avatar" class="d-flex justify-content center" style=" background-image: url(http://res.cloudinary.com/detkinqcf/image/upload/v1644343102/avatar-removebg-nofoot-removebg-preview_wm0ler.png); height: 530px; width: 450px; margin-left: 300px; background-repeat: no-repeat; ">
 
     <div id="hat" >
       <% if  @ids[0].photo.attached? %>
-        <%= cl_image_tag @ids[0].photo.key, style:"height: 43px; margin-left: 188px;  margin-top: 7px;"%>
+        <%= cl_image_tag @ids[0].photo.key, style:"height: 40px; margin-left: 190px;  margin-top: 7px;"%>
       <% end %>
     </div>
     <div id="chest" >
       <% if  @ids[1].photo.attached? %>
-        <%= cl_image_tag @ids[1].photo.key, style:"height: 181px; margin-left: 122px; margin-top: 45px;z-index:100; position: fixed;"%>
+        <%= cl_image_tag @ids[1].photo.key, style:"height: 200px; margin-left: 109px; margin-top: 45px;z-index:100; position: fixed;"%>
       <% end %>
     </div>
     <div id="leg" >
       <% if  @ids[2].photo.attached? %>
-        <%= cl_image_tag @ids[2].photo.key, style:"height: 287px; margin-left: 160px; margin-top: 177px; z-index: -1;"%>
+        <%= cl_image_tag @ids[2].photo.key, style:"height: 283px; margin-left: 156px; margin-top: 188px; z-index: -1;"%>
       <% end %>
     </div>
     <div id="foot" style="background-color:white">

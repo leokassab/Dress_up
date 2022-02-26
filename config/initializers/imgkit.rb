@@ -1,3 +1,3 @@
 IMGKit.configure do |config|
-  config.wkhtmltoimage = Rails.root.join('bin', 'wkhtmltoimage-amd64').to_s if ENV['RACK_ENV'] == 'production'
+  config.wkhtmltoimage = Gem.bin_path('wkhtmltopdf-heroku', 'wkhtmltopdf-linux-amd64')
 end
