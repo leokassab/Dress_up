@@ -65,6 +65,10 @@
   </div>
   <div class="new-collection">
     <h3 class="title-collection">New collections</h3>
-    <%= render "shared/shop_card", shop: Shop.first  %>
+    <ul><div class="horizontal-list hide-scrollbar shop-list">
+      <% @shops.each do |shop| %>
+        <li><%= render "shared/shop_card", shop: shop %></li>
+      <% end %>
+    </div></ul>
   </div>
 </div>
