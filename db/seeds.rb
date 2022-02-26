@@ -758,7 +758,7 @@ kith_shirt_black_west.save!
 
 kith_hat_pink = Clothe.new(
   name: "Hat pink Kith",
-  category: "Hat",
+  category: "Head",
   bookmark: false,
   size: "L",
   color: "pink",
@@ -773,7 +773,7 @@ kith_hat_pink.save!
 
 kith_hat_bob_logo = Clothe.new(
   name: "Bob blue logo Kith",
-  category: "Hat",
+  category: "Head",
   bookmark: false,
   size: "L",
   color: "navy",
@@ -788,7 +788,7 @@ kith_hat_bob_logo.save!
 
 kith_bob_blue = Clothe.new(
   name: "Bob Bleu",
-  category: "Hat",
+  category: "Head",
   bookmark: false,
   size: "L",
   color: "navy",
