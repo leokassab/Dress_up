@@ -38,7 +38,7 @@ class OutfitsController < ApplicationController
 
 
     # client = HTMLCSSToImage.new
-    client = HTMLCSSToImage.new(user_id: "1ab14c93-282f-4089-af6f-ec2af53bff4e", api_key: "3d4f4b0d-143a-46ca-8793-181930abf040")
+    client = HTMLCSSToImage.new(user_id: "75078c1f-710e-4eea-8410-c1da4aa5fc02", api_key: "442ef21c-7eed-4f2a-9035-475ed9c883d6")
     html = render_to_string("../views/outfits/create.html.erb", formats: :html, layout: false)
     puts(html)
     image = client.create_image(html)
