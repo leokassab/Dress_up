@@ -2,7 +2,7 @@
 
 <div id="outfit-show" class="container" >
   <h2> <%= @outfit.name %> </h2>
-  <div class="show-pic" style="background-image: url('<%= cl_image_path @outfit.photo.key, width: 400, crop: :fill %>')">
+  <div class="show-pic" style="background-image: url('<%= cl_image_path @outfit.photo.key %>')">
   </div>
   <div class="button-add-avatar">
     <%= link_to "Try on avatar"%>
