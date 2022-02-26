@@ -6,7 +6,7 @@
     </div>
   </div>
   <div class="category-wrapper">
-    <%= simple_form_for :search, url: filter_path, method: :get, html: { class: "d-none", data: { search_clothes_target: 'filters' } }  do |f| %>
+    <%= simple_form_for :search, url: filter_avatar_path, method: :get, html: { class: "d-none", data: { search_clothes_target: 'filters' } }  do |f| %>
       <h3>Colors</h3>
       <%= f.input :colors,
               as: :check_boxes,
