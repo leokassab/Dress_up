@@ -25,7 +25,7 @@ puts "create Elliott"
 travis = User.create(
   email: "travis@dressup.com",
   password: "123456",
-  user_name: "Travis",
+  user_name: "Elliott",
   height: 180,
   body_shape: "hourglass",
   skin_tone: "white",
