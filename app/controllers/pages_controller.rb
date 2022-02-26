@@ -37,6 +37,6 @@ class PagesController < ApplicationController
 
 # @clothes.where(category: "Chest", color: "black")
 
-  end
+  # end
 
 end
