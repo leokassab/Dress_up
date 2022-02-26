@@ -6,4 +6,8 @@ class Clothe < ApplicationRecord
   has_one_attached :photo
   has_many :tags, through: :clothes_tags
   delegate :brand, to: :shop, allow_nil: true
+
+  # def filter_by_color
+  #   params[:search][:colors].first
+  # end
 end

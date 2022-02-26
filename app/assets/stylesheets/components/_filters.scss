@@ -140,8 +140,19 @@ input[color="pink"] + label {
   font-weight: bold ;
 }
 
+.red-button {
+  color: white;
+  background-color: rgb(188,23,26);
+  padding: 10px 60px;
+  border-radius: 8px;
+  box-shadow: none;
+  border: none;
+  font-weight: bold ;
+  font-size: 14px;
+}
+
 .submit {
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
 }
