@@ -2,6 +2,7 @@ class PagesController < ApplicationController
 
   def home
     @user = current_user
+    @shops = Shop.first(3)
   end
 
   def avatar
