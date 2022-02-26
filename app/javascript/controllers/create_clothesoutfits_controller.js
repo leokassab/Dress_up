@@ -60,7 +60,7 @@ export default class extends Controller {
   }
 
   displayForm() {
-    this.formTarget.classList.toggle('d-none');
+    this.formTarget.classList.remove('d-none');
     window.scrollTo(0,document.body.scrollHeight);
   }
 
