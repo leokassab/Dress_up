@@ -170,7 +170,7 @@ wagon_tshirt = Clothe.new(
   product_ref: rand(1..1000000),
   user_id: 1,
 )
-wagon_tshirt.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1645873276/Clothes/1_yi9jyf.png"), filename: "clothe #{diesel_tshirt.id}.jpeg", content_type: 'image/jpeg')
+wagon_tshirt.photo.attach(io: URI.open("https://res.cloudinary.com/detkinqcf/image/upload/v1645873276/Clothes/1_yi9jyf.png"), filename: "clothe #{wagon_tshirt.id}.jpeg", content_type: 'image/jpeg')
 wagon_tshirt.save!
 
 diesel_tshirt = Clothe.new(
